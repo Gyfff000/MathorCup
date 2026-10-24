@@ -1,0 +1,146 @@
+[
+  {
+    "file": "audit/chemical_dictionary.csv",
+    "sha256": "ebdbf6456dce6cc218931e723ad64969ef2f7c480a92f1c977d55c24d2a91c71"
+  },
+  {
+    "file": "audit/field_scales.csv",
+    "sha256": "2154b6f582b4305e31c4782e2902ea62ad1e6674f7df496678bebc80a0b895c8"
+  },
+  {
+    "file": "audit/file_shapes.csv",
+    "sha256": "bc2fb6e3c13d30ea05a3613354f20c4de4b679993a29327f16e57ce51c5af7be"
+  },
+  {
+    "file": "audit/join_key_audit.csv",
+    "sha256": "19638e53b8caae3b3715224d26b180f9861e4b868d8bb1a41f5101fe9b224d58"
+  },
+  {
+    "file": "audit/sensory_dictionary.csv",
+    "sha256": "10cf01c179e5371c5d7c095e802164fa119900c50116de798c918d52dcbb272a"
+  },
+  {
+    "file": "audit/sensory_template_audit.csv",
+    "sha256": "9366a22bd4c9ff45bde9a02237437ad158f33958b21df18c23c37c3eb2c1e5f1"
+  },
+  {
+    "file": "audit/source_manifest.csv",
+    "sha256": "723f87ff2523b1499847b1564fc07c942de1bc57ef4edf2d42162a0be3d9a778"
+  },
+  {
+    "file": "audit/style_counts.csv",
+    "sha256": "bc842c16c60f3a3b22be38f53202e85a87c3873eeb6f86b8a10e3843f6614d83"
+  },
+  {
+    "file": "audit/verified_facts.json",
+    "sha256": "7b302d7f86f304cf61d5eb0a0217ee0b79aba56f4ba576164c2dbe8ad23fa0cd"
+  },
+  {
+    "file": "figures/calibration_uncertainty.png",
+    "sha256": "059e15ea1b375ef94da9cfd68eca99a0072736de15563bc900ca673f0d528542"
+  },
+  {
+    "file": "figures/factor_evidence.png",
+    "sha256": "1436ad988386102cca07357db31372ea8e60e3c8a4050dd24eced983d4d0bbbf"
+  },
+  {
+    "file": "figures/generator_comparison.png",
+    "sha256": "d61453c5759ef7dba7a55a6ded4d98a77112e4c13f3609a16bfa41eff65ade0c"
+  },
+  {
+    "file": "figures/model_comparison.png",
+    "sha256": "e61c31fb8cc02bb90ca14eeff07da4a0479997051e42952911e82cd62f13d4ad"
+  },
+  {
+    "file": "figures/style_counts.png",
+    "sha256": "ad6708f99027d0d6a4937475a4fc7af9095257984aabc9040ba02e98e4118c21"
+  },
+  {
+    "file": "figures/transfer_comparison.png",
+    "sha256": "e8752ba517b9198946c64100333a69fbd483695b67a2dd04cb1e906c20c69763"
+  },
+  {
+    "file": "q1/ASSUMPTION_grade_ranges.csv",
+    "sha256": "00264b702ca4a2d37e77d2842aab0865a709a51a3a3aec4956eca96b265583f6"
+  },
+  {
+    "file": "q1/conformal_coverage.csv",
+    "sha256": "f669c3c3390629501d9e99836c554d1355655392301c668d997e161c1c7ed244"
+  },
+  {
+    "file": "q1/conformal_split.csv",
+    "sha256": "3e3815386e87fd8de451a4070f1df4eb7dad42e4fa1c2fe1dde80dab7b939cd3"
+  },
+  {
+    "file": "q1/grade_rule_sensitivity.csv",
+    "sha256": "5bbcccad4fd4e2640a380f7b238a105c0ab288d0c84f76bf4f263b64c72183a2"
+  },
+  {
+    "file": "q1/metrics_by_target.csv",
+    "sha256": "3a7aeb2ff678a4fd045080a50a3effc6351837013c2bb597c0a29a1f511deed5"
+  },
+  {
+    "file": "q1/metrics_summary.csv",
+    "sha256": "68fa773355fda0e8368ff8ddd35893162cd767dd445f94addf0c25ee3e27a55c"
+  },
+  {
+    "file": "q1/oof_gbr_continuous.csv",
+    "sha256": "1a9c2e5b2c612305905f4991bfc1d8c10722d257493502944b139ece7c5eaad9"
+  },
+  {
+    "file": "q1/split_assignments.csv",
+    "sha256": "9e996b7159fda6d480e2af9f044d56fa1a138c56d2c3b2f35ea4336fc0f05642"
+  },
+  {
+    "file": "q2/heldout_permutation_importance.csv",
+    "sha256": "3615d158bc3ed6f79aba7f74a6bbf1435c495a9cc47b89e457beb840207057db"
+  },
+  {
+    "file": "q2/top3_evidence_review.csv",
+    "sha256": "ecc52da1ddb2005ba12bcfe1807d1e54376e6951df8c9dce5ef7d2eb82f19708"
+  },
+  {
+    "file": "q3/expanded_transfer_defect_checks.csv",
+    "sha256": "9c308d438bf1c68b94952a1d4f5549320ca049cd8ac7ca207e81174cd5ea0e9b"
+  },
+  {
+    "file": "q3/expanded_transfer_diagnostics.csv",
+    "sha256": "509793e080d0b4e560b52718c1cb66c721d61cea6ed6ce1165e50004863fe7e6"
+  },
+  {
+    "file": "q3/expanded_transfer_profiles.csv",
+    "sha256": "573515504914e72a5d8171efd0337ff127cfb2583dee7f0eff06d214c24a5d01"
+  },
+  {
+    "file": "q3/generator_comparison_by_split.csv",
+    "sha256": "925aefc7fa21745ab1004b50442c7f206eea5342b1799548d6e6279e0c2b38b4"
+  },
+  {
+    "file": "q3/generator_comparison_mean.csv",
+    "sha256": "10f7658576af15ec2ab4fbc3ecce28e1ce59dbc5f8442ab080e622f6d8612bb2"
+  },
+  {
+    "file": "q3/local_convex_generated_profiles.csv",
+    "sha256": "4ee99c4e12e97bfffa36e5680a0acf040a9aa93335090cbdfb00233e0961fe50"
+  },
+  {
+    "file": "q3/local_convex_sensory_continuous.csv",
+    "sha256": "4c1ccaa9af0741fbc1dc465301a1437617b2d52cd97058921363d975b2357868"
+  },
+  {
+    "file": "run_manifest.json",
+    "sha256": "f4635908492fff08470ace337376f25f88a634574f30224c1dc70585bff20dda"
+  },
+  {
+    "file": "STAGE_REPORT.md",
+    "sha256": "2c0f85dafea53918e228d9e0ad93b354419754692098922d0c8d058309a942ce"
+  },
+  {
+    "file": "status.json",
+    "sha256": "fc84d4af5f5cb78a375118b3ddf84c1fd8edda3a07165fddca300daf049ee72d"
+  },
+  {
+    "file": "validation_summary.json",
+    "sha256": "117b105a1bb35450e0df36a263aca15a5697de835b061b42a6bb767883dfca74"
+  }
+]

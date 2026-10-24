@@ -1,0 +1,12 @@
+﻿beer,status,generator_role,source_trip_probability,candidate_trip_probability,cleaning_only_probability,change_l2,missing_source_defects,all_source_defects_observed,stale_constraint
+124,nontrivial_model_feasible_candidate,train,0.00077155803,0.956568258,0.00077155803,137.70174,,True,predicted_proxy_only
+81,nontrivial_model_feasible_candidate,train,0.000881510129,0.985946782,0.000881510129,40.8735394,,True,predicted_proxy_only
+218,nontrivial_model_feasible_candidate,train,0.00139225346,0.98627918,0.00139225346,42.1861127,,True,predicted_proxy_only
+96,nontrivial_model_feasible_candidate,train,0.000471000678,0.956382855,0.000471000678,138.343129,,True,predicted_proxy_only
+230,nontrivial_model_feasible_candidate,train,0.00139543354,0.986169282,0.00139543354,43.0056028,,True,predicted_proxy_only
+185,nontrivial_model_feasible_candidate,holdout,0.000314850741,0.985835612,0.000314850741,42.9872302,,True,predicted_proxy_only
+139,nontrivial_model_feasible_candidate,holdout,0.000397093168,0.986239941,0.000397093168,42.2065903,,True,predicted_proxy_only
+209,nontrivial_model_feasible_candidate,train,0.00041945537,0.956608118,0.00041945537,138.447304,,True,predicted_proxy_only
+119,nontrivial_model_feasible_candidate,train,0.000687444272,0.98616838,0.000687444272,38.2505168,X2.3.butanedione,False,predicted_proxy_only
+90,nontrivial_model_feasible_candidate,train,0.000989832037,0.985900494,0.000989832037,41.2571995,,True,predicted_proxy_only
+28,nontrivial_model_feasible_candidate,train,0.00931464939,0.986260438,0.00931464939,38.580424,X2.3.butanedione,False,predicted_proxy_only

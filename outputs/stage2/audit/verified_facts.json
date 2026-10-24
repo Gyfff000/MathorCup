@@ -1,0 +1,12 @@
+{
+  "pearson_matrix_mean_absolute_difference": 0.08730394533051206,
+  "spearman_matrix_mean_absolute_difference": 1.5832267984104045e-16,
+  "n_samples": 250,
+  "n_features": 231,
+  "n_targets": 50,
+  "n_styles": 22,
+  "grade_calibration": "UNRESOLVED: no observed paired absolute 0-6 anchors confirmed",
+  "template_summary_barnyard_formula": "=beer_1!$AG$76",
+  "template_barnyard_expected_cell": "beer_1!AG90 based on the form's Barnyard label; team review required",
+  "scope": "source evidence verified by computation; model conclusions remain exploratory"
+}

@@ -6,6 +6,9 @@
 
 ## 从哪里开始阅读
 
+- **第一次参赛先读：[从数据到论文的解题教程](docs/从数据到论文的解题教程.md)**
+- [完整论文参考稿 PDF](paper/论文参考稿.pdf) · [可编辑 Markdown](paper/论文参考稿.md) · [参考稿使用说明](paper/阅读说明.md)
+- [第二阶段实验与实际结论](outputs/stage2/STAGE_REPORT.md) · [扩展方法与结果索引](docs/STAGE2_METHOD.md)
 - [阶段成果与实测数字](outputs/stage1/STAGE_REPORT.md)
 - [数据处理及证据分级](docs/DATA_DECISIONS.md)
 - [第一问方法与限制](docs/Q1_METHOD.md)
@@ -37,6 +40,18 @@ python run.py report --data-dir "D:\your_data\A附件"
 ```
 
 三折两次重复验证、100 次 bootstrap、生成样本数等均写在 config.json。改变配置应写入新的输出目录和研究日志，保留已有阶段，避免覆盖后混用结果。
+
+第二阶段在第一阶段的基础上增加 GBR、分级假设敏感性、分割保形区间、留出置换贡献、五次划分的生成对照和多锚点迁移。保留第一阶段完整结果，再运行：
+
+```powershell
+python run_stage2.py --data-dir "D:\your_data\A附件" --base outputs/stage1 --out outputs/stage2
+python -m pytest -q
+python scripts/stage2_figures.py
+```
+
+配套参考稿已生成，共 13 页（摘要、目录各 1 页，后续 11 页含正文、参考文献和复现索引），含 14 个公式、6 张图和实际实验表。模型、假设、求解、验证及局限均按三问展开。最新实测为 23 项检查通过；GBR 宏平均 MAE 0.3398；150 条因素候选中 11 条通过当前探索性证据条件；扩展搜索找到 11 个模型内迁移候选。**论文是供队员独立学习和复核的参考研究，AI 披露、完整源程序附录、队员贡献和正式提交格式仍须按实际使用补全。**
+
+论文再生成需另装 `requirements-paper.txt`，并提供宋体、黑体；当前 PDF 脚本使用 Windows 系统字体。按顺序运行 `scripts/prepare_paper.py`、`scripts/render_equations.py`、`scripts/build_paper_pdf.py`。数值模型环境不需要安装文档依赖。
 
 ## 结果的使用边界
 

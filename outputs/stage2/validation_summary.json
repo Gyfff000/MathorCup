@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-24",
+  "tests": {
+    "tests": 23,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "test_names": [
+    "test_join_uses_unique_beer_and_recovers_permuted_rows",
+    "test_duplicate_key_is_rejected_before_join",
+    "test_preprocessing_bounds_do_not_learn_from_validation_extreme",
+    "test_signed_laplacian_is_psd_with_negative_edges",
+    "test_ecdf_grades_are_bounded_and_monotone",
+    "test_each_defect_is_checked_separately",
+    "test_conditional_generator_is_finite_bounded_and_reproducible",
+    "test_original_sources_unchanged",
+    "test_oof_mean_matches_actual_training_only_mean",
+    "test_each_sample_held_out_once_per_repeat",
+    "test_top3_has_unique_eligible_factors_per_target",
+    "test_transfer_failure_is_not_hidden_as_success",
+    "test_calibration_remains_explicitly_unresolved",
+    "test_generator_holdout_does_not_overlap_training",
+    "test_generation_diagnostics_do_not_hide_missing_reference_values",
+    "test_conformal_quantile_uses_finite_sample_rank",
+    "test_three_grade_assumptions_remain_bounded",
+    "test_local_convex_samples_stay_inside_training_hull_box",
+    "test_conformal_roles_are_disjoint",
+    "test_attribution_flags_do_not_claim_causality",
+    "test_repeated_generator_comparison_has_all_methods_and_splits",
+    "test_extended_transfer_preserves_failure_and_each_defect",
+    "test_stage2_keeps_absolute_calibration_unidentified"
+  ],
+  "paper": {
+    "physical_pages": 13,
+    "abstract_page": 1,
+    "contents_page": 2,
+    "body_starts_physical_page": 3,
+    "body_starts_printed_page": 1,
+    "equations": 14,
+    "figures": 6,
+    "missing_glyph_nulls": 0,
+    "author_metadata_empty": true,
+    "visual_review": "all 13 rendered pages inspected; final amendment on defect names reviewed",
+    "sha256": "1ae051e736d594b7013300b8d547e14ec33aaa8495429262ca07009acc4aee0f"
+  },
+  "scientific_scope": "Exploratory AI-assisted reference; no absolute-score recovery, causal or tasting validation claimed."
+}

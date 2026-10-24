@@ -1,0 +1,13 @@
+{
+  "absolute_score_calibration": "not_identifiable_from_provided_aggregated_per_taster_standardized_scores_without_additional_anchors",
+  "grade_sensitivity_disagreement": 0.8447647733792313,
+  "conformal_nominal_marginal_coverage": 0.9,
+  "conformal_empirical_average_coverage": 0.9228000000000001,
+  "conformal_caveat": "single random split; marginal coverage on provided continuous labels, not simultaneous or original-scale coverage",
+  "comparatively_supported_top3_associations": 11,
+  "top3_total": 150,
+  "generation_repeated_splits": 5,
+  "expanded_transfer_nontrivial": 11,
+  "physical_or_tasting_validation": "not_performed",
+  "research_stage": "exploratory_extension_after_stage_one_not_an_untouched_external_test"
+}
