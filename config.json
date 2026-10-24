@@ -1,0 +1,21 @@
+{
+  "seed": 20261024,
+  "outer_folds": 3,
+  "outer_repeats": 2,
+  "inner_folds": 3,
+  "ridge_alphas": [1.0, 10.0, 100.0, 1000.0],
+  "pls_components": [3, 8],
+  "extra_trees": 200,
+  "bootstrap_repeats": 100,
+  "graph_threshold": 0.7,
+  "graph_ridge_alpha": 20.0,
+  "graph_ridge_lambda": 5.0,
+  "generation_holdout_fraction": 0.2,
+  "generation_components": 10,
+  "generation_samples_per_style": 40,
+  "generation_styles": ["Tripel", "Kriek", "Lambic"],
+  "transfer_source": "Pils/Lager",
+  "transfer_target": "Tripel",
+  "missing_rates": [0.0, 0.05, 0.1, 0.2],
+  "export_assumption_grades": true
+}

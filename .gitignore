@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.joblib
+data/raw/
+outputs/**/private/
+tmp/
+publish_payload.json
+*.zip
+*.rar
+.env
+ai_usage_private/
