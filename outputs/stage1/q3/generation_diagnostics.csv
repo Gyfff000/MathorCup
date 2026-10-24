@@ -1,0 +1,4 @@
+﻿style,n_generated,n_training_style,n_holdout_style,mean_marginal_KS_holdout,n_KS_fields_observed,RBF_MMD2_holdout,bootstrap_baseline_MMD2_holdout,mean_target_style_probability,nearest_train_distance_mean,exact_training_copy_fraction,heldout_reference_warning
+Tripel,40,22,6,0.480050505,231,0.124195019,0.124750609,0.295238343,11.1424575,0,"few independent style examples; descriptive distances only, no quality guarantee"
+Kriek,40,8,2,0.645887446,231,0.268601651,0.211803734,0.396222332,12.2351021,0,"few independent style examples; descriptive distances only, no quality guarantee"
+Lambic,40,9,2,0.591774892,231,0.223035551,0.213826467,0.413629865,11.4709189,0,"few independent style examples; descriptive distances only, no quality guarantee"

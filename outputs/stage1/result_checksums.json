@@ -1,0 +1,186 @@
+[
+  {
+    "file": "audit/chemical_dictionary.csv",
+    "sha256": "ebdbf6456dce6cc218931e723ad64969ef2f7c480a92f1c977d55c24d2a91c71"
+  },
+  {
+    "file": "audit/field_scales.csv",
+    "sha256": "2154b6f582b4305e31c4782e2902ea62ad1e6674f7df496678bebc80a0b895c8"
+  },
+  {
+    "file": "audit/file_shapes.csv",
+    "sha256": "bc2fb6e3c13d30ea05a3613354f20c4de4b679993a29327f16e57ce51c5af7be"
+  },
+  {
+    "file": "audit/join_key_audit.csv",
+    "sha256": "19638e53b8caae3b3715224d26b180f9861e4b868d8bb1a41f5101fe9b224d58"
+  },
+  {
+    "file": "audit/sensory_dictionary.csv",
+    "sha256": "10cf01c179e5371c5d7c095e802164fa119900c50116de798c918d52dcbb272a"
+  },
+  {
+    "file": "audit/sensory_template_audit.csv",
+    "sha256": "9366a22bd4c9ff45bde9a02237437ad158f33958b21df18c23c37c3eb2c1e5f1"
+  },
+  {
+    "file": "audit/source_manifest.csv",
+    "sha256": "723f87ff2523b1499847b1564fc07c942de1bc57ef4edf2d42162a0be3d9a778"
+  },
+  {
+    "file": "audit/style_counts.csv",
+    "sha256": "bc842c16c60f3a3b22be38f53202e85a87c3873eeb6f86b8a10e3843f6614d83"
+  },
+  {
+    "file": "audit/verified_facts.json",
+    "sha256": "7b302d7f86f304cf61d5eb0a0217ee0b79aba56f4ba576164c2dbe8ad23fa0cd"
+  },
+  {
+    "file": "figures/q1_validation.png",
+    "sha256": "f858986854063d807268f4a874a707210f08792f6b68accbe5881ee8dfd704c7"
+  },
+  {
+    "file": "figures/q2_stability.png",
+    "sha256": "f02a44227d229662b021060918218a53c8c6e0b4e0a0749e0e3dae6a9b56535b"
+  },
+  {
+    "file": "figures/q3_sensory_portraits.png",
+    "sha256": "19fcee77bd3abb41d14009cbf63173ee1121e541c12358744991aa73ff496f88"
+  },
+  {
+    "file": "figures/q3_transfer_checks.png",
+    "sha256": "bef74d716c639e3aea7f396b8aaab056290c29b8b571c332a95b162aa37e9bb2"
+  },
+  {
+    "file": "q1/ASSUMPTION_percentile_grades_0_6.csv",
+    "sha256": "82d374864f092d495c17db32fb05f862af529f6e09774ec83bfab55d28f9cab2"
+  },
+  {
+    "file": "q1/final_ridge_coefficients.csv",
+    "sha256": "4c7f9daa7c7ea7d4986acdc3e8a7da095d1ba1b54859b664bafc27f5e5c8cc3d"
+  },
+  {
+    "file": "q1/inner_selected_parameters.csv",
+    "sha256": "60a16abef53c95e586bd2915529a29d3b0a3877a1172e7885b540886877a7a94"
+  },
+  {
+    "file": "q1/metrics_by_fold.csv",
+    "sha256": "0ccab041d5826e8a7f0da70d5a40993f08a40bad2e7d9158902bef20347c45de"
+  },
+  {
+    "file": "q1/metrics_by_style.csv",
+    "sha256": "5281239b02f2aec7890739d1fa1d7c20e8d465721b6b9c375384831dc11679e6"
+  },
+  {
+    "file": "q1/metrics_by_target.csv",
+    "sha256": "34305e718129efb72575b270c364dbce1710605b184d7525a4df7dee9ce89df2"
+  },
+  {
+    "file": "q1/metrics_summary.csv",
+    "sha256": "5eff4ae6a23b33c8c9bd0b544c5812ff2711bf52cdec777703f4c4c3656df9b3"
+  },
+  {
+    "file": "q1/missingness_robustness.csv",
+    "sha256": "9970515af7dcae544ffbfe1ed880a1a699f3aef7f00f9a3546bb448a808e1ba4"
+  },
+  {
+    "file": "q1/oof_extra_trees_continuous.csv",
+    "sha256": "3448919466bca3c06162ccbf3b569f64a3cde2c592df47d967c62aa378122b85"
+  },
+  {
+    "file": "q1/oof_mean_continuous.csv",
+    "sha256": "918d7f2e26a34ca804aef55cb8df4a04e9eba5bb6b1cc1dc1061164252be8d08"
+  },
+  {
+    "file": "q1/oof_pls_continuous.csv",
+    "sha256": "a444f618a2d9e4536dace03e52f4e71895e4edcccb17fe5122008a937c3e86fb"
+  },
+  {
+    "file": "q1/oof_ridge_continuous.csv",
+    "sha256": "a29741cc78b6ef1063805854d5ea34c05b85b426bc8b92fba39ddf86203e1434"
+  },
+  {
+    "file": "q1/split_assignments.csv",
+    "sha256": "c66791870c06c50fea3331cdefa2f99f3a96baa1f0c5d1f6ef0317c0aaf457e6"
+  },
+  {
+    "file": "q1/status.json",
+    "sha256": "5e5c8d61574ed8e61e6f9670c7f0902a625c07b5797390241dfb9c1fb1f23f45"
+  },
+  {
+    "file": "q2/bootstrap_selection_frequencies.csv",
+    "sha256": "3bd8a3158cfd8f1b66b00ddc26f54cf8932362748ce7367356bd3059dd0a874e"
+  },
+  {
+    "file": "q2/coexpression_edges.csv",
+    "sha256": "8166dffdd5ed5c8e0787b1df5d6ee1054cd8a12e6069042ad01c99c2c1ee8e46"
+  },
+  {
+    "file": "q2/method_jaccard.csv",
+    "sha256": "a0844d79c90898e908a30eea1567ffb10cf76fd7ab4471fb9bc27a76dd72c17f"
+  },
+  {
+    "file": "q2/network_nodes.csv",
+    "sha256": "688ed1fd18c31e458764472ce7fbf241448dfe8454cb90ea956ac3d396a105ea"
+  },
+  {
+    "file": "q2/network_threshold_sensitivity.csv",
+    "sha256": "c5bfac9ff731a7424d78bb434e50ec96e6c02243930e17ba1bdf6ac50554194e"
+  },
+  {
+    "file": "q2/status.json",
+    "sha256": "71e4431dcfd4e904e35bfcb1a10d361f3b7c911a2f1fe2a98ae823a2f06ca293"
+  },
+  {
+    "file": "q2/top3_by_sensory_dimension.csv",
+    "sha256": "9781820623211735113cc14c102b414d7cf4277bde1f7d584224cea8a78648ec"
+  },
+  {
+    "file": "q3/ASSUMPTION_generated_percentile_grades.csv",
+    "sha256": "4937dd79d63addb200d35d4206ea6c3a779464b95c12bf50aa445bd98302a880"
+  },
+  {
+    "file": "q3/defect_nonincrease_checks.csv",
+    "sha256": "4b3c640b8a9a07bfd842d149c5fdeabb44fc3b2dcfa2d923b90a618b1a4eaaf4"
+  },
+  {
+    "file": "q3/generated_compound_profiles.csv",
+    "sha256": "58485fe6d989ce7ad51685494219bafade82ac0562dcc51ba59d4bae9e116464"
+  },
+  {
+    "file": "q3/generated_sensory_continuous.csv",
+    "sha256": "2168d0cfb9b722326dd0c4cd462e804ba80ecc35c238056311f3da059534b841"
+  },
+  {
+    "file": "q3/generation_diagnostics.csv",
+    "sha256": "207dd7386e2d2edf2c43c942721eb1c395f1e6c5d265e183c4621b94247c63d1"
+  },
+  {
+    "file": "q3/generator_split.csv",
+    "sha256": "90b88e14b3b4d3a27649f51b19bd03726bcf511c68c61c06915b29b8f693a66f"
+  },
+  {
+    "file": "q3/pils_to_tripel_profiles.csv",
+    "sha256": "d2344e1c89635e1805b2b0dc45b80e3e0d075569a56408db4fd8c8cc0f6cce97"
+  },
+  {
+    "file": "q3/pils_to_tripel_sensory_continuous.csv",
+    "sha256": "3e4026ad1e1ad07ad6ea7a6cbd7c9bf616e5c8cb375f5a4dcfa0554e627f91e2"
+  },
+  {
+    "file": "q3/status.json",
+    "sha256": "44d51014ecb0556b9feeade7542faba267a4217b1e008f37dcf715b22b1bc6d3"
+  },
+  {
+    "file": "q3/transfer_diagnostics.csv",
+    "sha256": "26bbff2deb333ce1c97813d12df9444dea591db441d4b3f7f53a41b467557e90"
+  },
+  {
+    "file": "STAGE_REPORT.md",
+    "sha256": "35b13b2cba43d046ee3b50de967fe9ec107880784a5442a847a6da5d9147a434"
+  },
+  {
+    "file": "validation_summary.json",
+    "sha256": "ebe89717dac530cc962c262bceeb41f9e0bb068eaaf3591510ea249d6af52a31"
+  }
+]

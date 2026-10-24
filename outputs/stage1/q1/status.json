@@ -1,0 +1,11 @@
+{
+  "continuous_prediction": "computed_repeated_out_of_fold_exploratory_baselines",
+  "absolute_0_6_prediction": "UNRESOLVED_missing_raw_score_calibration",
+  "proxy_grades": "empirical equal-frequency bins, not a recovery of the original 0-6 intensity",
+  "primary_model": "ridge selected before evaluation; inner tuning only",
+  "final_inner_parameters": {
+    "model__alpha": 1000.0
+  },
+  "external_generalization": "not established; supplied targets already preprocessed by source authors",
+  "intervals": "not calibrated; no nominal coverage claim is made"
+}

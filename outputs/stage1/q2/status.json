@@ -1,0 +1,12 @@
+{
+  "scope": "descriptive_exploratory_full_dataset_association",
+  "nodes": 231,
+  "edges": 109,
+  "modules": 169,
+  "bootstrap_repeats": 100,
+  "bootstrap_rebuilds_preprocessing_and_graph": true,
+  "causal_status": "not_identified",
+  "chemical_mechanism_status": "reference metadata attached; target-specific human literature review required",
+  "regularization_parameters": "fixed research defaults, not optimized for causal recovery",
+  "eligible_compounds": 218
+}

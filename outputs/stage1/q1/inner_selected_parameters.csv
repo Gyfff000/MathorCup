@@ -1,0 +1,25 @@
+﻿outer_fold,model,parameters
+0,mean,{}
+0,ridge,{'model__alpha': 1000.0}
+0,pls,{'model__n_components': 8}
+0,extra_trees,{}
+1,mean,{}
+1,ridge,{'model__alpha': 1000.0}
+1,pls,{'model__n_components': 8}
+1,extra_trees,{}
+2,mean,{}
+2,ridge,{'model__alpha': 1000.0}
+2,pls,{'model__n_components': 8}
+2,extra_trees,{}
+3,mean,{}
+3,ridge,{'model__alpha': 1000.0}
+3,pls,{'model__n_components': 8}
+3,extra_trees,{}
+4,mean,{}
+4,ridge,{'model__alpha': 1000.0}
+4,pls,{'model__n_components': 8}
+4,extra_trees,{}
+5,mean,{}
+5,ridge,{'model__alpha': 1000.0}
+5,pls,{'model__n_components': 8}
+5,extra_trees,{}

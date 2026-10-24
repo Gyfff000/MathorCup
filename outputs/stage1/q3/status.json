@@ -1,0 +1,13 @@
+{
+  "model": "conditional_PCA_Gaussian_with_partial_covariance_pooling",
+  "generator_train_n": 200,
+  "generator_holdout_n": 50,
+  "style_classifier_holdout_balanced_accuracy": 0.5643939393939393,
+  "primary_feature_scale": "supplied_mixed_transforms; see audit/field_scales.csv",
+  "marginal_bounds": "training 1%-99% descriptor range; not a thermodynamic or brewing-feasibility guarantee",
+  "aggregate_consistency": "aggregate descriptors generated jointly; exact chemical sum identities not established",
+  "sensory_portraits": "Q1 full-data fitted predictor, model-based only; not an independent tasting validation",
+  "defect_thresholds": "absolute thresholds incomplete and some field scales unresolved; no complete OAV certification",
+  "stale_hops_constraint": "prediction proxy only; actual sensory non-worsening unverified",
+  "zero_change_transfers": "explicitly reported as no nontrivial feasible candidate, never counted as successful style transfer"
+}

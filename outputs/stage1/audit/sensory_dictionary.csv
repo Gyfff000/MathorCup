@@ -1,0 +1,52 @@
+﻿field,label,group,observed_scale,absolute_0_6_calibration
+A_malt_all,Malt aroma - overall,Aroma,provided centered/standardized continuous values,unresolved
+A_malt_grain,Malt aroma - grain,Aroma,provided centered/standardized continuous values,unresolved
+A_malt_bread,Malt aroma - bread,Aroma,provided centered/standardized continuous values,unresolved
+A_malt_cara,Malt aroma - caramel,Aroma,provided centered/standardized continuous values,unresolved
+A_malt_burn,Malt aroma - smoked,Aroma,provided centered/standardized continuous values,unresolved
+A_hops_all,Hops aroma - overall,Aroma,provided centered/standardized continuous values,unresolved
+A_hops_citrus,Hops aroma - citrus,Aroma,provided centered/standardized continuous values,unresolved
+A_hops_tropical,Hops aroma - tropical fruit,Aroma,provided centered/standardized continuous values,unresolved
+A_hops_noble,Hops aroma - grassy,Aroma,provided centered/standardized continuous values,unresolved
+A_hops_woody,Hops aroma - woody,Aroma,provided centered/standardized continuous values,unresolved
+A_esters_all,Esters aroma - overall,Aroma,provided centered/standardized continuous values,unresolved
+A_esters_ethac,Esters aroma - nail polish,Aroma,provided centered/standardized continuous values,unresolved
+A_esters_isoaa,Esters aroma - banana,Aroma,provided centered/standardized continuous values,unresolved
+A_esters_flower,Esters aroma - floral,Aroma,provided centered/standardized continuous values,unresolved
+A_esters_fruity,Esters aroma - fruity,Aroma,provided centered/standardized continuous values,unresolved
+F_malt_all,Malt taste - overall,Flavour,provided centered/standardized continuous values,unresolved
+F_malt_grain,Malt taste - grain,Flavour,provided centered/standardized continuous values,unresolved
+F_malt_bread,Malt taste - bread,Flavour,provided centered/standardized continuous values,unresolved
+F_malt_cara,Malt taste - caramel,Flavour,provided centered/standardized continuous values,unresolved
+F_malt_burn,Malt taste - smoked,Flavour,provided centered/standardized continuous values,unresolved
+F_hops_all,Hops taste - overall,Flavour,provided centered/standardized continuous values,unresolved
+F_hops_citrus,Hops taste - citrus,Flavour,provided centered/standardized continuous values,unresolved
+F_hops_tropical,Hops taste - tropical fruit,Flavour,provided centered/standardized continuous values,unresolved
+F_hops_noble,Hops taste - grassy,Flavour,provided centered/standardized continuous values,unresolved
+F_hops_woody,Hops taste - woody,Flavour,provided centered/standardized continuous values,unresolved
+F_esters_all,Esters taste - overall,Flavour,provided centered/standardized continuous values,unresolved
+F_esters_ethac,Esters taste - nail polish,Flavour,provided centered/standardized continuous values,unresolved
+F_esters_isoaa,Esters taste - banana,Flavour,provided centered/standardized continuous values,unresolved
+F_esters_flower,Esters taste - floral,Flavour,provided centered/standardized continuous values,unresolved
+F_esters_fruity,Esters taste - fruity,Flavour,provided centered/standardized continuous values,unresolved
+acidity,Acidity,Other sensory,provided centered/standardized continuous values,unresolved
+bitternes,Bitterness,Other sensory,provided centered/standardized continuous values,unresolved
+sweetness,Sweetness,Other sensory,provided centered/standardized continuous values,unresolved
+X4vg,4-vinyl guaiacol,Other sensory,provided centered/standardized continuous values,unresolved
+diacetyl,Diacetyl,Other sensory,provided centered/standardized continuous values,unresolved
+dms,Dimethyl sulfide,Other sensory,provided centered/standardized continuous values,unresolved
+metallic,Metallic,Other sensory,provided centered/standardized continuous values,unresolved
+stale_hops,Stale hops,Other sensory,provided centered/standardized continuous values,unresolved
+t2n,Trans-2-nonenal,Other sensory,provided centered/standardized continuous values,unresolved
+orange,Orange,Other sensory,provided centered/standardized continuous values,unresolved
+coriander,Coriander,Other sensory,provided centered/standardized continuous values,unresolved
+clove,Clove,Other sensory,provided centered/standardized continuous values,unresolved
+lactic,Lactic acid,Other sensory,provided centered/standardized continuous values,unresolved
+acetic,Acetic acid,Other sensory,provided centered/standardized continuous values,unresolved
+barnyard,Barnyard,Other sensory,provided centered/standardized continuous values,unresolved
+alcohol,Alcohol,Other sensory,provided centered/standardized continuous values,unresolved
+aftertaste,Aftertaste,Other sensory,provided centered/standardized continuous values,unresolved
+body,Body,Other sensory,provided centered/standardized continuous values,unresolved
+co2,Carbonation,Other sensory,provided centered/standardized continuous values,unresolved
+overall,"Overall appreciation_x000D_
+(Trained panel)",Other sensory,provided centered/standardized continuous values,unresolved

@@ -1,0 +1,15 @@
+{
+  "tests": "15",
+  "failures": "0",
+  "errors": "0",
+  "skipped": "0",
+  "time": "3.101",
+  "test_results": "15 passed; no failures or skips with local source data",
+  "figures_visually_reviewed": [
+    "q1_validation.png",
+    "q2_stability.png",
+    "q3_sensory_portraits.png",
+    "q3_transfer_checks.png"
+  ],
+  "scope": "algorithm properties, original-source integrity, sample isolation, output invariants; not scientific validation of all model assumptions"
+}
