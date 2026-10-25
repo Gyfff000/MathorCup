@@ -11,7 +11,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--out", required=True)
 parser.add_argument("--payload")
 args = parser.parse_args()
-root_names = {"README.md", ".gitignore", "config.json", "config_stage2.json", "config_stage3_design.json", "run.py", "run_stage2.py", "requirements.txt", "requirements-lock.txt", "requirements-paper.txt"}
+root_names = {"README.md", ".gitignore", "config.json", "config_stage2.json", "config_stage3_design.json", "config_stage3.json", "run.py", "run_stage2.py", "run_stage3.py", "requirements.txt", "requirements-lock.txt", "requirements-paper.txt"}
 directories = {"src", "tests", "docs", "outputs", "paper", "scripts"}
 suffixes = {".md", ".py", ".txt", ".json", ".csv", ".png", ".pdf"}
 files = []

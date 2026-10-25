@@ -1,0 +1,56 @@
+{
+  "complete": true,
+  "repeats": 5,
+  "G_n": 100,
+  "J_n": 100,
+  "T_n": 50,
+  "basic_fields": 226,
+  "excluded_unverified_aggregates": [
+    "acids_sum",
+    "aroma_hops_sum",
+    "esters_sum",
+    "kcalperc",
+    "sulfur_sum"
+  ],
+  "candidate_locks": [
+    {
+      "repeat": 0,
+      "candidate_sha256": "4496d45d802811868a9408e1410e3d9f41b303d912b0c67e097055cf1ef26f23",
+      "selection_used_J_or_T": false,
+      "n_generated": 480,
+      "n_transfer_records": 44
+    },
+    {
+      "repeat": 1,
+      "candidate_sha256": "df7bdef16c6162b357f03da67739ac3493490702fb5f183fd85e4109a3a88031",
+      "selection_used_J_or_T": false,
+      "n_generated": 480,
+      "n_transfer_records": 44
+    },
+    {
+      "repeat": 2,
+      "candidate_sha256": "4deec3789530c9406f13b668da4f2ca0a254ead6af1edf1fec36d80c94f622aa",
+      "selection_used_J_or_T": false,
+      "n_generated": 480,
+      "n_transfer_records": 44
+    },
+    {
+      "repeat": 3,
+      "candidate_sha256": "9b03d39e5aee6f57a14daf57bb0677dcb0bd965ca6bf1faf3fb0b13d7efa9455",
+      "selection_used_J_or_T": false,
+      "n_generated": 480,
+      "n_transfer_records": 44
+    },
+    {
+      "repeat": 4,
+      "candidate_sha256": "ac160206be87b649c56b600daeb562babaad42981ee0efa24e2586c6adb20c8e",
+      "selection_used_J_or_T": false,
+      "n_generated": 480,
+      "n_transfer_records": 44
+    }
+  ],
+  "independent_evaluation_scope": "J is disjoint within the current run; all original beers were seen in earlier research stages, not new external validation",
+  "absolute_chemical_certification": false,
+  "real_brewing_or_tasting": false,
+  "elapsed_seconds": 56.065767799998866
+}

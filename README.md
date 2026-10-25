@@ -6,9 +6,10 @@
 
 ## 从哪里开始阅读
 
+- **最新：2026-10-25 实验与论文修订版**：[论文PDF（含完整源程序附录）](paper/revised_20261025/论文修订稿.pdf) · [可编辑正文](paper/revised_20261025/论文修订稿.md) · [AI工具使用详情阶段版](paper/revised_20261025/AI工具使用详情说明_阶段版.pdf) · [修订说明](docs/论文修订说明_20261025.md) · [第三阶段实测报告](outputs/stage3/STAGE_REPORT.md)。主要计算实验已执行，40项检查通过；原始评分锚点、完整化学认证和真实品评仍未完成。
 - **2026-10-25 新增：[六个缺口的实验与算法方案](docs/六个缺口的实验与算法方案.md)**，含 12 项实验、参数、对照、评价、停止规则及三人分工；[设计阶段实际检查](outputs/stage3_design/DESIGN_STATUS.md)。这是设计与先导检查，尚未运行第三阶段完整训练。
 - **第一次参赛先读：[从数据到论文的解题教程](docs/从数据到论文的解题教程.md)**
-- [完整论文参考稿 PDF](paper/论文参考稿.pdf) · [可编辑 Markdown](paper/论文参考稿.md) · [参考稿使用说明](paper/阅读说明.md)
+- [第二阶段历史论文 PDF](paper/论文参考稿.pdf) · [历史 Markdown](paper/论文参考稿.md) · [参考稿使用说明](paper/阅读说明.md)
 - [第二阶段实验与实际结论](outputs/stage2/STAGE_REPORT.md) · [扩展方法与结果索引](docs/STAGE2_METHOD.md)
 - [阶段成果与实测数字](outputs/stage1/STAGE_REPORT.md)
 - [数据处理及证据分级](docs/DATA_DECISIONS.md)
@@ -62,6 +63,22 @@ python scripts/stage3_preflight.py --data-dir "D:\your_data\A附件"
 ```
 
 当前本地有对应原附件时，全部 **29 项检查通过**；原先第二阶段的 23 项记录保留。先导检查发现：核心 30 维与全 50 维的模型比较方向不同；3 个评分字段别名、12 处疑似 Barnyard 汇总误引用已经另存映射。未修改原工作簿。完整第三阶段训练入口尚未实现，不应把 preflight 当作全部实验运行器。
+
+以上29项与“入口尚未实现”为设计阶段快照。**后续已经实现并运行**第三阶段执行版，当前40项通过。复现新研究使用：
+
+```powershell
+python run_stage3.py q1 --data-dir "D:\your_data\A附件"
+python run_stage3.py q2 --data-dir "D:\your_data\A附件"
+python run_stage3.py q3 --data-dir "D:\your_data\A附件"
+python -m pytest -q --junitxml=tmp/stage3_full_tests.xml
+python scripts/verify_stage3.py
+python scripts/stage3_figures.py
+python scripts/revised_equations.py
+python scripts/prepare_revised_paper.py
+python scripts/build_revised_pdf.py --content paper/revised_20261025/paper_content.json --output paper/revised_20261025/论文修订稿.pdf
+```
+
+执行版配置为 config_stage3.json，设计版配置保留为历史计划。验证脚本默认从 data/raw 或相邻 materials/A/附件 找原件；若使用其他位置，可将材料放入上述默认目录再验证。论文生成需要 requirements-paper.txt 与宋体、黑体、Consolas；原始附件不公开分发。模型训练约束与真实化学、真实品评认证分开记录，不把40项检查通过当作科学问题全部解决。
 
 ## 结果的使用边界
 

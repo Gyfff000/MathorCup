@@ -1,0 +1,34 @@
+{
+  "client_date": "2026-10-25",
+  "documents": [
+    {
+      "file": "论文修订稿.pdf",
+      "physical_pages": 68,
+      "body_starts_page": 3,
+      "appendix_A_starts_physical_page": 14,
+      "missing_glyph_nulls": 0,
+      "text_overflow_pages": 0,
+      "sha256": "ef319ed2ee92f1400d95fba4fb91911dbe2e1c2e1fb68e55e54f1d4c848f5d6a"
+    },
+    {
+      "file": "AI工具使用详情说明_阶段版.pdf",
+      "physical_pages": 4,
+      "body_starts_page": 3,
+      "appendix_A_starts_physical_page": null,
+      "missing_glyph_nulls": 0,
+      "text_overflow_pages": 0,
+      "sha256": "38a6b5b243e02546b8ff1b0c2fd0f226d016dd14e99b60239d9df2726fcd91cb"
+    }
+  ],
+  "numbered_equations": 17,
+  "source_files": 37,
+  "source_lines": 3337,
+  "source_appendix_matches_current_files": true,
+  "visual_review": {
+    "status": "completed",
+    "date": "2026-10-25",
+    "main_pages": 68,
+    "ai_pages": 4,
+    "method": "Rendered main pages 1-16 and AI pages 1-4 inspected in spreads; source pages 17-68 inspected in contact sheets, with representative pages at full size; automated text bounds, glyph, formula order and source hash checks passed."
+  }
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "difference_A_minus_B": 3.1978788532147594e-06,
+    "conditional_percentile_95": [
+      -3.580436623977912e-06,
+      9.916250447413504e-06
+    ],
+    "scope": "conditional_on_fixed_OOF_predictions_does_not_include_model_retraining_or_selection_uncertainty",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "target_scope": "core30"
+  },
+  {
+    "difference_A_minus_B": 2.178185838645951e-06,
+    "conditional_percentile_95": [
+      -3.5761652987326673e-06,
+      7.661270651860387e-06
+    ],
+    "scope": "conditional_on_fixed_OOF_predictions_does_not_include_model_retraining_or_selection_uncertainty",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "target_scope": "all50"
+  }
+]

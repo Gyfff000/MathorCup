@@ -1,5 +1,15 @@
 # 公开检索与借鉴记录
 
+## 2026-10-25 论文修订补充来源
+
+- [Breiman 1996 Stacked Regressions，作者机构全文](https://statistics.berkeley.edu/sites/default/files/tech-reports/367.pdf)：交叉验证组合权重与过拟合的已有研究；本题融合仅作应用变体，不声称首创。
+- [Li和Li 2010图约束回归原文](https://pmc.ncbi.nlm.nih.gov/articles/PMC3423227/)：拉普拉斯二次惩罚的先例，不将本题符号相关图称为新的回归理论。
+- [Vanbeneden等2008，4VG陈化](https://pubmed.ncbi.nlm.nih.gov/19053838/)：支持丁香相关香气的合理性，不提供本批次因果或新加标证据。
+- [Omur-Ozbek等2012，口腔金属味实验](https://pubmed.ncbi.nlm.nih.gov/22304665/)：铁/铜溶液与脂质氧化，研究区分铁价态；不将其阈值直接套用总iron或啤酒基质。
+- [Pater等2024，芫荽籽添加低醇啤酒](https://pubmed.ncbi.nlm.nih.gov/38398596/)及[原文](https://pmc.ncbi.nlm.nih.gov/articles/PMC10892622/)：linalool相关气味活性背景，不证明本附件特定标签的单化合物因果。
+
+只有明确支持的案例写入chemical_evidence_ledger，其余保留元数据或未充分核实状态；没有为150条候选补造独立文献。
+
 ## 2026-10-25 实验设计的方法依据
 
 以下均核对原始研究页面；用于设计与界定证据范围，未复制其代码或把其结果归为本项目实验。

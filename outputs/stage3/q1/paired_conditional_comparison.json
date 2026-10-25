@@ -1,0 +1,106 @@
+[
+  {
+    "difference_A_minus_B": 0.0008258810117616193,
+    "conditional_percentile_95": [
+      -0.002966983745384221,
+      0.0049714015504445375
+    ],
+    "scope": "conditional_on_fixed_OOF_predictions_does_not_include_model_retraining_or_selection_uncertainty",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "model_A": "gbr",
+    "model_B": "extra_trees",
+    "target_scope": "core30"
+  },
+  {
+    "difference_A_minus_B": -0.004529409122713407,
+    "conditional_percentile_95": [
+      -0.007668164736207633,
+      -0.001048371661649499
+    ],
+    "scope": "conditional_on_fixed_OOF_predictions_does_not_include_model_retraining_or_selection_uncertainty",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "model_A": "gbr",
+    "model_B": "extra_trees",
+    "target_scope": "all50"
+  },
+  {
+    "difference_A_minus_B": -0.002917869510070879,
+    "conditional_percentile_95": [
+      -0.004420624213626957,
+      -0.0012507260593122877
+    ],
+    "scope": "conditional_on_fixed_OOF_predictions_does_not_include_model_retraining_or_selection_uncertainty",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "model_A": "global_oof_blend",
+    "model_B": "extra_trees",
+    "target_scope": "core30"
+  },
+  {
+    "difference_A_minus_B": -0.0055463020495459675,
+    "conditional_percentile_95": [
+      -0.006843376685517083,
+      -0.00415465308359996
+    ],
+    "scope": "conditional_on_fixed_OOF_predictions_does_not_include_model_retraining_or_selection_uncertainty",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "model_A": "global_oof_blend",
+    "model_B": "extra_trees",
+    "target_scope": "all50"
+  },
+  {
+    "difference_A_minus_B": -0.0025412728121012736,
+    "conditional_percentile_95": [
+      -0.0038614632179031685,
+      -0.0012000204547738726
+    ],
+    "scope": "conditional_on_fixed_OOF_predictions_does_not_include_model_retraining_or_selection_uncertainty",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "model_A": "unshrunk_target_blend",
+    "model_B": "extra_trees",
+    "target_scope": "core30"
+  },
+  {
+    "difference_A_minus_B": -0.005857466662561331,
+    "conditional_percentile_95": [
+      -0.0073353333645894015,
+      -0.004209233530834911
+    ],
+    "scope": "conditional_on_fixed_OOF_predictions_does_not_include_model_retraining_or_selection_uncertainty",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "model_A": "unshrunk_target_blend",
+    "model_B": "extra_trees",
+    "target_scope": "all50"
+  },
+  {
+    "difference_A_minus_B": -0.0029940280369197695,
+    "conditional_percentile_95": [
+      -0.004414102200638158,
+      -0.001474845120309309
+    ],
+    "scope": "conditional_on_fixed_OOF_predictions_does_not_include_model_retraining_or_selection_uncertainty",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "model_A": "shrunk_target_blend",
+    "model_B": "extra_trees",
+    "target_scope": "core30"
+  },
+  {
+    "difference_A_minus_B": -0.00597869654791786,
+    "conditional_percentile_95": [
+      -0.007324589116975978,
+      -0.004505068055504743
+    ],
+    "scope": "conditional_on_fixed_OOF_predictions_does_not_include_model_retraining_or_selection_uncertainty",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "model_A": "shrunk_target_blend",
+    "model_B": "extra_trees",
+    "target_scope": "all50"
+  }
+]

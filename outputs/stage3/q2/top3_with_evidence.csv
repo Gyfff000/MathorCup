@@ -1,0 +1,151 @@
+﻿target,rank,field,coefficient,bootstrap_frequency_conditional_on_full_selected_params,crossfit_selection_count,heldout_delta_on_selected_folds,within_style_delta_on_selected_folds,style_centering_retention_fraction,origin,unit,attachment_off_flavors,evidence_status,chemical_review,causal_status
+A_malt_all,1,X2.acetylfuran,0.0314220022,0.855,14,0.00451279455,0.00135080261,0.857142857,Malt,,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+A_malt_all,2,MeSH,0.0227255497,0.3,5,0.00206867491,-0.000948314009,0.2,Yeast,ug/L,"putrefaction, drains, rotting vegetables, estery",weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_malt_all,3,ethyl.furoate,0.0214462539,0.265,6,0.00271793669,0.000219443374,0,Malt,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_malt_grain,1,car.3.en.2.one,-0.0162314555,0.55,8,0.00166077442,-0.000189870569,0.25,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_malt_grain,2,X5.methylfurfural,0.0145955493,0.32,8,0.00197353927,0.00111558825,0,Malt,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_malt_grain,3,gamma.nonalactone,0.0145260054,0.365,10,0.00104053994,0.000664454694,0.4,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_malt_bread,1,furfural,0.0197496356,0.545,11,0.00229436742,0.00138429751,0.818181818,Malt,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+A_malt_bread,2,gamma.nonalactone,0.0125551827,0.15,5,-0.000125904308,-0.000479137487,0.2,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_malt_bread,3,X1.10.di.epi.cubenol,-0.0125111148,0.275,5,-0.000260110972,-0.000619545427,0.6,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_malt_cara,1,X2.acetylfuran,0.023636339,0.63,12,0.00288900929,0.00108409108,0.166666667,Malt,,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+A_malt_cara,2,octyl_acetate,0.0189904504,0.265,4,0.00269988491,0.00027932996,0.25,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_malt_cara,3,SO2.mg.L.,-0.0185904215,0.265,3,0.00317840572,0.00292617647,0,Yeast,mg/L,Burnt matches,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_malt_burn,1,methylpyrazine,0.0308845826,0.74,14,0.000949897012,0.000415007489,0.785714286,Malt,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+A_malt_burn,2,X2.acetylfuran,0.0267056162,0.65,14,0.00256409565,0.00149269336,0.285714286,Malt,,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+A_malt_burn,3,MeSH,0.0191029128,0.15,5,-0.000593684592,-0.000149193649,0.2,Yeast,ug/L,"putrefaction, drains, rotting vegetables, estery",weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_all,1,iron,-0.0200705841,0.525,10,0.0033438876,0.00129618619,0.1,Others,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+A_hops_all,2,DMS,0.0174404437,0.29,5,0.00173775595,-0.000322164323,0,Malt,ug/L,"cooked vegetables, onion, garlic, corn, black currant, sulfidic, cabbage, tinned tomato, baked beans",weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_all,3,X6.methyl.5.hepten.2.one,0.0173235428,0.285,8,0.000556631166,0.00023572411,0.375,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_citrus,1,X6.methyl.5.hepten.2.one,0.0147262834,0.45,8,0.00146819831,0.000562269085,0.375,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_citrus,2,geraniol,0.0132114175,0.29,8,0.00106526646,5.25884754e-05,0.125,Hops,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_citrus,3,terpinolene,0.0120357813,0.095,4,0.00100762017,0.000388583879,0,Spices,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_tropical,1,DMS,0.0202784735,0.52,15,0.00268845475,0.000348567621,0.0666666667,Malt,ug/L,"cooked vegetables, onion, garlic, corn, black currant, sulfidic, cabbage, tinned tomato, baked beans",comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+A_hops_tropical,2,beta.phellandrene,0.0168668419,0.165,6,0.00103247498,0.000718810289,1,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_tropical,3,citronellol,0.015843547,0.28,5,0.00201736246,0.000961003054,0.4,Hops,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_noble,1,ethyl_octanoate,0.0157108363,0.35,14,0.00296942136,0.00125484741,0.0714285714,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_noble,2,ethyl_decanoate,0.0155308758,0.295,7,0.00312447752,0.000992079481,0.714285714,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_noble,3,iron,-0.015043617,0.28,5,0.00110929157,0.000383384886,0.6,Others,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_woody,1,ethyl_2.methyl_butyrate,0.0110786136,0.33,9,0.00118592731,0.000143671858,0.111111111,Others,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_woody,2,iron,-0.0100598728,0.25,8,0.000128651979,0.000138571752,0.125,Others,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_hops_woody,3,X.E..ortho.methoxy.cinnamaldehyde,0.009771448,0.195,5,0.000272445735,0.00018137711,0.4,Spices,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_all,1,acetaldehyde,0.0235574022,0.82,14,0.00393459859,0.00188818793,0.714285714,Yeast,mg/L,"pungent, rotten-apples, green apple",comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+A_esters_all,2,X.E..beta.ionone,0.0178277258,0.23,7,0.00101333628,-0.000111630845,0,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_all,3,methylpyrazine,-0.0166455095,0.255,3,0.000660270095,0.000349350037,1,Malt,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_ethac,1,acetaldehyde,0.0142422475,0.425,11,0.00198832858,0.000448080976,0.363636364,Yeast,mg/L,"pungent, rotten-apples, green apple",weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_ethac,2,X2E.6Z.farnesal,0.0121042335,0.215,3,-0.000374535097,-0.000621979335,0.666666667,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_ethac,3,ethyl_acetate,0.0110504546,0.12,5,0.00119403495,0.00024411806,0,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_isoaa,1,ambroxide,-0.0156091644,0.33,3,0.00138436309,0.000407024013,0.333333333,Spices,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_isoaa,2,n.hexanol,0.0155285036,0.23,6,0.00163453561,0.00103453402,0.166666667,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_isoaa,3,ethyl.hexadecanoate,-0.0154076428,0.19,5,-0.000790489598,-0.000135983502,0.8,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_flower,1,X.E..alpha.ionone,0.0150541144,0.435,8,0.000752421449,0.000235265813,0.25,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_flower,2,beta.phellandrene,0.0139157649,0.31,8,0.00163000112,0.000888713591,0.125,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_flower,3,X.E..beta.ionone,0.012856499,0.31,8,0.00109565547,0.0002296354,0,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_fruity,1,beta.phellandrene,0.0196271697,0.695,13,0.00220321954,0.000447329136,0.153846154,Hops,,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+A_esters_fruity,2,X1.10.di.epi.cubenol,-0.0180337118,0.475,9,0.00195355655,0.00110110491,0.666666667,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+A_esters_fruity,3,X.E..beta.ionone,0.0131053563,0.14,2,-0.000238705616,0.000326256616,0,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_all,1,acetaldehyde,0.0261958837,0.775,15,0.00489863908,0.000620883419,0.0666666667,Yeast,mg/L,"pungent, rotten-apples, green apple",comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+F_malt_all,2,X2.acetylfuran,0.0261338301,0.665,10,0.00337406267,0.00193286804,0.6,Malt,,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+F_malt_all,3,X.E..alpha.ionone,-0.0214667907,0.265,5,0.00278283388,0.000302650503,0.2,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_grain,1,X2.3.butanedione,-0.0133169312,0.37,10,0.00128158628,0.00103931651,0.6,Yeast,mg/L,"butterscotch, popcorn, oily, milky",weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_grain,2,terpinen.4.ol,-0.0127578403,0.375,8,6.84467695e-05,-0.000177079481,0.125,Spices,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_grain,3,X3.methyl.2.butenal,0.0124743196,0.305,3,0.000582742978,0.000526922141,0.333333333,Internal standard solution,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_bread,1,caryophylla.4.12..8.13..dien.5.alpha.ol,0.0136796537,0.3,6,0.00060605396,0.000800264156,0.833333333,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_bread,2,terpinen.4.ol,-0.0127635702,0.32,9,0.000778590534,0.000195049209,0.333333333,Spices,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_bread,3,acetaldehyde,0.012313429,0.205,6,0.00223426967,0.000465462059,0,Yeast,mg/L,"pungent, rotten-apples, green apple",weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_cara,1,acetaldehyde,0.0209402966,0.65,14,0.00293360679,-0.00029496159,0.0714285714,Yeast,mg/L,"pungent, rotten-apples, green apple",weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_cara,2,isobutyl.hexanoate,-0.0160843866,0.29,4,-0.000773143443,-0.000810120464,0.5,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_cara,3,ethyl.nicotinate,0.0154773628,0.245,5,0.000683746359,9.01387258e-05,0.2,Others,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_burn,1,X2.acetylfuran,0.0238811123,0.48,9,0.00176614261,0.00105809566,0,Malt,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_burn,2,methylpyrazine,0.0228505105,0.52,9,0.000187352404,-0.000826301867,0.444444444,Malt,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_malt_burn,3,MeSH,0.0219984159,0.425,11,0.00350079903,0.000761321791,0.363636364,Yeast,ug/L,"putrefaction, drains, rotting vegetables, estery",weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_hops_all,1,cis.dihydro.beta.terpineol,0.0258808956,0.65,14,0.00435523084,0.000500871052,0.0714285714,Hops,,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+F_hops_all,2,iron,-0.0243818293,0.7,13,0.00349516374,0.00133588647,0.153846154,Others,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+F_hops_all,3,ethyl_isovalerate,0.0221168271,0.43,5,0.00416016298,0.00114315008,1,Others,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_hops_citrus,1,geosmin,0.012991902,0.32,6,-0.000421470568,-0.000411370188,0.333333333,Wild flora,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_hops_citrus,2,geraniol,0.0124655373,0.25,8,0.00159388236,0.000674479306,0.125,Hops,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_hops_citrus,3,X2.acetylfuran,-0.0121350748,0.2,4,0.00151187418,0.00025474749,0,Malt,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_hops_tropical,1,DMS,0.0144423381,0.325,7,0.00145276035,-3.05434849e-06,0,Malt,ug/L,"cooked vegetables, onion, garlic, corn, black currant, sulfidic, cabbage, tinned tomato, baked beans",weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_hops_tropical,2,X6.methyl.5.hepten.2.one,0.0141774316,0.325,8,0.000587598091,0.000383911669,0.75,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_hops_tropical,3,beta.phellandrene,0.0130364704,0.12,5,0.000558149661,0.00016358479,0.4,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_hops_noble,1,iron,-0.0220121556,0.685,12,0.00346707442,0.000528283154,0.25,Others,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+F_hops_noble,2,cis.dihydro.beta.terpineol,0.0186412272,0.325,9,0.0025726733,0.000105090405,0,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_hops_noble,3,X14.hydroxy.alpha.humulene,-0.0180308113,0.29,5,0.000520929124,7.35109009e-05,0.2,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_hops_woody,1,manool,-0.0163380497,0.665,12,0.00119601521,0.000128816829,0.583333333,Spices,,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+F_hops_woody,2,cis.dihydro.beta.terpineol,0.0130400099,0.31,9,0.00181397451,0.000404346313,0.111111111,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_hops_woody,3,isobutanol,0.0126888231,0.145,3,0.00264719735,0.00156584296,0,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_all,1,acetaldehyde,0.0244064944,0.885,15,0.00464326851,0.0014306485,0.533333333,Yeast,mg/L,"pungent, rotten-apples, green apple",comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+F_esters_all,2,X1.10.di.epi.cubenol,-0.0183999826,0.315,5,0.00161840363,0.000570133042,0.4,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_all,3,phenethyl_alcohol,0.0169869789,0.325,5,0.000446349252,0.000255975605,1,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_ethac,1,acetaldehyde,0.0146585474,0.355,11,0.00167782625,0.000744078972,0.363636364,Yeast,mg/L,"pungent, rotten-apples, green apple",weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_ethac,2,X2E.6Z.farnesal,0.0131646637,0.3,3,0.000899376959,-0.00035343235,0.333333333,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_ethac,3,glycerol,0.0130627143,0.2,8,0.000955174615,0.000398564391,0.125,Yeast,g/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_isoaa,1,acetaldehyde,0.0151207711,0.175,4,0.000991095374,0.000208414783,0,Yeast,mg/L,"pungent, rotten-apples, green apple",weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_isoaa,2,phenethyl_alcohol,0.014799511,0.21,6,0.000554304528,0.000636887283,0.166666667,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_isoaa,3,isopentyl_acetate,0.0142094402,0.135,2,0.00155073843,0.000717573344,0.5,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_flower,1,beta.phellandrene,0.0128997784,0.36,8,0.00123159753,0.000967896301,0.25,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_flower,2,eucalyptol,0.0119704949,0.305,7,0.00106967284,0.000983429219,1,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_flower,3,benzyl.alcohol,0.0102317873,0.165,4,0.000671203691,0.000339776417,0,Hops,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_fruity,1,X1.10.di.epi.cubenol,-0.0186001376,0.565,10,0.00139761876,0.000848876137,0.6,Hops,,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+F_esters_fruity,2,beta.phellandrene,0.0153289467,0.275,9,0.00171758447,0.000431628631,0,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+F_esters_fruity,3,X.E..beta.ionone,0.0126832752,0.145,2,0.000423916598,-0.000793130305,0,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+acidity,1,lactic_acid.mg.L.,0.0449574805,1,15,0.012506621,0.000629649788,0,Wild flora,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+acidity,2,acetic_acid.g.L.,0.0319822844,0.785,14,0.00740417063,0.00109541342,0.0714285714,Wild flora,g/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+acidity,3,ethyl.phenylacetate,0.0248252374,0.075,3,0.00325533553,-0.000517960672,0,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+bitternes,1,iron,-0.0311833751,0.935,13,0.00683222459,0.00197902847,0.538461538,Others,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+bitternes,2,ethyl_octanoate,0.0267255848,0.665,12,0.00660874973,0.00162974436,0.833333333,Yeast,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+bitternes,3,cis.dihydro.beta.terpineol,0.0263897107,0.52,6,0.0040685146,-0.000136170907,0.666666667,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+sweetness,1,ethyl_decanoate,-0.022196292,0.48,12,0.00185802621,0.00119638574,0.75,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+sweetness,2,iron,0.021572401,0.435,8,0.00290695578,0.00180055814,0.375,Others,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+sweetness,3,ethyl_octanoate,-0.0196594547,0.23,3,0.000973334998,0.000572242963,0.333333333,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+X4vg,1,X4VG,0.050722215,1,15,0.0129552816,0.00784633555,1,Yeast,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+X4vg,2,delta.terpinyl.acetate,0.0188831263,0.3,6,0.00182726535,-7.13471306e-05,0.333333333,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+X4vg,3,ethyl_isovalerate,-0.0166017046,0.14,4,0.000378864634,-0.000948020901,0,Others,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+diacetyl,1,beta.phellandrene,-0.0143265982,0.33,6,0.000562783326,-0.000235327348,0.166666667,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+diacetyl,2,X.E..beta.ionone,-0.0139085249,0.18,4,0.00064480698,-0.000227652393,0,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+diacetyl,3,pentyl.octanoate,-0.0130880015,0.235,5,0.000569022191,0.000491285408,1,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+dms,1,SO2.mg.L.,0.0167026065,0.6,10,0.00131049988,0.000492094147,0.9,Yeast,mg/L,Burnt matches,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+dms,2,caryophylla.4.12..8.13..dien.5.alpha.ol,0.0132526544,0.275,6,0.000437850699,-0.000114898826,0.166666667,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+dms,3,X.Z..dihydro.apofarnesal,0.0113387804,0.09,1,-0.000951709928,-0.000949836856,1,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+metallic,1,iron,0.0216138512,0.865,15,0.00330400092,0.0021350719,1,Others,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+metallic,2,ethyl_isovalerate,-0.0160270631,0.54,11,0.00111467099,0.000219439522,0.0909090909,Others,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+metallic,3,isopentyl.butanoate,-0.013268707,0.27,3,-6.11108119e-05,-0.000208275114,0.333333333,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+stale_hops,1,X2.butyloctanoate,-0.0119030157,0.31,3,0.000549827083,0.000918462997,0.666666667,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+stale_hops,2,iron,-0.0117559074,0.345,6,0.000615645604,0.000571276907,0.166666667,Others,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+stale_hops,3,X.E..ortho.methoxy.cinnamaldehyde,0.0116037013,0.225,5,0.000776515463,0.000608363001,0.8,Spices,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+t2n,1,germacrene.D,-0.0155228416,0.69,14,0.00140125925,0.000201043758,0,Hops,,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+t2n,2,isopentyl.hexanoate,-0.0118218847,0.335,5,0.00104452699,0.000224969953,0,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+t2n,3,glycerol,-0.011743759,0.29,9,0.000699666741,8.77355864e-05,0,Yeast,g/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+orange,1,X1.alpha.terpineol,0.0397280849,0.815,13,0.00385695548,0.0030194337,1,Hops,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+orange,2,limonene,0.0275499383,0.4,9,0.00119903944,0.000690648871,0.444444444,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+orange,3,geraniol,0.0273652898,0.48,8,0.00150984227,0.00186407773,1,Hops,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+coriander,1,x.methyl.1.octanol,-0.0221674765,0.795,14,0.00310765837,0.00192949033,0.571428571,Yeast,,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+coriander,2,linalool,0.0206270457,0.6,11,0.0039902125,0.00207564168,1,Hops,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+coriander,3,geraniol,0.0180873116,0.455,5,0.00262409151,0.00151200559,1,Hops,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+clove,1,linalool,0.0312463601,0.745,12,0.00280387785,0.0017093355,1,Hops,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+clove,2,eucalyptol,0.0219171424,0.545,8,0.00182691216,0.000953297148,1,Hops,,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+clove,3,limonene,0.0213541872,0.475,9,0.00268299339,0.00130436744,0.333333333,Hops,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+lactic,1,lactic_acid.mg.L.,0.0364263466,0.99,15,0.0119805063,0.000226550777,0,Wild flora,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+lactic,2,acetic_acid.g.L.,0.0265970086,0.615,14,0.00534546289,-0.000583895768,0,Wild flora,g/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+lactic,3,ethyl.phenylacetate,0.0233403945,0.09,5,0.00469426421,-0.000907584094,0,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+acetic,1,lactic_acid.mg.L.,0.0375971302,0.995,15,0.011614617,0.00068652974,0,Wild flora,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+acetic,2,acetic_acid.g.L.,0.0287758652,0.7,14,0.00530651748,-0.000199633635,0,Wild flora,g/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+acetic,3,DES,-0.0229435114,0.16,0,,,,Yeast,ug/L,rotting vegetables,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+barnyard,1,gamma.eudesmol,0.0122652433,0.325,8,0.00206646528,0.000959676209,0.75,Spices,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+barnyard,2,X2.butyloctanoate,-0.0115775103,0.265,3,0.000516966468,0.000628089974,0.666666667,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+barnyard,3,iron,-0.0113156187,0.275,4,9.82692586e-05,0.000392707207,0,Others,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+alcohol,1,acetaldehyde,0.0314526201,0.85,12,0.00787373965,0.00157073977,0.75,Yeast,mg/L,"pungent, rotten-apples, green apple",comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+alcohol,2,ethanol..v.v.,0.0311702278,0.805,15,0.00900372755,0.000919671722,0,Yeast,v/v,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+alcohol,3,ethyl_octanoate,0.0273391046,0.425,8,0.00513122102,-0.000542980911,1,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+aftertaste,1,ethyl_isovalerate,0.0213678351,0.565,10,0.00557981445,0.00144595556,0.3,Others,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+aftertaste,2,glycerol,0.0209156645,0.415,9,0.00425022035,0.000275486232,0,Yeast,g/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+aftertaste,3,ethanol..v.v.,0.0208188565,0.325,8,0.0038916055,0.000221742291,0,Yeast,v/v,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+body,1,glycerol,0.021723073,0.71,13,0.00506604173,0.000991052133,0.230769231,Yeast,g/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+body,2,acetaldehyde,0.0201587257,0.595,10,0.00267159502,-0.00035500189,0.1,Yeast,mg/L,"pungent, rotten-apples, green apple",weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+body,3,X3.methyl.2.hexanol,-0.0193104106,0.43,8,0.00281583146,0.000224701119,0,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+co2,1,ethyl_octanoate,0.0189324384,0.67,13,0.0029059237,0.00140571157,0.461538462,Yeast,mg/L,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+co2,2,X3.methyl.2.hexanol,-0.0188853718,0.6,11,0.00235020805,0.000437123804,0.272727273,Yeast,,,comparatively_supported_exploratory_association,target_specific_literature_not_yet_complete,not_identified
+co2,3,ethyl_hexanoate,0.0165435047,0.3,13,0.00256529746,0.0011584755,0.153846154,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+overall,1,ethyl_acetate,0.0162173939,0.425,13,0.00204674429,0.000705603185,0,Yeast,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+overall,2,X2.butyloctanoate,0.0147387924,0.28,6,0.00104570781,0.000382005048,1,Yeast,,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified
+overall,3,X.E..beta.ocimene,-0.0124031734,0.155,1,0.000462184825,0.000740279522,0,Hops,mg/L,,weak_or_incomplete_evidence,target_specific_literature_not_yet_complete,not_identified

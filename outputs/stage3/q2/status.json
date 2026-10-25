@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "outer_folds": 15,
+  "null_graphs_per_fit": 10,
+  "full_graph_params": {
+    "alpha": 1000,
+    "lambda": 0,
+    "tau": 0.7
+  },
+  "bootstrap_repeats": 200,
+  "bootstrap_params_reselected": false,
+  "bootstrap_caveat": "conditional_on_hyperparameters_selected_on_full_data; descriptive_stability_not_independent_inference",
+  "supported_top3": 39,
+  "scope": "exploratory_association_not_causal",
+  "elapsed_seconds": 49.18340919999173
+}

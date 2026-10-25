@@ -1,0 +1,266 @@
+[
+  {
+    "file": "figures/blend_weights.png",
+    "sha256": "2191eba8f177a67da43ebb4e578aa2f5ebdf30d91f44c1d03258fc9cd4cfc1c5"
+  },
+  {
+    "file": "figures/factor_crossfit.png",
+    "sha256": "db7aa6f90b41593d85da31da78efbca866bbce94ae79d553750f5026b7876b03"
+  },
+  {
+    "file": "figures/generation_independent.png",
+    "sha256": "64852fdb3123bd159480ff8e94ad3f2d27bb226941c4cff26c90a32943267e58"
+  },
+  {
+    "file": "figures/graph_ablation.png",
+    "sha256": "7286dafcd1a159d2105a16e175286de92807a83fc5b051642e47be6099d0812b"
+  },
+  {
+    "file": "figures/ordinal_uncertainty.png",
+    "sha256": "af0bf589ebe7058d2d2362230f1b4d4f80278c808347c9841aecc8a432cfc319"
+  },
+  {
+    "file": "figures/prediction_by_scope.png",
+    "sha256": "37f655ee36a2dcc42a30afb5992e1fe8ced75bda35be8396cb31d66798b61866"
+  },
+  {
+    "file": "figures/transfer_independent.png",
+    "sha256": "1194d5542baae399331bfa59d1b8948d1da0960dc7eb2f2a81b26b6ce2a792bb"
+  },
+  {
+    "file": "q1/ASSUMPTION_oof_relative_grades.csv",
+    "sha256": "df985908dcabbc900e134a0b9b1e45a25efba87777efccf3c1902c2fdd5e53c5"
+  },
+  {
+    "file": "q1/ASSUMPTION_ordinal_sets.csv",
+    "sha256": "42c9f66b1db2f98d564db4fda0fde689255231a69d93f8a575c7bef477423650"
+  },
+  {
+    "file": "q1/blend_weights.csv",
+    "sha256": "98cb53c9980d0c4dd29beec7e961e8b29253bc497ba1cc6cbec9eb38d046b687"
+  },
+  {
+    "file": "q1/clipping_ablation.csv",
+    "sha256": "e57e4118ccd5a822dbc01e28198be8600c01e4281e2fdbbc911c973d174ec232"
+  },
+  {
+    "file": "q1/conformal_coverage.csv",
+    "sha256": "2b817f4f500fc6c118b1263a0e7dd56ce02ad2261124572139aaa97e510df1e2"
+  },
+  {
+    "file": "q1/conformal_roles_0.csv",
+    "sha256": "019a93adcb3cc0e6aea5d96f6296bcf1b1ed187708a116a00c622729fc05d5f2"
+  },
+  {
+    "file": "q1/conformal_roles_1.csv",
+    "sha256": "b068fcda043b9866b2e154ffb47936c9a9f4f6d547f707c5aaee13894fcebf56"
+  },
+  {
+    "file": "q1/conformal_roles_2.csv",
+    "sha256": "347bb17a3a6804a6a13500dd7555421c4a45e15b21fbae81beb53fb5e43e4c1c"
+  },
+  {
+    "file": "q1/conformal_roles_3.csv",
+    "sha256": "1d48ba644fac8691a444fa4e72f1011fdc5f0c585a70ab268872b078270f4c1f"
+  },
+  {
+    "file": "q1/conformal_roles_4.csv",
+    "sha256": "1f0769bc1101a24aa97fe32250629883f33fbe2c0362fa7a973e95641a9b5e1a"
+  },
+  {
+    "file": "q1/fold_metrics.csv",
+    "sha256": "87b5e80e3a4b28cf728f5a63abd05fb6281c3f43542754636a0cf1f87e993a7b"
+  },
+  {
+    "file": "q1/metrics_by_scope.csv",
+    "sha256": "df1f2452e914aca3ea5f1d748f30b91480a00160c198d3259d89729fbd5ed122"
+  },
+  {
+    "file": "q1/metrics_by_target.csv",
+    "sha256": "2762e311bc51eaa4bd87c601ac460f385946dcddca71e752bc4602b71f5abd4c"
+  },
+  {
+    "file": "q1/missingness_stress.csv",
+    "sha256": "577395e6c5340623774638c931ef82606fee32cf321bb1609d2fbd2778b8bbfa"
+  },
+  {
+    "file": "q1/oof_extra_trees.csv",
+    "sha256": "defa6c9718a76ebb12a03d826a2381bcd7f03d305443728a0bfff1db78145087"
+  },
+  {
+    "file": "q1/oof_fixed_half_blend.csv",
+    "sha256": "bee169d02bd5b2923d3f7e6f13b2f1c5bb80919fc3d7f1162cf075bc547bf59b"
+  },
+  {
+    "file": "q1/oof_gbr.csv",
+    "sha256": "a18628743acdf49ed76adda75cef3464d0585bb2b4e328e8bd5510a0a0cf070a"
+  },
+  {
+    "file": "q1/oof_global_oof_blend.csv",
+    "sha256": "acd091aa96ae5517920c1dd53c503a1ee949fa10dfc8b090501f300e0d87c2ee"
+  },
+  {
+    "file": "q1/oof_mean.csv",
+    "sha256": "bb7f023faf47af031dee6e55f30be63cb76d3d0bc37bf78b8ad22f544cdb7d76"
+  },
+  {
+    "file": "q1/oof_ridge.csv",
+    "sha256": "a34d702fa07036a8c8c9be5ccda15e3791ac98b1a35caf9d6f8f9d2abf27e11c"
+  },
+  {
+    "file": "q1/oof_shrunk_target_blend.csv",
+    "sha256": "f5598d649281f8ce3ef6263a8107c4b7db315522645f7f735ceb97b76186c3e1"
+  },
+  {
+    "file": "q1/oof_unshrunk_target_blend.csv",
+    "sha256": "353555f6b10fdf236c7c033c94fb72ec2fa9cd276a62901e4bbabbb2f460e057"
+  },
+  {
+    "file": "q1/outer_roles.csv",
+    "sha256": "0b65240d4429c7b02a59c7951b07551f6f7c5a9173af1603658c4048dd4f8917"
+  },
+  {
+    "file": "q1/paired_conditional_comparison.json",
+    "sha256": "8836f5e0b88be33ff44b5d423e4afd37a3c60466b5d7ff69f1d1d4c065a6ec88"
+  },
+  {
+    "file": "q1/progress.json",
+    "sha256": "094d82062a98fba2b5b018eefe73692015e841172820bb837074f30b037cc663"
+  },
+  {
+    "file": "q1/status.json",
+    "sha256": "0bb1fb27266ba8f859ad10553b3b5be57c05bf4699e130959bd8f3fa9c0bdcbb"
+  },
+  {
+    "file": "q1_run_manifest.json",
+    "sha256": "1226fa6da520bd44317e7a096763834c14a19f2c7b2a61350d469464efaa5562"
+  },
+  {
+    "file": "q2/bootstrap_frequencies.csv",
+    "sha256": "1a98c729f9c0f3ee134082a98114d578e492792a36beb1173f3d07f365fd72cf"
+  },
+  {
+    "file": "q2/chemical_evidence_ledger.csv",
+    "sha256": "f03e8ba07ac6677baa9d6dffd9b7e42ae70195fe51ed3ff5938aa1e78ebd6ac3"
+  },
+  {
+    "file": "q2/crossfit_module_effects.csv",
+    "sha256": "6a5b654e6e9e8a32c6ce5dc949cc00ef33d681e22ed89edcde1e56cd4de9613b"
+  },
+  {
+    "file": "q2/crossfit_top3_effects.csv",
+    "sha256": "844a6b12a5dc7cd44202d2bb4585c6235f1062ae1fc4983884ad3955dc2bc4c8"
+  },
+  {
+    "file": "q2/graph_comparison.csv",
+    "sha256": "94907aae16d8196c6e0126194f0489fb4b67a82fb4673df3df9d1e0f333e1d2a"
+  },
+  {
+    "file": "q2/graph_fold_metrics.csv",
+    "sha256": "5dbe33bf84392d8795f7b959f378975c1e5ff0f1ff18c82ceb59a8481deb68ee"
+  },
+  {
+    "file": "q2/oof_graph_none.csv",
+    "sha256": "b8382e4a12e3c1b87eb0812e2a0eb0331ce6482c2b8610f8bcfdca34de209df2"
+  },
+  {
+    "file": "q2/oof_graph_real.csv",
+    "sha256": "050f3e688b1b11a659014911113d3f9535ac7a1cbc3cf2f9268c5a62afc9fa7e"
+  },
+  {
+    "file": "q2/paired_graph_vs_none.json",
+    "sha256": "e1e41dff4cc0c646c285487c2503d0745ca5719b8f668170ef0258f9f476ef5d"
+  },
+  {
+    "file": "q2/selected_parameters.csv",
+    "sha256": "d348e77b732cad9cc7ec0ffcfb2535c4ff44249644e654f74e471523b582fc64"
+  },
+  {
+    "file": "q2/status.json",
+    "sha256": "d88b0a1f2a31a216ebbd526961fa8f2efb29db610af23f3d9106f9eb958dc37b"
+  },
+  {
+    "file": "q2/style_centering_diagnostics.csv",
+    "sha256": "0cb726ac55292d279c18cd1566a2bd81cf5212113f7129bab6abbd6f88d317ac"
+  },
+  {
+    "file": "q2/top3_with_evidence.csv",
+    "sha256": "a809a89cb1c0552b67ba1a1f0e9c17c732165f9ef93a407f35da0f581e061b1c"
+  },
+  {
+    "file": "q2_run_manifest.json",
+    "sha256": "3ed3006321d75b65ced6dec6856c77eb6575e2f92a3ee1da9eed77a50c24c5e6"
+  },
+  {
+    "file": "q3/disjoint_roles.csv",
+    "sha256": "33bda342d52af78cf1dd36288ce4c6362b5e1dedfefb218e1e949a7885a8cae5"
+  },
+  {
+    "file": "q3/generated_profiles_first_split.csv",
+    "sha256": "bb735e5327ccf96df731ad8e9003cea2815df727b21dbfc058cb049f464cc8a2"
+  },
+  {
+    "file": "q3/generated_sensory_proxy_first_split.csv",
+    "sha256": "32ecb04dc110f22d208c529ed8ad8b6e0b8f6704330a20476c3878a078099a31"
+  },
+  {
+    "file": "q3/generation_comparison.csv",
+    "sha256": "37ba2cac37d40361d68e9010b863c71162a3922195062a7e55bf686a32c610fb"
+  },
+  {
+    "file": "q3/generation_summary.csv",
+    "sha256": "55ff8f96db10782c2eb0ce6256054508452175b73618e4b73473dd4686c42332"
+  },
+  {
+    "file": "q3/locked_candidates_0.json",
+    "sha256": "20903371c7ef18a2776a210532376c590e32753d8fe73b88c27d6d9416a63221"
+  },
+  {
+    "file": "q3/locked_candidates_1.json",
+    "sha256": "1557874d15f026fa0ca5a684f7706770b2b33287511330aeef518bfc1467e677"
+  },
+  {
+    "file": "q3/locked_candidates_2.json",
+    "sha256": "43ac1db161f6e69479638fbdb03fb0628eb4acdbaeb6d1ff7ad74d9a2ce800b9"
+  },
+  {
+    "file": "q3/locked_candidates_3.json",
+    "sha256": "0e2afc36043aefaa1d569834f093cef6dd51a3c8107a8f5284b759032b5a2175"
+  },
+  {
+    "file": "q3/locked_candidates_4.json",
+    "sha256": "9d2bbc498a7aeca0b9e0d8dc8bd0bcb7fce58d51de8ea16fc673593238866f99"
+  },
+  {
+    "file": "q3/real_holdout_diagnostics.csv",
+    "sha256": "528cfeb02c4b64be74d5964516aed5ddbee96ad85ffc7eb76736f6c6586c98cd"
+  },
+  {
+    "file": "q3/status.json",
+    "sha256": "95258ca587f7deabde5aae9a04edfa91bb2d9fcea69b02675b3dbd3143a70234"
+  },
+  {
+    "file": "q3/transfer_defect_checks.csv",
+    "sha256": "7f7e46b6188ffe2366e19e5fd34e525796725b009aac0c65016f59bcfa261312"
+  },
+  {
+    "file": "q3/transfer_independent_evaluation.csv",
+    "sha256": "33373ac34e85b1f6ec13ba63c1853080a659028158dccd9a8431860cab9a93f9"
+  },
+  {
+    "file": "q3/transfer_profiles.csv",
+    "sha256": "bb2102b8085d3eaf6cb266e4ebbb8c2e8b0d7538c9c9426e2bb83cf53b4a708f"
+  },
+  {
+    "file": "q3_run_manifest.json",
+    "sha256": "2868c6ecf9474ee0aa48c0d5a5c7a0f9d17632fdcce8233492059454a1eceebe"
+  },
+  {
+    "file": "STAGE_REPORT.md",
+    "sha256": "a67a64e38edbc80bf7793d9a1ca79fcf4825a17245f48a52a9fac7e06b0becd1"
+  },
+  {
+    "file": "validation_summary.json",
+    "sha256": "989ce954162ad4226f6dba94360eb4d795dd84e71ed5a9ff3a6ba02f70e61e7f"
+  }
+]

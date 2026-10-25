@@ -1,0 +1,83 @@
+{
+  "client_date": "2026-10-25",
+  "tests": {
+    "tests": 40,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "original_sources_unchanged": true,
+  "prediction_outer_folds": 15,
+  "unique_beers": 250,
+  "graph_null_fits_per_outer": 10,
+  "generation_disjoint_partitions": 5,
+  "generated_records_per_group": 40,
+  "core_targets": 30,
+  "all_targets": 50,
+  "relative_grade_cells": 12500,
+  "complete_absolute_score_calibration": false,
+  "complete_chemical_certification": false,
+  "real_tasting_validated": false,
+  "scientific_scope": "exploratory_internal_validation_after_earlier_stages_not_new_external_validation",
+  "executed": [
+    "nested_prediction_and_shrinkage",
+    "fixed_relative_grade_sets",
+    "missingness_and_clipping",
+    "train_only_graph_ablations",
+    "crossfit_within_style_module_effects",
+    "disjoint_generation_and_Pareto_transfer",
+    "failure_and_unknown_item_preservation"
+  ],
+  "still_unresolved": [
+    "real_absolute_score_anchors",
+    "detection_limits_and_all_units",
+    "all_aggregate_formulas",
+    "full_target_specific_chemical_mechanisms",
+    "new_external_beers_and_tasting",
+    "human_independent_review"
+  ],
+  "source_hashes": [
+    {
+      "file": "1.csv",
+      "sha256": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69"
+    },
+    {
+      "file": "2.csv",
+      "sha256": "415709ac10f2f730d31f249bd6ac108250bdfbfd62e0055f4d8db9b41ec9cc4c"
+    },
+    {
+      "file": "3.xlsx",
+      "sha256": "fe4dcabd48431e6d677c095962ea9c447e10e509c4f3f8dd511a48c5541ab587"
+    },
+    {
+      "file": "4.csv",
+      "sha256": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c"
+    },
+    {
+      "file": "5.csv",
+      "sha256": "c512eed108de6f98e0c6ed66497ed2319745d30ca7f6f4acac4f175a4bdcde9a"
+    },
+    {
+      "file": "6.csv",
+      "sha256": "a55004fb0390299a5c8089f0c37d3bfc006e7049963c84d7d9652affabe614ae"
+    },
+    {
+      "file": "7.csv",
+      "sha256": "2083138df46640e20b46f7e76ec32cf9b380fd34e019269afd819edeb546ff5e"
+    },
+    {
+      "file": "8.xlsx",
+      "sha256": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+    },
+    {
+      "file": "数据说明.txt",
+      "sha256": "40813e273e081ae0dc6d6fa76838c5cdbaa721335df3648b4b29d5f76b6378d7"
+    }
+  ],
+  "code_sha256": {
+    "src/stage3_algorithms.py": "2b4809570f06879bd1b8e3e1e3a131031c9c5623747068867b43e5531ba142ea",
+    "src/stage3_generation.py": "4a93645da81ce4eef23fc97da021e60a5a64bed279f0a06889116118d57b5f91",
+    "src/stage3_graph.py": "cae91361f8995d070c36573fecc1e44cf990e70fe56ad119512c112447ad8278",
+    "src/stage3_prediction.py": "f07230afb6aa94da0c2dda7440ccbfac83bec4e218cc8638ab4c72aeb9904e1a"
+  }
+}

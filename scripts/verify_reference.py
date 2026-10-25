@@ -15,7 +15,7 @@ assert "摘 要" in texts[0] and "目 录" in texts[1]
 assert "1 问题重述与研究范围" in texts[2]
 assert all("\x00" not in text for text in texts)
 assert reader.metadata.get("/Author", "") == ""
-assert all("Gyfff000" not in text and "github.com" not in text for text in texts)
+assert all("github.com" not in text and "@qq.com" not in text for text in texts)
 assert all(abs(float(p.mediabox.width) - 595.2756) < 0.1 for p in reader.pages)
 content = json.loads((ROOT / "paper/paper_content.json").read_text(encoding="utf-8"))
 for block in content["blocks"]:

@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "outer_folds": 15,
+  "unique_beers": 250,
+  "grade_semantics": "relative_training_quantile_not_original_0_6_intensity",
+  "absolute_anchors_observed": false,
+  "elapsed_seconds": 712.608490700004,
+  "model_originality": "standard_estimators_and_regularized_stacking_variant_no_first_invention_claim"
+}

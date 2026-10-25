@@ -1,0 +1,187 @@
+[
+  {
+    "file": "src/__init__.py",
+    "sha256": "3b1eea7a9366064522bf75fd40afce3bf4ca609038c64212ea216b5cc1b8628a",
+    "lines": 1
+  },
+  {
+    "file": "src/audit.py",
+    "sha256": "4dbd74dcb633d6d7bd0880ddc85566daa86b61f9b5dff79512f19957ebb80b80",
+    "lines": 81
+  },
+  {
+    "file": "src/common.py",
+    "sha256": "8dcac5ed17a1c38a1177d3cc9f1288fe89d370af6be49519e908dc5ada2bec27",
+    "lines": 81
+  },
+  {
+    "file": "src/data.py",
+    "sha256": "f85cae725f53a54fdd33c67090cd7239da7280f3ed1de5ae541f2eeb926f0683",
+    "lines": 88
+  },
+  {
+    "file": "src/q1.py",
+    "sha256": "3e35c17dcf3e14e9bbc5b6dc462e83936cde736bda99b83f459be5e31466c5bb",
+    "lines": 115
+  },
+  {
+    "file": "src/q2.py",
+    "sha256": "e0aee406aa525f13afecfe671a6fddfd36d67feadfcbbf7de6ec1677eb727d10",
+    "lines": 118
+  },
+  {
+    "file": "src/q3.py",
+    "sha256": "87380d849ca920336cff7f2ac67e89d98351d30dc4130e26b7ada71fd52e928c",
+    "lines": 205
+  },
+  {
+    "file": "src/reporting.py",
+    "sha256": "a45b010b8c3763975c47e497d35d2a8a0842f56bdb899081f2f3b5d029fe4309",
+    "lines": 141
+  },
+  {
+    "file": "src/stage2.py",
+    "sha256": "c4f813eca5de962a4c13481ad2b25a89656f15f4e7e84af98bf720fa3262930c",
+    "lines": 236
+  },
+  {
+    "file": "src/stage3_algorithms.py",
+    "sha256": "2b4809570f06879bd1b8e3e1e3a131031c9c5623747068867b43e5531ba142ea",
+    "lines": 98
+  },
+  {
+    "file": "src/stage3_generation.py",
+    "sha256": "4a93645da81ce4eef23fc97da021e60a5a64bed279f0a06889116118d57b5f91",
+    "lines": 160
+  },
+  {
+    "file": "src/stage3_graph.py",
+    "sha256": "cae91361f8995d070c36573fecc1e44cf990e70fe56ad119512c112447ad8278",
+    "lines": 147
+  },
+  {
+    "file": "src/stage3_prediction.py",
+    "sha256": "f07230afb6aa94da0c2dda7440ccbfac83bec4e218cc8638ab4c72aeb9904e1a",
+    "lines": 133
+  },
+  {
+    "file": "scripts/build_paper_pdf.py",
+    "sha256": "52b7336c465bb20759359b7364660523a38bed1de79d1178c269f8a29edee1b6",
+    "lines": 107
+  },
+  {
+    "file": "scripts/build_revised_pdf.py",
+    "sha256": "70fe223a77cf207718d66bcb2e7c8e4061410a11d6d6073a29f3ae0a8cef52a9",
+    "lines": 106
+  },
+  {
+    "file": "scripts/package_reference.py",
+    "sha256": "4310cba34775a2fea91ad962c234319be00615bd7a3bbf9511544127a9f477bb",
+    "lines": 45
+  },
+  {
+    "file": "scripts/prepare_paper.py",
+    "sha256": "7a249ff14a469d08d4d8ac2bad07a3f3af327be4ba3e57844fb65e42f15e74d8",
+    "lines": 167
+  },
+  {
+    "file": "scripts/prepare_revised_paper.py",
+    "sha256": "b25bae45d7f88abd48a728bbdfe0aa6f80a26ad9f242978faf672bbbdbe6429d",
+    "lines": 225
+  },
+  {
+    "file": "scripts/render_equations.py",
+    "sha256": "9a84f63af772d9295b1b4b6d545e4e68df73fa4a5b88c7a2fe0edaf82e5f7487",
+    "lines": 28
+  },
+  {
+    "file": "scripts/revised_equations.py",
+    "sha256": "50bcf939a5bd042d522820f7fc12eab91cf196700ecd429a2619064319706315",
+    "lines": 13
+  },
+  {
+    "file": "scripts/stage2_figures.py",
+    "sha256": "36fdcd95061c197ff8159bd4c67a4d53cb2110a9155460d6144884c02d2130bd",
+    "lines": 86
+  },
+  {
+    "file": "scripts/stage3_figures.py",
+    "sha256": "131695b1167b03eda8ac5ee9eae6305cc94762dda10d2bdfc6ccaf960dca3a1e",
+    "lines": 48
+  },
+  {
+    "file": "scripts/stage3_preflight.py",
+    "sha256": "9d3a0f42ba8413a624b9fd22dc99770b0b070cd68757282d24f17b943a6b20e2",
+    "lines": 130
+  },
+  {
+    "file": "scripts/verify_reference.py",
+    "sha256": "c93702104e761d0b8f58d863362dc69dd436a88174c28d518576285937241ef9",
+    "lines": 51
+  },
+  {
+    "file": "scripts/verify_revised_paper.py",
+    "sha256": "43a989bacae0b7e635056d192e2cdd2d2808b6ec627b0a5bb894c9dadec1e544",
+    "lines": 37
+  },
+  {
+    "file": "scripts/verify_stage3.py",
+    "sha256": "e3f2be7fc24498e9180c1e45d75af5978d74a990b2e8277588db8e9f1722b75e",
+    "lines": 61
+  },
+  {
+    "file": "tests/test_invariants.py",
+    "sha256": "494e62008d1b7cbf4734ace39dc6613523f93a2312447946b567854983da7ff1",
+    "lines": 158
+  },
+  {
+    "file": "tests/test_stage2.py",
+    "sha256": "3f1b5c734d4d46ecf4279e9c4a28405e3d13778fadbdb4231897455f89a6ddfd",
+    "lines": 83
+  },
+  {
+    "file": "tests/test_stage3_algorithms.py",
+    "sha256": "4af2187d4950fe9833398dc25ef9f04a89cbba18ff6bb5b972b2103520819d6d",
+    "lines": 46
+  },
+  {
+    "file": "tests/test_stage3_research.py",
+    "sha256": "556deb0fdd6162b90211a6d8b5e8544de5e4a4d7e62e2c942988b86733230623",
+    "lines": 100
+  },
+  {
+    "file": "run.py",
+    "sha256": "c2cdcc4e785935cd32810f86060f677cd97b2a85764f790290561e16aab2a192",
+    "lines": 50
+  },
+  {
+    "file": "run_stage2.py",
+    "sha256": "2591df5a4bc5376a44e95f8e8ade9bd532f9b16fdab29e5726cdc6ba060a727c",
+    "lines": 26
+  },
+  {
+    "file": "run_stage3.py",
+    "sha256": "94fd3eb792ffdfccc437ce193965660b8199aa79e22da4fc6b3fd45a0a3cafe6",
+    "lines": 33
+  },
+  {
+    "file": "config.json",
+    "sha256": "99d951a293fb68d50331c65c77d45ee750794e7557bd58a816b682d41d6fdcf8",
+    "lines": 21
+  },
+  {
+    "file": "config_stage2.json",
+    "sha256": "62ff7e23b3dffa299362ef605a0c5699cb111230c593f024ca5dcf53318c677e",
+    "lines": 12
+  },
+  {
+    "file": "config_stage3.json",
+    "sha256": "d80cbf005d2e448b3b300e67d9abff3fd1ae4090cc3475ca167d6589897be146",
+    "lines": 34
+  },
+  {
+    "file": "config_stage3_design.json",
+    "sha256": "f8d585918ba8200b14d7798267dfce6a1795eee9bf857952a723e7426c04e112",
+    "lines": 66
+  }
+]
