@@ -86,7 +86,7 @@ for index,b in enumerate(content['blocks']):
     elif kind=='table':
         rows=[[Paragraph(txt(c),styles['Header']) for c in b['headers']]]+[[Paragraph(txt(c),styles['Cell']) for c in row] for row in b['rows']]
         widths=b.get('widths') or [1/len(rows[0])]*len(rows[0]); table=LongTable(rows,colWidths=[doc.width*w for w in widths],repeatRows=1)
-        table.setStyle(TableStyle([('GRID',(0,0),(-1,-1),.4,colors.HexColor('#D5DCE1')),('BACKGROUND',(0,0),(-1,0),colors.HexColor('#E8EEF2')),('VALIGN',(0,0),(-1,-1),'MIDDLE'),('LEFTPADDING',(0,0),(-1,-1),5),('RIGHTPADDING',(0,0),(-1,-1),5),('TOPPADDING',(0,0),(-1,-1),5),('BOTTOMPADDING',(0,0),(-1,-1),5)])); story.extend([Spacer(1,4),table,Spacer(1,8)])
+        table.setStyle(TableStyle([('GRID',(0,0),(-1,-1),.4,colors.HexColor('#D5DCE1')),('BACKGROUND',(0,0),(-1,0),colors.HexColor('#E8EEF2')),('VALIGN',(0,0),(-1,-1),'MIDDLE'),('NOSPLIT',(0,0),(-1,min(2,len(rows)-1))),('LEFTPADDING',(0,0),(-1,-1),5),('RIGHTPADDING',(0,0),(-1,-1),5),('TOPPADDING',(0,0),(-1,-1),5),('BOTTOMPADDING',(0,0),(-1,-1),5)])); story.extend([Spacer(1,4),table,Spacer(1,8)])
     elif kind=='figure':
         path=ROOT/b['path']
         with PILImage.open(path) as im: w,h=im.size

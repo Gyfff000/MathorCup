@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "beer_grouped_outer_fits": 15,
+  "grade_definition": "modal_prediction_of_actual_0_6_panelist_rating_distribution",
+  "zero_definition": "most_probable_panelist_rating_zero_not_chemical_absence",
+  "equal_panelist_and_within_person_repeat_weights": true,
+  "probabilities_claimed_calibrated": false,
+  "new_physical_measurements": false
+}

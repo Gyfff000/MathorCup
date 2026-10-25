@@ -1,0 +1,11 @@
+﻿assumed_SD_of_person_mean_paired_difference,noninferiority_margin,one_sided_alpha_per_defect,target_power,minimum_independent_panelists,power_at_30,status
+0.4,0.25,0.01,0.8,29,0.825159982,planning_assumptions_not_observed_trial_data
+0.4,0.5,0.01,0.8,10,0.99998563,planning_assumptions_not_observed_trial_data
+0.6,0.25,0.01,0.8,61,0.440203475,planning_assumptions_not_observed_trial_data
+0.6,0.5,0.01,0.8,18,0.978275363,planning_assumptions_not_observed_trial_data
+0.8,0.25,0.01,0.8,106,0.243886684,planning_assumptions_not_observed_trial_data
+0.8,0.5,0.01,0.8,29,0.825159982,planning_assumptions_not_observed_trial_data
+1,0.25,0.01,0.8,164,0.153845656,planning_assumptions_not_observed_trial_data
+1,0.5,0.01,0.8,43,0.611792476,planning_assumptions_not_observed_trial_data
+1.2,0.25,0.01,0.8,234,0.107925324,planning_assumptions_not_observed_trial_data
+1.2,0.5,0.01,0.8,61,0.440203475,planning_assumptions_not_observed_trial_data

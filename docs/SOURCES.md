@@ -1,3 +1,12 @@
+# 2026-10-25 新版原始评分补查
+
+- [作者Zenodo v4](https://zenodo.org/records/23624915)，2026-10-24发布，新增Raw sensory data anonymized.csv，MD5 a8f911d8c0061e096abf3b087678e164；补充工作簿MD5 52645e38d90aafda272532e19e2fea1c。两文件已下载核验，原件在仓库外，未重新公开分发。v3先前下载障碍不再代表当前获取状态。
+- [Meilgaard 1993原始阈值研究](https://doi.org/10.1016/0950-3293(93)90158-3)：多实验室与品评人员的啤酒阈值试验，作为外部参考，不替代本批次标定。
+- [Santos等2003 nonenal测量研究](https://pubmed.ncbi.nlm.nih.gov/12580508/)：约0.1 ug/L的感知背景值用于敏感性，对应0.0001 mg/L；不据此认证本附件全部浓度或新候选缺陷。
+- 原作者全文通过Europe PMC的PMC10966102 fullTextXML核对，重点为Trained panel与Chemical dataset；公开R/Python脚本仅用于来源追踪，未逐段复制成自有算法。
+
+当前匿名对应、零方差和化学例外见outputs/stage4/audit。以下为历史检索记录，其“尚未获得”只代表各阶段当时状态。
+
 # 公开检索与借鉴记录
 
 ## 2026-10-25 论文修订补充来源

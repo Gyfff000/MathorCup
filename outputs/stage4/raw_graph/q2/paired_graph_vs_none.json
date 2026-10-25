@@ -1,0 +1,24 @@
+[
+  {
+    "difference_A_minus_B": -0.0012828133871368164,
+    "conditional_percentile_95": [
+      -0.002340583683446031,
+      -0.00022894998799908198
+    ],
+    "scope": "conditional_on_fixed_OOF_predictions_does_not_include_model_retraining_or_selection_uncertainty",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "target_scope": "core30"
+  },
+  {
+    "difference_A_minus_B": -0.0010531769352131847,
+    "conditional_percentile_95": [
+      -0.0018366778412629169,
+      -0.0002986168076936159
+    ],
+    "scope": "conditional_on_fixed_OOF_predictions_does_not_include_model_retraining_or_selection_uncertainty",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "target_scope": "all50"
+  }
+]

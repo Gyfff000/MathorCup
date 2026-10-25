@@ -1,0 +1,17 @@
+{
+  "all_four_stage4_components_complete": true,
+  "tests": {
+    "tests": 48,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "identity_mapping_verified": true,
+  "raw_endpoint_graph_controls_complete": true,
+  "absolute_panel_mean_cells": 12500,
+  "integer_grade_cells_per_rule": 12500,
+  "ordinal_probability_rows": 12500,
+  "frozen_transfer_records": 220,
+  "concentration_mixture_records": 55,
+  "physical_trial_observations": 0
+}

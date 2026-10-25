@@ -1,0 +1,25 @@
+{
+  "raw_rows": 2197,
+  "beers": 250,
+  "panelists": 16,
+  "targets": 50,
+  "duplicate_person_beer_records": 187,
+  "identity_matches_both_attribute_groups": 250,
+  "nonconstant_targets_reproduced": 38,
+  "nonconstant_max_error": 2.8338009281556642e-08,
+  "replacement_rules_empirically_reconstructed": 12,
+  "panelists_per_beer_min": 3,
+  "panelists_per_beer_max": 14,
+  "mean_abs_record_vs_person_aggregation_difference": 0.00322263801070005,
+  "calibrated_reference_fields": 70,
+  "concentration_model_fields": 61,
+  "fully_reconciled_fields": 38,
+  "unexplained_chemical_pairs": 80,
+  "source_sha256": {
+    "Raw sensory data anonymized.csv": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+    "Supplemental Files and Figure source files.xlsx": "e0a10635c4fbc3c62dc7e06e553cce9fad98c768ea6af5c8adc8a836098d1474"
+  },
+  "mapping_scope": "reconstructed_source_identity_not_independent_new_external_samples",
+  "absolute_target_scope": "equal_panelist_mean_after_within_beer_panelist_repeat_averaging",
+  "physical_validation_performed": false
+}

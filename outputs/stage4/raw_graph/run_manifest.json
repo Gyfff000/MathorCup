@@ -1,0 +1,147 @@
+{
+  "timestamp": "2026-10-25T19:48:40.781213+08:00",
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "networkx": "3.7",
+    "matplotlib": "3.11.2",
+    "openpyxl": "3.1.5"
+  },
+  "config": {
+    "date": "2026-10-25",
+    "seed": 20261025,
+    "outer_folds": 3,
+    "outer_repeats": 5,
+    "inner_folds": 3,
+    "primary_targets": "explicit_A_and_F_prefixed_30_not_official_scope_ruling",
+    "blend_penalties": [
+      0,
+      0.01,
+      0.1,
+      1,
+      10
+    ],
+    "ridge_alphas": [
+      1,
+      10,
+      100,
+      1000
+    ],
+    "extra_trees": 200,
+    "gbr_estimators": 100,
+    "graph_thresholds": [
+      0.6,
+      0.7,
+      0.8
+    ],
+    "graph_lambdas": [
+      0,
+      1,
+      5,
+      20
+    ],
+    "graph_null_repeats": 10,
+    "bootstrap_repeats": 200,
+    "permutation_repeats": 20,
+    "conformal_repeats": 5,
+    "conformal_alpha": 0.1,
+    "generation_repeats": 5,
+    "generation_n": 40,
+    "generation_styles": [
+      "Tripel",
+      "Kriek",
+      "Lambic"
+    ],
+    "generator_n": 100,
+    "evaluator_n": 100,
+    "real_holdout_n": 50,
+    "transfer_weights": 30,
+    "trust_radii": [
+      0.25,
+      0.5,
+      1,
+      2
+    ],
+    "transfer_target_probability_floor": 0.5,
+    "transfer_min_probability_gain": 0.01,
+    "claim_scope": "Internal prediction of observed panel means; reconstructed identity mapping is audited separately; no new physical beer or tasting experiment",
+    "execution_differences_from_design": [
+      "Clipping and missingness ablations use fixed ExtraTrees, not all nested fusion variants; reported separately.",
+      "Chemical literature evidence is graded and incomplete; no fabricated absolute-score anchors or physical validation."
+    ],
+    "panel_bootstrap_repeats": 1000,
+    "mapping_tolerance": 1e-07,
+    "external_record": "https://zenodo.org/records/23624915",
+    "raw_md5": "a8f911d8c0061e096abf3b087678e164",
+    "workbook_md5": "52645e38d90aafda272532e19e2fea1c",
+    "primary_absolute_target": "equal_panelist_mean_after_within_beer_panelist_repeat_averaging",
+    "absolute_models": [
+      "mean",
+      "ridge",
+      "extra_trees",
+      "gbr",
+      "fixed_half_blend",
+      "concentration_ET",
+      "standardized_ET_train_isotonic"
+    ],
+    "ordinal_target": "equal_panelist_equal_repeat_observed_rating_distribution_7_categories",
+    "ordinal_decision_rules": [
+      "mode_for_exact_match",
+      "median_for_absolute_grade_loss",
+      "rounded_mean_sensitivity"
+    ],
+    "concentration_mixture_LP_extension": "exploratory_after_failed_single_anchor_pilot_not_pre_registered",
+    "concentration_units": [
+      "mg/L",
+      "g/L",
+      "ug/L",
+      "v/v"
+    ],
+    "literature_nonenal_threshold_mg_L": 0.0001,
+    "threshold_sensitivity_multipliers": [
+      0.5,
+      1,
+      2
+    ],
+    "mixture_weights": [
+      0.025,
+      0.05,
+      0.075,
+      0.1,
+      0.125,
+      0.15,
+      0.175,
+      0.2,
+      0.225,
+      0.25,
+      0.275,
+      0.3,
+      0.325,
+      0.35,
+      0.375,
+      0.4,
+      0.425,
+      0.45,
+      0.475,
+      0.5,
+      0.525,
+      0.55,
+      0.575,
+      0.6,
+      0.625,
+      0.65,
+      0.675,
+      0.7,
+      0.725,
+      0.75
+    ]
+  },
+  "target": "observed_raw_equal_panelist_mean_0_6",
+  "code_sha256": {
+    "scripts/stage4_graph_comparison.py": "a5d2055327fc11c373f0f1735882d6fdaf93a611eade14e378a5420129a10c66",
+    "src/stage3_graph.py": "cae91361f8995d070c36573fecc1e44cf990e70fe56ad119512c112447ad8278"
+  }
+}

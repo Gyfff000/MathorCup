@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "elapsed_seconds": 128.9991272999905,
+  "outer_fits": 15,
+  "selected_full_ridge_alpha": 1000.0,
+  "absolute_endpoint": "equal_panelist_mean_after_within_beer_panelist_repeat_averaging",
+  "source_identity_reconstructed": true,
+  "new_external_beers": 0
+}

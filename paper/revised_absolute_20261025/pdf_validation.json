@@ -1,0 +1,31 @@
+{
+  "documents": [
+    {
+      "file": "论文完善稿.pdf",
+      "physical_pages": 88,
+      "appendix_A_starts_physical_page": 14,
+      "missing_glyphs": 0,
+      "overflow_pages": 0,
+      "sha256": "539182eaa562f14df3a9e673fe6ed589494cd2d72cc7d4c38586ff527e42c0d8"
+    },
+    {
+      "file": "AI工具使用详情说明_更新版.pdf",
+      "physical_pages": 5,
+      "appendix_A_starts_physical_page": null,
+      "missing_glyphs": 0,
+      "overflow_pages": 0,
+      "sha256": "5336945677caffd78309144b5e86f4de753803f26648862d6de1c51eccbebc80"
+    }
+  ],
+  "numbered_equations": 21,
+  "source_files": 51,
+  "source_lines": 4571,
+  "source_hashes_match": true,
+  "visual_review": {
+    "status": "completed",
+    "date": "2026-10-25",
+    "main_pages": 88,
+    "ai_pages": 5,
+    "method": "All main pages 1-16 and AI pages 1-5 inspected; source pages 17-88 inspected in contact sheets, with new audit/model/trial and final pages at full size. Final tables, equations, figures, glyphs, anonymous metadata and source hashes checked."
+  }
+}

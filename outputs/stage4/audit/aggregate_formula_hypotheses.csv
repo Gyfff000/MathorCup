@@ -1,0 +1,14 @@
+﻿aggregate,hypothesis,component_count,fitted_slope_on_discovery,fitted_intercept_on_discovery,validation_mae,validation_max_error,identity_verified,scope
+esters_sum,mean_processed,41,0.102900898,0.542271775,0.230242163,1.17006424,False,exploratory_formula_hypothesis_not_author_documentation
+esters_sum,sum_processed,41,0.00249424845,0.544641148,0.229933094,1.17142879,False,exploratory_formula_hypothesis_not_author_documentation
+esters_sum,log10_sum_exponentiated_processed,41,0.0102996036,0.733798472,0.236227477,1.26612337,False,exploratory_formula_hypothesis_not_author_documentation
+aroma_hops_sum,mean_processed,77,0.142803335,1.74072095,0.471618216,1.42832154,False,exploratory_formula_hypothesis_not_author_documentation
+aroma_hops_sum,sum_processed,77,0.00185458876,1.74072095,0.471618216,1.42832154,False,exploratory_formula_hypothesis_not_author_documentation
+aroma_hops_sum,log10_sum_exponentiated_processed,77,0.0196979576,1.99639827,0.484912601,1.46756068,False,exploratory_formula_hypothesis_not_author_documentation
+acids_sum,mean_processed,2,1.02606078,-0.517556908,0.0709948465,0.317263826,False,exploratory_formula_hypothesis_not_author_documentation
+acids_sum,sum_processed,2,0.513030388,-0.517556908,0.0709948465,0.317263826,False,exploratory_formula_hypothesis_not_author_documentation
+acids_sum,log10_sum_exponentiated_processed,2,0.665954051,-1.23748928,0.165607849,0.675843162,False,exploratory_formula_hypothesis_not_author_documentation
+sulfur_sum,mean_processed,6,0.751786554,0.621970488,0.121566629,0.897189417,False,exploratory_formula_hypothesis_not_author_documentation
+sulfur_sum,sum_processed,6,0.125297759,0.621970488,0.121566629,0.897189417,False,exploratory_formula_hypothesis_not_author_documentation
+sulfur_sum,log10_sum_exponentiated_processed,6,0.791979888,-0.598076704,0.0915029711,0.342959215,False,exploratory_formula_hypothesis_not_author_documentation
+kcalperc,five_raw_nutrient_affine_fit,5,,,0.139998305,1.53818904,False,exploratory_formula_hypothesis_not_author_documentation

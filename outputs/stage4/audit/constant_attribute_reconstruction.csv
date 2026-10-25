@@ -1,0 +1,13 @@
+﻿target,replacement,fit_beers,validation_beers,validation_max_error,status
+A_hops_woody,-0.447369088,21,34,5.14291974e-10,empirically_reconstructed_not_source_documented
+A_esters_flower,-0.486306696,87,87,4.93372183e-10,empirically_reconstructed_not_source_documented
+A_esters_fruity,-0.710582465,56,62,5.61182045e-10,empirically_reconstructed_not_source_documented
+F_hops_tropical,-0.487400684,35,36,5.2457011e-10,empirically_reconstructed_not_source_documented
+F_hops_woody,-0.519714941,21,34,5.36588718e-10,empirically_reconstructed_not_source_documented
+F_esters_flower,-0.44537149,56,62,5.66479454e-10,empirically_reconstructed_not_source_documented
+F_esters_fruity,-0.635125384,56,62,5.01025221e-10,empirically_reconstructed_not_source_documented
+stale_hops,-0.361763528,87,87,5.32001602e-10,empirically_reconstructed_not_source_documented
+clove,-0.230933556,11,23,4.98923444e-10,empirically_reconstructed_not_source_documented
+lactic,-0.496575009,30,45,5.09110476e-10,empirically_reconstructed_not_source_documented
+acetic,-0.3880586,23,37,5.44818413e-10,empirically_reconstructed_not_source_documented
+barnyard,-0.356227512,87,87,5.98060754e-10,empirically_reconstructed_not_source_documented
