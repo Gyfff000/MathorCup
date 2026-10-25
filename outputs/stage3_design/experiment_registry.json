@@ -1,0 +1,137 @@
+[
+  {
+    "id": "E01",
+    "gap": 1,
+    "title": "评分卡、别名与最终目标映射",
+    "status": "preflight_completed_submission_scope_still_requires_reporting",
+    "depends": [],
+    "outputs": [
+      "scoring_field_map.json",
+      "scoring_scope_audit.json"
+    ]
+  },
+  {
+    "id": "E02",
+    "gap": 1,
+    "title": "固定相对分级及区间集合；有锚点时另作绝对标定",
+    "status": "algorithm_properties_checked_full_grade_validation_not_run",
+    "depends": [
+      "E01"
+    ],
+    "additional_data": "原始绝对评分路径需要真实同协议锚点"
+  },
+  {
+    "id": "E03",
+    "gap": 4,
+    "title": "训练内逐维收缩融合与缺失压力",
+    "status": "weight_formula_implemented_full_nested_training_not_run",
+    "depends": [
+      "E01",
+      "E02"
+    ],
+    "acceptance": "相同范围与划分的 MAE、逐维胜负、缺失退化；不预设优于简单模型"
+  },
+  {
+    "id": "E04",
+    "gap": 2,
+    "title": "有图、无图与打乱图的预测和稳定性消融",
+    "status": "designed_not_run",
+    "depends": [
+      "E01"
+    ],
+    "acceptance": "训练折重算图与调参，真实图的额外价值可检验"
+  },
+  {
+    "id": "E05",
+    "gap": 2,
+    "title": "风格控制、模块贡献与化学证据",
+    "status": "designed_not_run",
+    "depends": [
+      "E04",
+      "E06"
+    ],
+    "additional_data": "对应感官主张的原始化学文献，必要时实测/加标"
+  },
+  {
+    "id": "E06",
+    "gap": 3,
+    "title": "单位、浓度、检测限、阈值及综合量字典",
+    "status": "preflight_only_no_complete_chemical_certification",
+    "depends": [],
+    "outputs": [
+      "defect_registry_preflight.json"
+    ],
+    "additional_data": "不匹配校准配对的解释、检测限、缺失阈值、综合量公式"
+  },
+  {
+    "id": "E07",
+    "gap": 3,
+    "title": "226 字段受约束条件生成与简单基线",
+    "status": "designed_not_run",
+    "depends": [
+      "E06"
+    ],
+    "acceptance": "已核实硬约束零违反，另报复制率与分布距离的代价"
+  },
+  {
+    "id": "E08",
+    "gap": 3,
+    "title": "最小改动、Pareto 与缺陷稳健约束迁移",
+    "status": "pareto_and_risk_helpers_checked_full_search_not_run",
+    "depends": [
+      "E06",
+      "E07"
+    ],
+    "acceptance": "逐项实测/未知区分，非平凡可行与失败均保留"
+  },
+  {
+    "id": "E09",
+    "gap": 3,
+    "title": "生成搜索、独立评价与真实留出三组隔离",
+    "status": "designed_not_run",
+    "depends": [
+      "E07",
+      "E08"
+    ],
+    "additional_data": "真实生成酒的感官确认仍需新测量/品评"
+  },
+  {
+    "id": "E10",
+    "gap": 4,
+    "title": "公平配对比较与不确定性",
+    "status": "existing_fixed_OOF_pilot_completed_new_method_comparison_not_run",
+    "depends": [
+      "E03"
+    ],
+    "outputs": [
+      "existing_oof_paired_pilot.json"
+    ],
+    "acceptance": "不将条件重采样范围当作重训/选择不确定性的完整区间"
+  },
+  {
+    "id": "E11",
+    "gap": 5,
+    "title": "完整方法逐项消融与贡献选择",
+    "status": "designed_not_run",
+    "depends": [
+      "E03",
+      "E04",
+      "E05",
+      "E07",
+      "E08",
+      "E09",
+      "E10"
+    ],
+    "acceptance": "论文贡献随实际对照结果决定，保留负结果"
+  },
+  {
+    "id": "E12",
+    "gap": 6,
+    "title": "复现、结论台账、源程序附录与实际 AI/队员记录",
+    "status": "protocol_designed_human_independent_review_not_claimed",
+    "depends": [
+      "E11"
+    ],
+    "additional_data": "队员真实独立复跑及修改记录"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-25",
+  "stage": "design_and_preflight",
+  "complete_stage3_training_run": false,
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "3.xlsx": "fe4dcabd48431e6d677c095962ea9c447e10e509c4f3f8dd511a48c5541ab587",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "protocol_sha256": "f8d585918ba8200b14d7798267dfce6a1795eee9bf857952a723e7426c04e112",
+  "algorithm_tests": {
+    "tests": 29,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "no_human_validation_claimed": true,
+  "no_original_workbook_edited": true,
+  "full_experiments_status": "planned_not_executed; only source mapping and conditional existing-OOF pilot executed"
+}

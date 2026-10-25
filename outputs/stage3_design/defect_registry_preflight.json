@@ -1,0 +1,46 @@
+[
+  {
+    "field": "DMS",
+    "unit_in_attachment": "ug/L",
+    "threshold_median_in_attachment": 19.0,
+    "transformation_evidence": "verified_log10_positive_pairs",
+    "positive_pair_log10_supported": true,
+    "concentration_rule_if_eligible": "10**x",
+    "zero_LOD_or_substitution_provenance": "not_fully_verified",
+    "absolute_defect_certification": "not_complete_even_if_positive_pairs_match",
+    "next_action": "audit_per_sample_calibrated_pairs_and_detection_limits"
+  },
+  {
+    "field": "X2.3.butanedione",
+    "unit_in_attachment": "mg/L",
+    "threshold_median_in_attachment": 0.09,
+    "transformation_evidence": "mostly_identity_with_mismatches",
+    "positive_pair_log10_supported": false,
+    "concentration_rule_if_eligible": "unresolved_per_sample_check_needed",
+    "zero_LOD_or_substitution_provenance": "not_fully_verified",
+    "absolute_defect_certification": "not_complete_even_if_positive_pairs_match",
+    "next_action": "resolve_mismatching_pairs_and_scale_before_concentration_claim"
+  },
+  {
+    "field": "X4VG",
+    "unit_in_attachment": "mg/L",
+    "threshold_median_in_attachment": 0.2,
+    "transformation_evidence": "verified_log10_positive_pairs",
+    "positive_pair_log10_supported": true,
+    "concentration_rule_if_eligible": "10**x",
+    "zero_LOD_or_substitution_provenance": "not_fully_verified",
+    "absolute_defect_certification": "not_complete_even_if_positive_pairs_match",
+    "next_action": "audit_per_sample_calibrated_pairs_and_detection_limits"
+  },
+  {
+    "field": "X.E..2.nonenal",
+    "unit_in_attachment": "mg/L",
+    "threshold_median_in_attachment": null,
+    "transformation_evidence": "mostly_identity_with_mismatches",
+    "positive_pair_log10_supported": false,
+    "concentration_rule_if_eligible": "unresolved_per_sample_check_needed",
+    "zero_LOD_or_substitution_provenance": "not_fully_verified",
+    "absolute_defect_certification": "not_complete_even_if_positive_pairs_match",
+    "next_action": "resolve_mismatching_pairs_and_scale_before_concentration_claim"
+  }
+]

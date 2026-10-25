@@ -1,0 +1,98 @@
+{
+  "mapped_targets": 50,
+  "core_Aroma": 15,
+  "core_Flavour": 15,
+  "additional_targets": 20,
+  "aliases": {
+    "A_ester_fruity": "A_esters_fruity",
+    "F_ester_fruity": "F_esters_fruity",
+    "4vg": "X4vg"
+  },
+  "suspected_formula_mismatches": [
+    {
+      "summary_cell": "AX2",
+      "target": "barnyard",
+      "actual_formula": "=beer_1!$AG$76",
+      "form_position_expected_formula": "=beer_1!$AG$90"
+    },
+    {
+      "summary_cell": "AX3",
+      "target": "barnyard",
+      "actual_formula": "=beer_2!$AG$76",
+      "form_position_expected_formula": "=beer_2!$AG$90"
+    },
+    {
+      "summary_cell": "AX4",
+      "target": "barnyard",
+      "actual_formula": "=beer_3!$AG$76",
+      "form_position_expected_formula": "=beer_3!$AG$90"
+    },
+    {
+      "summary_cell": "AX5",
+      "target": "barnyard",
+      "actual_formula": "=beer_4!$AG$76",
+      "form_position_expected_formula": "=beer_4!$AG$90"
+    },
+    {
+      "summary_cell": "AX6",
+      "target": "barnyard",
+      "actual_formula": "=beer_5!$AG$76",
+      "form_position_expected_formula": "=beer_5!$AG$90"
+    },
+    {
+      "summary_cell": "AX7",
+      "target": "barnyard",
+      "actual_formula": "=beer_6!$AG$76",
+      "form_position_expected_formula": "=beer_6!$AG$90"
+    },
+    {
+      "summary_cell": "AX8",
+      "target": "barnyard",
+      "actual_formula": "=beer_7!$AG$76",
+      "form_position_expected_formula": "=beer_7!$AG$90"
+    },
+    {
+      "summary_cell": "AX9",
+      "target": "barnyard",
+      "actual_formula": "=beer_8!$AG$76",
+      "form_position_expected_formula": "=beer_8!$AG$90"
+    },
+    {
+      "summary_cell": "AX10",
+      "target": "barnyard",
+      "actual_formula": "=beer_9!$AG$76",
+      "form_position_expected_formula": "=beer_9!$AG$90"
+    },
+    {
+      "summary_cell": "AX11",
+      "target": "barnyard",
+      "actual_formula": "=beer_10!$AG$76",
+      "form_position_expected_formula": "=beer_10!$AG$90"
+    },
+    {
+      "summary_cell": "AX12",
+      "target": "barnyard",
+      "actual_formula": "=beer_11!$AG$76",
+      "form_position_expected_formula": "=beer_11!$AG$90"
+    },
+    {
+      "summary_cell": "AX13",
+      "target": "barnyard",
+      "actual_formula": "=beer_12!$AG$76",
+      "form_position_expected_formula": "=beer_12!$AG$90"
+    }
+  ],
+  "card_items_without_separate_supervised_targets": [
+    {
+      "card_label": "Acetaldehyde under Aroma",
+      "score_cell": "Q45"
+    },
+    {
+      "card_label": "Acetaldehyde under Flavour",
+      "score_cell": "AG45"
+    }
+  ],
+  "original_files_edited": false,
+  "absolute_score_anchors_available": false,
+  "scope_caveat": "30 is the prefixed core comparison scope, not a ruling that only 30 answers are required."
+}

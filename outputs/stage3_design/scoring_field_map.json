@@ -1,0 +1,502 @@
+[
+  {
+    "target": "A_malt_all",
+    "summary_header": "A_malt_all",
+    "summary_column": 2,
+    "original_formula": "=beer_1!$Q$7",
+    "expected_score_cell": "Q7",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_malt_grain",
+    "summary_header": "A_malt_grain",
+    "summary_column": 3,
+    "original_formula": "=beer_1!$Q$10",
+    "expected_score_cell": "Q10",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_malt_bread",
+    "summary_header": "A_malt_bread",
+    "summary_column": 4,
+    "original_formula": "=beer_1!$Q$12",
+    "expected_score_cell": "Q12",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_malt_cara",
+    "summary_header": "A_malt_cara",
+    "summary_column": 5,
+    "original_formula": "=beer_1!$Q$14",
+    "expected_score_cell": "Q14",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_malt_burn",
+    "summary_header": "A_malt_burn",
+    "summary_column": 6,
+    "original_formula": "=beer_1!$Q$16",
+    "expected_score_cell": "Q16",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_hops_all",
+    "summary_header": "A_hops_all",
+    "summary_column": 7,
+    "original_formula": "=beer_1!$Q$20",
+    "expected_score_cell": "Q20",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_hops_citrus",
+    "summary_header": "A_hops_citrus",
+    "summary_column": 8,
+    "original_formula": "=beer_1!$Q$23",
+    "expected_score_cell": "Q23",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_hops_tropical",
+    "summary_header": "A_hops_tropical",
+    "summary_column": 9,
+    "original_formula": "=beer_1!$Q$25",
+    "expected_score_cell": "Q25",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_hops_noble",
+    "summary_header": "A_hops_noble",
+    "summary_column": 10,
+    "original_formula": "=beer_1!$Q$27",
+    "expected_score_cell": "Q27",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_hops_woody",
+    "summary_header": "A_hops_woody",
+    "summary_column": 11,
+    "original_formula": "=beer_1!$Q$29",
+    "expected_score_cell": "Q29",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_esters_all",
+    "summary_header": "A_esters_all",
+    "summary_column": 12,
+    "original_formula": "=beer_1!$Q$33",
+    "expected_score_cell": "Q33",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_esters_ethac",
+    "summary_header": "A_esters_ethac",
+    "summary_column": 13,
+    "original_formula": "=beer_1!$Q$36",
+    "expected_score_cell": "Q36",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_esters_isoaa",
+    "summary_header": "A_esters_isoaa",
+    "summary_column": 14,
+    "original_formula": "=beer_1!$Q$38",
+    "expected_score_cell": "Q38",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_esters_flower",
+    "summary_header": "A_esters_flower",
+    "summary_column": 15,
+    "original_formula": "=beer_1!$Q$40",
+    "expected_score_cell": "Q40",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "A_esters_fruity",
+    "summary_header": "A_ester_fruity",
+    "summary_column": 16,
+    "original_formula": "=beer_1!$Q$42",
+    "expected_score_cell": "Q42",
+    "section": "Aroma_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_malt_all",
+    "summary_header": "F_malt_all",
+    "summary_column": 17,
+    "original_formula": "=beer_1!$AG$7",
+    "expected_score_cell": "AG7",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_malt_grain",
+    "summary_header": "F_malt_grain",
+    "summary_column": 18,
+    "original_formula": "=beer_1!$AG$10",
+    "expected_score_cell": "AG10",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_malt_bread",
+    "summary_header": "F_malt_bread",
+    "summary_column": 19,
+    "original_formula": "=beer_1!$AG$12",
+    "expected_score_cell": "AG12",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_malt_cara",
+    "summary_header": "F_malt_cara",
+    "summary_column": 20,
+    "original_formula": "=beer_1!$AG$14",
+    "expected_score_cell": "AG14",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_malt_burn",
+    "summary_header": "F_malt_burn",
+    "summary_column": 21,
+    "original_formula": "=beer_1!$AG$16",
+    "expected_score_cell": "AG16",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_hops_all",
+    "summary_header": "F_hops_all",
+    "summary_column": 22,
+    "original_formula": "=beer_1!$AG$20",
+    "expected_score_cell": "AG20",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_hops_citrus",
+    "summary_header": "F_hops_citrus",
+    "summary_column": 23,
+    "original_formula": "=beer_1!$AG$23",
+    "expected_score_cell": "AG23",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_hops_tropical",
+    "summary_header": "F_hops_tropical",
+    "summary_column": 24,
+    "original_formula": "=beer_1!$AG$25",
+    "expected_score_cell": "AG25",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_hops_noble",
+    "summary_header": "F_hops_noble",
+    "summary_column": 25,
+    "original_formula": "=beer_1!$AG$27",
+    "expected_score_cell": "AG27",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_hops_woody",
+    "summary_header": "F_hops_woody",
+    "summary_column": 26,
+    "original_formula": "=beer_1!$AG$29",
+    "expected_score_cell": "AG29",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_esters_all",
+    "summary_header": "F_esters_all",
+    "summary_column": 27,
+    "original_formula": "=beer_1!$AG$33",
+    "expected_score_cell": "AG33",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_esters_ethac",
+    "summary_header": "F_esters_ethac",
+    "summary_column": 28,
+    "original_formula": "=beer_1!$AG$36",
+    "expected_score_cell": "AG36",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_esters_isoaa",
+    "summary_header": "F_esters_isoaa",
+    "summary_column": 29,
+    "original_formula": "=beer_1!$AG$38",
+    "expected_score_cell": "AG38",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_esters_flower",
+    "summary_header": "F_esters_flower",
+    "summary_column": 30,
+    "original_formula": "=beer_1!$AG$40",
+    "expected_score_cell": "AG40",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "F_esters_fruity",
+    "summary_header": "F_ester_fruity",
+    "summary_column": 31,
+    "original_formula": "=beer_1!$AG$42",
+    "expected_score_cell": "AG42",
+    "section": "Flavour_core",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "body",
+    "summary_header": "body",
+    "summary_column": 32,
+    "original_formula": "=beer_1!$Q$50",
+    "expected_score_cell": "Q50",
+    "section": "Palate_or_basic_taste",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "bitternes",
+    "summary_header": "bitternes",
+    "summary_column": 33,
+    "original_formula": "=beer_1!$Q$54",
+    "expected_score_cell": "Q54",
+    "section": "Palate_or_basic_taste",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "co2",
+    "summary_header": "co2",
+    "summary_column": 34,
+    "original_formula": "=beer_1!$Q$58",
+    "expected_score_cell": "Q58",
+    "section": "Palate_or_basic_taste",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "aftertaste",
+    "summary_header": "aftertaste",
+    "summary_column": 35,
+    "original_formula": "=beer_1!$Q$62",
+    "expected_score_cell": "Q62",
+    "section": "Palate_or_basic_taste",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "alcohol",
+    "summary_header": "alcohol",
+    "summary_column": 36,
+    "original_formula": "=beer_1!$AG$50",
+    "expected_score_cell": "AG50",
+    "section": "Palate_or_basic_taste",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "sweetness",
+    "summary_header": "sweetness",
+    "summary_column": 37,
+    "original_formula": "=beer_1!$AG$54",
+    "expected_score_cell": "AG54",
+    "section": "Palate_or_basic_taste",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "acidity",
+    "summary_header": "acidity",
+    "summary_column": 38,
+    "original_formula": "=beer_1!$AG$58",
+    "expected_score_cell": "AG58",
+    "section": "Palate_or_basic_taste",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "dms",
+    "summary_header": "dms",
+    "summary_column": 39,
+    "original_formula": "=beer_1!$Q$68",
+    "expected_score_cell": "Q68",
+    "section": "Faults",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "metallic",
+    "summary_header": "metallic",
+    "summary_column": 40,
+    "original_formula": "=beer_1!$Q$72",
+    "expected_score_cell": "Q72",
+    "section": "Faults",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "X4vg",
+    "summary_header": "4vg",
+    "summary_column": 41,
+    "original_formula": "=beer_1!$Q$76",
+    "expected_score_cell": "Q76",
+    "section": "Faults",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "t2n",
+    "summary_header": "t2n",
+    "summary_column": 42,
+    "original_formula": "=beer_1!$AG$68",
+    "expected_score_cell": "AG68",
+    "section": "Faults",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "diacetyl",
+    "summary_header": "diacetyl",
+    "summary_column": 43,
+    "original_formula": "=beer_1!$AG$72",
+    "expected_score_cell": "AG72",
+    "section": "Faults",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "stale_hops",
+    "summary_header": "stale_hops",
+    "summary_column": 44,
+    "original_formula": "=beer_1!$AG$76",
+    "expected_score_cell": "AG76",
+    "section": "Faults",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "orange",
+    "summary_header": "orange",
+    "summary_column": 45,
+    "original_formula": "=beer_1!$Q$82",
+    "expected_score_cell": "Q82",
+    "section": "Spiced_beers",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "coriander",
+    "summary_header": "coriander",
+    "summary_column": 46,
+    "original_formula": "=beer_1!$Q$86",
+    "expected_score_cell": "Q86",
+    "section": "Spiced_beers",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "clove",
+    "summary_header": "clove",
+    "summary_column": 47,
+    "original_formula": "=beer_1!$Q$90",
+    "expected_score_cell": "Q90",
+    "section": "Spiced_beers",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "lactic",
+    "summary_header": "lactic",
+    "summary_column": 48,
+    "original_formula": "=beer_1!$AG$82",
+    "expected_score_cell": "AG82",
+    "section": "Lambic_Geuze",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "acetic",
+    "summary_header": "acetic",
+    "summary_column": 49,
+    "original_formula": "=beer_1!$AG$86",
+    "expected_score_cell": "AG86",
+    "section": "Lambic_Geuze",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "barnyard",
+    "summary_header": "barnyard",
+    "summary_column": 50,
+    "original_formula": "=beer_1!$AG$76",
+    "expected_score_cell": "AG90",
+    "section": "Lambic_Geuze",
+    "formula_status": "suspected_wrong_reference_derived_map_corrects_only",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  },
+  {
+    "target": "overall",
+    "summary_header": "overall",
+    "summary_column": 51,
+    "original_formula": "=beer_1!$Q$94",
+    "expected_score_cell": "Q94",
+    "section": "Overall",
+    "formula_status": "consistent_with_form_position",
+    "official_submission_scope": "requires_explicit_reporting_core_30_and_full_50_not_inferred_from_count"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "file": "defect_registry_preflight.json",
+    "sha256": "b97cdd4403da99209ae533a3916b68cb93de4fd95c07fb87e81f1c5665c39cbb"
+  },
+  {
+    "file": "DESIGN_STATUS.md",
+    "sha256": "6a9803c459833fa7aa2b8d821e4e78658d2b6e76f94bf58f8a29277875c416b9"
+  },
+  {
+    "file": "existing_oof_paired_pilot.json",
+    "sha256": "5959be646b7fb0bb98472b40878ee3cc03a4ae2a4c72ceb307587b611adb77f6"
+  },
+  {
+    "file": "experiment_registry.json",
+    "sha256": "3a36cd8407665143de0128c4774b6114fb54151703aabf8cb34215db4dc5cfec"
+  },
+  {
+    "file": "preflight_manifest.json",
+    "sha256": "815a39e8d50c95bdccc70055524cf3f90ef49c45823428847022e0ef7ecdfa95"
+  },
+  {
+    "file": "scoring_field_map.json",
+    "sha256": "1377e10522ace08204116f5e995a108d60d757d2dcd67566e65dccd4fc7f7102"
+  },
+  {
+    "file": "scoring_scope_audit.json",
+    "sha256": "10c9b3ce108a3f6ff2a2cda5c8094b4cba45c14b0c938acc28e44924970827d5"
+  }
+]

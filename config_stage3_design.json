@@ -1,0 +1,66 @@
+{
+  "stage": "stage3_design",
+  "date": "2026-10-25",
+  "seed": 20261025,
+  "status": "protocol_and_preflight_only_not_completed_stage3_experiments",
+  "validation": {
+    "outer_folds": 3,
+    "outer_repeats": 5,
+    "inner_folds": 3,
+    "stratification": "beer_style",
+    "unit": "unique_beer",
+    "primary_metric": "macro_MAE_on_explicitly_mapped_Aroma_Flavour_30_targets",
+    "secondary_scope": "all_50_targets_and_card_sections_reported_separately",
+    "paired_bootstrap_repeats": 2000,
+    "bootstrap_scope": "conditional_on_saved_OOF_predictions_not_full_algorithm_uncertainty",
+    "practical_relative_MAE_margin": 0.01,
+    "new_external_data": "not_available_existing_data_are_exploratory"
+  },
+  "grading": {
+    "primary_without_anchors": "training_only_ECDF_relative_rank_bins_0_to_6",
+    "conformal_alpha": 0.1,
+    "absolute_grade_accuracy": "not_estimable_without_observed_absolute_anchors",
+    "warning_if_grade_set_size_at_least": 4,
+    "anchor_analysis": "conditional_on_new_observed_same_protocol_pairs_only"
+  },
+  "models": {
+    "baselines": ["mean", "ridge", "extra_trees", "gbr_fixed"],
+    "proposed": "inner_OOF_per_target_GBR_ET_blend_shrunk_to_global_weight",
+    "blend_shrinkage_grid": [0, 0.01, 0.1, 1, 10],
+    "clip_quantiles": [0, 0.01, 0.025],
+    "missing_rates": [0, 0.05, 0.1, 0.2],
+    "mask_scenarios": ["MCAR", "preferentially_mask_low_training_quantile_values"]
+  },
+  "graph": {
+    "thresholds": [0.6, 0.7, 0.8],
+    "ridge_alphas": [1, 10, 100, 1000],
+    "graph_lambdas": [0, 1, 5, 20],
+    "null_graph": "permute_node_labels_preserving_unlabelled_weighted_signed_graph",
+    "bootstrap_repeats": 200,
+    "permutation_repeats": 20,
+    "inference": "descriptive_training_selection_with_heldout_effects_no_causal_or_p_value_claim"
+  },
+  "generation": {
+    "repeat_seeds": [20261025, 20261026, 20261027, 20261028, 20261029],
+    "generator_search_training_n": 100,
+    "external_evaluator_training_n": 100,
+    "real_holdout_n": 50,
+    "samples_per_style": 40,
+    "styles": ["Tripel", "Kriek", "Lambic"],
+    "primary_fields": "all_nonaggregate_fields_226",
+    "unknown_aggregate_policy": "exclude_from_primary_models_until_formula_verified",
+    "methods": ["bootstrap", "local_convex", "conditional_PCA_Gaussian", "constrained_local_convex"],
+    "MMD_bandwidth": "fit_on_generator_training_data_once_per_split_shared_by_all_methods"
+  },
+  "transfer": {
+    "source": "Pils/Lager",
+    "target": "Tripel",
+    "chemical_fields": ["DMS", "X2.3.butanedione", "X4VG", "X.E..2.nonenal"],
+    "trust_region_radii": [0.25, 0.5, 1, 2],
+    "objective": "Pareto_minimize_standardized_change_target_distance_and_defect_excess",
+    "threshold_sensitivity_multipliers": [0.5, 1, 2],
+    "missing_defect_source": "unknown_not_certified_against_median",
+    "stale_hops": "multiple_model_proxy_consensus_not_real_tasting_certification",
+    "failure": "preserve_source_and_record_no_feasible_nontrivial_candidate"
+  }
+}

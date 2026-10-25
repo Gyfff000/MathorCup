@@ -6,6 +6,7 @@
 
 ## 从哪里开始阅读
 
+- **2026-10-25 新增：[六个缺口的实验与算法方案](docs/六个缺口的实验与算法方案.md)**，含 12 项实验、参数、对照、评价、停止规则及三人分工；[设计阶段实际检查](outputs/stage3_design/DESIGN_STATUS.md)。这是设计与先导检查，尚未运行第三阶段完整训练。
 - **第一次参赛先读：[从数据到论文的解题教程](docs/从数据到论文的解题教程.md)**
 - [完整论文参考稿 PDF](paper/论文参考稿.pdf) · [可编辑 Markdown](paper/论文参考稿.md) · [参考稿使用说明](paper/阅读说明.md)
 - [第二阶段实验与实际结论](outputs/stage2/STAGE_REPORT.md) · [扩展方法与结果索引](docs/STAGE2_METHOD.md)
@@ -52,6 +53,15 @@ python scripts/stage2_figures.py
 配套参考稿已生成，共 13 页（摘要、目录各 1 页，后续 11 页含正文、参考文献和复现索引），含 14 个公式、6 张图和实际实验表。模型、假设、求解、验证及局限均按三问展开。最新实测为 23 项检查通过；GBR 宏平均 MAE 0.3398；150 条因素候选中 11 条通过当前探索性证据条件；扩展搜索找到 11 个模型内迁移候选。**论文是供队员独立学习和复核的参考研究，AI 披露、完整源程序附录、队员贡献和正式提交格式仍须按实际使用补全。**
 
 论文再生成需另装 `requirements-paper.txt`，并提供宋体、黑体；当前 PDF 脚本使用 Windows 系统字体。按顺序运行 `scripts/prepare_paper.py`、`scripts/render_equations.py`、`scripts/build_paper_pdf.py`。数值模型环境不需要安装文档依赖。
+
+第三阶段已有算法原型和只读先导检查，可单独运行：
+
+```powershell
+python -m pytest -q --junitxml=tmp/stage3_tests.xml
+python scripts/stage3_preflight.py --data-dir "D:\your_data\A附件"
+```
+
+当前本地有对应原附件时，全部 **29 项检查通过**；原先第二阶段的 23 项记录保留。先导检查发现：核心 30 维与全 50 维的模型比较方向不同；3 个评分字段别名、12 处疑似 Barnyard 汇总误引用已经另存映射。未修改原工作簿。完整第三阶段训练入口尚未实现，不应把 preflight 当作全部实验运行器。
 
 ## 结果的使用边界
 

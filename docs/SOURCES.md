@@ -1,5 +1,19 @@
 # 公开检索与借鉴记录
 
+## 2026-10-25 实验设计的方法依据
+
+以下均核对原始研究页面；用于设计与界定证据范围，未复制其代码或把其结果归为本项目实验。
+
+- [Bengio 与 Grandvalet，交叉验证方差研究](https://jmlr.org/papers/v5/grandvalet04a.html)：重叠训练/测试产生误差相关，不能把重复折当独立样本简单检验。本阶段固定 OOF 重采样明确只作条件敏感性。
+- [Lei 等，回归保形预测](https://arxiv.org/abs/1604.04173)：用于设计拟合/校准分离的逐维区间；映射到固定相对等级不等于恢复原始等级。
+- [Debeer 与 Strobl，Conditional permutation importance revisited](https://pmc.ncbi.nlm.nih.gov/articles/PMC7362659/)：用于区分边际贡献、相关替代与条件解释。拟议风格内/模块置换不冒充严格完整条件置换。
+- [Gretton 等，A Kernel Two-Sample Test](https://jmlr.org/papers/v13/gretton12a.html)：分布比较依据；设计中所有生成方法共用训练确定的表示与带宽，不以小样本不显著等同分布一致。
+- [Schreurs 等原始研究的公开全文](https://pmc.ncbi.nlm.nih.gov/articles/PMC10966102/)：核对数据来源和研究范围。原作者已有模型和加标实验不能作为本队新增实测证据。
+
+完整设计见 docs/六个缺口的实验与算法方案.md，科学效果尚待完整第三阶段实验。
+
+## 2026-10-24 初始检索记录
+
 检索日期：2026-10-24。先检索 GitHub，再开展本阶段实现。查询包括 `beer machine learning`、`beer sensory`、`beer flavor prediction` 及 `tasting_category_fine`。按数据来源、输入目标是否一致、验证方法是否可核对进行筛选，没有把仓库排名或名称视为质量证明。
 
 | 来源 | 已阅读内容 | 与本题关系和借鉴范围 |

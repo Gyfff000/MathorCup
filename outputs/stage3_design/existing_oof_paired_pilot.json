@@ -1,0 +1,28 @@
+[
+  {
+    "difference_A_minus_B": -0.001803992783995412,
+    "conditional_percentile_95": [
+      -0.005334030945910742,
+      0.002055850473291687
+    ],
+    "scope": "all_50",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "comparison": "fixed_stage2_GBR_minus_stage1_ExtraTrees",
+    "metric": "macro_MAE",
+    "uncertainty_scope": "beer-resampling_conditional_on_existing_predictions_not_fresh_external_validation"
+  },
+  {
+    "difference_A_minus_B": 0.005502198211517127,
+    "conditional_percentile_95": [
+      0.0012952917322022594,
+      0.009884562568241677
+    ],
+    "scope": "prefixed_core_30",
+    "n_unique_beers": 250,
+    "resamples": 2000,
+    "comparison": "fixed_stage2_GBR_minus_stage1_ExtraTrees",
+    "metric": "macro_MAE",
+    "uncertainty_scope": "beer-resampling_conditional_on_existing_predictions_not_fresh_external_validation"
+  }
+]
