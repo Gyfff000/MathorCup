@@ -1,0 +1,12 @@
+{
+  "core_beer_target_records": 7500,
+  "core_nonzero_records": 1648,
+  "core_nonzero_predicted_zero_fraction": 0.27851941747572817,
+  "core_nonzero_modal_accuracy": 0.2433252427184466,
+  "coverage_repeat_warning": "Repeated test records share beers; group rates are descriptive, not independent-binomial guarantees.",
+  "input_sha256": {
+    "oof_rating_distributions.csv": "bbc661dddcbc8ed703f1241aba0452eecc37bb394bada4e080fa819d69fb6d69",
+    "absolute_panel_mean_intervals.csv": "8f13e5bf852315404775398d3fde73a9d7d569a97a1ab1daef7723ad16c4565a",
+    "panel_sample_counts.csv": "cb47f5d60cefdb0a742863736a00c5aef393618208842256fba7eb341797e7b9"
+  }
+}

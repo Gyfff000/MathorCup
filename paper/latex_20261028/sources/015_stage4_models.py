@@ -19,6 +19,7 @@ from .q1 import metric_rows
 from .stage2 import conformal_quantile
 from .stage3_prediction import fit_pair, predict_pair, tree_model
 from .stage4_audit import panel_rating_distribution
+from .review_diagnostics import distribution_scores
 
 
 def calibrated_from_training(z_train, raw_train, z_pred):
@@ -48,8 +49,9 @@ def run_absolute(data, panel, records, concentration, out, cfg):
     names = ['mean', 'ridge', 'extra_trees', 'gbr', 'fixed_half_blend', 'concentration_ET', 'standardized_ET_train_isotonic']
     sums = {m: np.zeros_like(Y) for m in names}; count = np.zeros(len(Y)); folds, factors, sensitivity, roles = [], [], [], []
     start = time.perf_counter()
-    for fold, (train, test) in enumerate(RepeatedStratifiedKFold(n_splits=3, n_repeats=5, random_state=cfg['seed']).split(X, labels)):
-        progress(f'S4 absolute fold {fold+1}/15; {(time.perf_counter()-start):.0f}s')
+    n_splits, n_repeats = cfg['outer_folds'], cfg['outer_repeats']
+    for fold, (train, test) in enumerate(RepeatedStratifiedKFold(n_splits=n_splits, n_repeats=n_repeats, random_state=cfg['seed']).split(X, labels)):
+        progress(f'S4 absolute fold {fold+1}/{n_splits*n_repeats}; {(time.perf_counter()-start):.0f}s')
         et, gb = fit_pair(X[train], Y[train], cfg)
         pe, pg = predict_pair((et, gb), X[test])
         ridge = ridge_search(X[train], Y[train], core, cfg)
@@ -62,7 +64,7 @@ def run_absolute(data, panel, records, concentration, out, cfg):
         for name, pred in predictions.items():
             pred = np.clip(pred, 0, 6); sums[name][test] += pred
             for scope, indices in [('core30', core), ('all50', np.arange(50))]:
-                folds.append({'fold': fold, 'repeat': fold // 3, 'model': name, 'scope': scope,
+                folds.append({'fold': fold, 'repeat': fold // n_splits, 'model': name, 'scope': scope,
                               'mae_0_6': float(np.abs(Y[test][:, indices] - pred[:, indices]).mean()), 'n_test': len(test)})
         count[test] += 1
         record_model = tree_model(cfg).fit(X[train], records.to_numpy()[train])
@@ -70,7 +72,7 @@ def run_absolute(data, panel, records, concentration, out, cfg):
         sensitivity.append({'fold': fold, 'person_balanced_ET_mae_own_endpoint': float(np.abs(Y[test] - pe).mean()),
                             'record_weighted_ET_mae_own_endpoint': float(np.abs(records.to_numpy()[test] - record_pred).mean()),
                             'prediction_aggregation_difference': float(np.abs(record_pred - pe).mean())})
-        roles.extend({'fold': fold, 'repeat': fold // 3, 'beer': int(beers[i]), 'role': 'outer_test'} for i in test)
+        roles.extend({'fold': fold, 'repeat': fold // n_splits, 'beer': int(beers[i]), 'role': 'outer_test'} for i in test)
         # Linear model permits exact input-coordinate permutation changes without refits.
         zp = ridge.named_steps['prep'].transform(X[test]); rp = ridge.predict(X[test]); rng = np.random.default_rng(cfg['seed'] + fold)
         for target, j, coefficient, rank in raw_top3(ridge, fields, targets):
@@ -104,7 +106,7 @@ def run_absolute(data, panel, records, concentration, out, cfg):
         train, rest = train_test_split(np.arange(len(X)), test_size=.4, random_state=cfg['seed'] + 71 + repeat)
         calibration, test = train_test_split(rest, test_size=.5, random_state=cfg['seed'] + 72 + repeat)
         model = tree_model(cfg).fit(X[train], Y[train]); pred = model.predict(X[test])
-        q = conformal_quantile(np.abs(Y[calibration] - model.predict(X[calibration])), .1)
+        q = conformal_quantile(np.abs(Y[calibration] - model.predict(X[calibration])), cfg['conformal_alpha'])
         lo, hi = np.maximum(0, pred - q), np.minimum(6, pred + q)
         for j, target in enumerate(targets):
             coverage.append({'repeat': repeat, 'target': target, 'coverage': float(((Y[test, j] >= lo[:, j]) & (Y[test, j] <= hi[:, j])).mean()),
@@ -133,7 +135,8 @@ def run_absolute(data, panel, records, concentration, out, cfg):
                          'descriptive_support': bool(f >= .5 and evidence.selected_folds >= 5 and evidence.ordinary_delta_mae > 0 and evidence.within_style_delta_mae > 0),
                          'unit': metadata.at[field, 'unit'], 'origin': metadata.at[field, 'origin_paper'], 'causal_validated': False})
     save_csv(pd.DataFrame(top_rows), dest / 'absolute_raw_top3.csv')
-    write_json(dest / 'status.json', {'complete': True, 'elapsed_seconds': time.perf_counter() - start, 'outer_fits': 15,
+    write_json(dest / 'status.json', {'complete': True, 'elapsed_seconds': time.perf_counter() - start, 'outer_fits': n_splits * n_repeats,
+                                     'outer_folds': n_splits, 'outer_repeats': n_repeats, 'conformal_alpha': cfg['conformal_alpha'],
                                      'selected_full_ridge_alpha': alpha, 'absolute_endpoint': cfg['primary_absolute_target'],
                                      'source_identity_reconstructed': True, 'new_external_beers': 0})
 
@@ -161,8 +164,7 @@ def ordinal_summary(observed, probabilities, grades):
     nonzero = observed.argmax(-1) > 0
     result['nonzero_panel_mode_accuracy'] = float(modal_accuracy[nonzero].mean()) if nonzero.any() else np.nan
     if probabilities is not None:
-        result.update(RPS=float(((probabilities.cumsum(-1)[..., :-1] - observed.cumsum(-1)[..., :-1]) ** 2).mean()),
-                      Brier=float(((probabilities - observed) ** 2).sum(-1).mean()),
+        result.update(**{name: float(value.mean()) for name, value in distribution_scores(observed, probabilities).items()},
                       expected_panel_mean_MAE=float(np.abs((probabilities * axis).sum(-1) - (observed * axis).sum(-1)).mean()))
     return result
 
@@ -173,8 +175,9 @@ def run_ordinal(data, raw, panel, out, cfg, previous):
     labels = data.meta.tasting_category_fine.to_numpy(); observed = panel_rating_distribution(raw, targets, beers)
     core = np.array([j for j, t in enumerate(targets) if t.startswith(('A_', 'F_'))]); scopes = [('core30', core), ('all50', np.arange(50))]
     sums = np.zeros_like(observed); base_sum = np.zeros_like(observed); point_sum = np.zeros_like(Y); counts = np.zeros(len(X)); folds, stress = [], []
-    for fold, (train, test) in enumerate(RepeatedStratifiedKFold(n_splits=3, n_repeats=5, random_state=cfg['seed']).split(X, labels)):
-        progress(f'S4 ordinal distribution fold {fold+1}/15')
+    n_splits, n_repeats = cfg['outer_folds'], cfg['outer_repeats']
+    for fold, (train, test) in enumerate(RepeatedStratifiedKFold(n_splits=n_splits, n_repeats=n_repeats, random_state=cfg['seed']).split(X, labels)):
+        progress(f'S4 ordinal distribution fold {fold+1}/{n_splits*n_repeats}')
         model = tree_model(cfg).fit(X[train], observed[train].reshape(len(train), -1))
         p = model.predict(X[test]).reshape(len(test), 50, 7); p /= p.sum(-1, keepdims=True)
         base = np.broadcast_to(observed[train].mean(0), p.shape)
@@ -225,7 +228,7 @@ def run_ordinal(data, raw, panel, out, cfg, previous):
         p = model.predict(generated[features].to_numpy()).reshape(len(generated), 50, 7)
         save_csv(pd.concat([generated[['generated_id', 'method', 'style']], pd.DataFrame(p.argmax(-1), columns=targets)], axis=1),
                  dest / f'generated_modal_grade_proxy_{name}_first_split.csv')
-    write_json(dest / 'status.json', {'complete': True, 'beer_grouped_outer_fits': 15, 'grade_definition': 'modal_prediction_of_actual_0_6_panelist_rating_distribution',
+    write_json(dest / 'status.json', {'complete': True, 'beer_grouped_outer_fits': n_splits * n_repeats, 'outer_folds': n_splits, 'outer_repeats': n_repeats, 'grade_definition': 'modal_prediction_of_actual_0_6_panelist_rating_distribution',
                                     'zero_definition': 'most_probable_panelist_rating_zero_not_chemical_absence',
                                     'equal_panelist_and_within_person_repeat_weights': True, 'probabilities_claimed_calibrated': False,
                                     'new_physical_measurements': False})

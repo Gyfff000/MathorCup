@@ -147,7 +147,9 @@ def render(markdown, is_appendix=False):
 appendix = old_md.split('## 附录A 全部50项Top-3、结果索引与运行命令', 1)[1].split('## 附录B', 1)[0]
 refs = '\n'.join(r'\noindent [' + str(k) + '] ' + inline(references[k]).replace('https://zenodo.org/records/23624915', r'\url{https://zenodo.org/records/23624915}') + r'\par' for k in sorted(references))
 sources = next(b['paths'] for b in old_json['blocks'] if b['type'] == 'source_files')
-for path in ('scripts/review_experiments.py', 'src/review_diagnostics.py', 'scripts/build_latex_revision.py'):
+for path in ('scripts/review_experiments.py', 'src/review_diagnostics.py', 'scripts/build_latex_revision.py',
+             'run_final_model.py', 'src/deployment.py', 'scripts/diagnose_stage4.py', 'tests/test_deployment.py',
+             'scripts/ordinal_two_stage_experiment.py', 'scripts/summarize_two_stage.py'):
     if path not in sources: sources.append(path)
 source_dir = PROJECT / 'sources'; source_dir.mkdir(exist_ok=True)
 listings = []
@@ -167,10 +169,15 @@ content = (header + render(section_text) + '\n\\section*{参考文献}\n\\addcon
 figures = PROJECT / 'figures'; figures.mkdir(exist_ok=True)
 for filename in ('ordinal_review.png', 'mixture_certificate.png'):
     shutil.copyfile(ROOT / 'outputs/review_20261028/figures' / filename, figures / filename)
+shutil.copyfile(ROOT / 'outputs/stage5_diagnostics_20261028/ordinal_confusion.png', figures / 'ordinal_confusion.png')
 content = content.replace('\\subsection{面板均分预测}', r'''\begin{figure*}[t]
 \centering\includegraphics[width=0.95\textwidth]{figures/ordinal_review.png}
 \caption{等级分布预测的累计距离与非零众数识别比较。}
 \end{figure*}
+\begin{figure}[t]
+\centering\includegraphics[width=0.95\columnwidth]{figures/ordinal_confusion.png}
+\caption{核心30项留出预测的面板众数等级混淆。}
+\end{figure}
 \subsection{面板均分预测}''')
 content = content.replace('\\section{验证范围与应用建议}', r'''\begin{figure*}[t]
 \centering\includegraphics[width=0.95\textwidth]{figures/mixture_certificate.png}

@@ -69,8 +69,9 @@ def main():
         grades = p.argmax(-1)
         for scope, selected in scopes.items():
             row = ordinal_summary(q[:, selected], p[:, selected], grades[:, selected])
-            # The historical helper names squared distribution distances RPS/Brier.
-            row.pop('RPS'); row.pop('Brier')
+            # Recompute from the common scoring function for each requested scope.
+            for name in ('cdf_distance', 'panel_disagreement', 'expected_individual_RPS', 'brier_distance', 'expected_individual_Brier'):
+                row.pop(name, None)
             summary.append({'model': name, 'scope': scope, **row, **{k: float(v[:, selected].mean()) for k, v in metric.items()}})
         for j, target in enumerate(targets):
             by_target.append({'model': name, 'target': target, **ordinal_summary(q[:, j:j+1], None, grades[:, j:j+1]), **{k: float(v[:, j].mean()) for k, v in metric.items()}})

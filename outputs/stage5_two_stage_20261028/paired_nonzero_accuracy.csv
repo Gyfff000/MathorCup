@@ -1,0 +1,5 @@
+scope,comparator,nonzero_beer_target_records,difference_two_stage_minus_frequency,conditional_low95,conditional_high95,resamples,unit
+core30,base,1648,0.0115291262,-0.00432372338,0.0273242758,5000,beer stratified by style; fixed OOF predictions
+core30,matched,1648,0.0072815534,-0.00905797101,0.0230360951,5000,beer stratified by style; fixed OOF predictions
+all50,base,3355,0.00298062593,-0.00919342524,0.0146576029,5000,beer stratified by style; fixed OOF predictions
+all50,matched,3355,0.00268256334,-0.00975790109,0.0148758884,5000,beer stratified by style; fixed OOF predictions

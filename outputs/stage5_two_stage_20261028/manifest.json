@@ -1,0 +1,13 @@
+{
+  "trees_per_two_stage_model": 32,
+  "baseline_trees": 200,
+  "folds": 3,
+  "repeats": 5,
+  "seed": 20261025,
+  "design": "exploratory; conditional nonzero distributions weighted by training panel nonzero mass; fixed saved folds; no calibration",
+  "conditional_interval": "beer stratified bootstrap of fixed OOF predictions; no refitting uncertainty",
+  "source_sha256": {
+    "baseline_ratings": "bbc661dddcbc8ed703f1241aba0452eecc37bb394bada4e080fa819d69fb6d69",
+    "chemical_file": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69"
+  }
+}

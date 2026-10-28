@@ -1,0 +1,5 @@
+scope,comparison,difference_A_minus_B,conditional_low95,conditional_high95,unique_beers,resamples
+core30,two_stage_minus_frequency_200,0.000211202016,2.26437951e-05,0.000410847578,250,5000
+core30,two_stage_minus_frequency_matched,0.000216136075,4.96647575e-06,0.000434993054,250,5000
+all50,two_stage_minus_frequency_200,7.82992507e-07,-0.000144087026,0.000147789656,250,5000
+all50,two_stage_minus_frequency_matched,-2.6649241e-05,-0.000191928572,0.000141482538,250,5000

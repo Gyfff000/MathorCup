@@ -28,9 +28,10 @@ fig, axes = plt.subplots(1, 2, figsize=(10, 3.2))
 for k, scope in enumerate(['core30', 'all50']):
     a = ordinal[ordinal.scope == scope].set_index('method')
     for offset, (method, name, color) in enumerate([('training_population_distribution', 'Population baseline', '#999999'), ('ET_rating_distribution', 'ET rating distribution', '#4B8BB5')]):
-        axes[0].bar(k + (offset - .5) * .28, a.loc[method, 'RPS'], width=.27, label=name if k == 0 else None, color=color)
+        distance_column = 'cdf_distance' if 'cdf_distance' in a.columns else 'RPS'  # legacy RPS field was a distribution distance
+        axes[0].bar(k + (offset - .5) * .28, a.loc[method, distance_column], width=.27, label=name if k == 0 else None, color=color)
         axes[1].bar(k + (offset - .5) * .28, a.loc[method, 'nonzero_panel_mode_accuracy'], width=.27, label=name if k == 0 else None, color=color)
-axes[0].set_ylabel('Ranked probability score / 6 (lower is better)'); axes[1].set_ylabel('Accuracy among nonzero observed modes')
+axes[0].set_ylabel('Squared cumulative distribution distance'); axes[1].set_ylabel('Accuracy among nonzero observed modes')
 for ax in axes: ax.set_xticks([0, 1], ['core30', 'all50']); ax.legend(fontsize=8)
 finish(fig, 'ordinal_distribution.png')
 
