@@ -1,28 +1,33 @@
-\documentclass[UTF8,a4paper,twocolumn,10pt]{ctexart}
-\usepackage{amsmath,amssymb,graphicx,longtable,booktabs,array,geometry,hyperref,listings,xcolor,multicol}
-\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
-\setlength{\columnsep}{0.7cm}
+% 本论文基于 latexstudio/chinesejournal 的 cjc 文档类，依比赛要求适配。
+% 上游作者 Zeping Lee；LPPL 1.3c 或更高版本，见同目录 LICENSE 与 cjc.dtx。
+\documentclass{mathorcup-journal}
+\usepackage{longtable,booktabs,array,hyperref,listings,xcolor}
+\geometry{left=2cm,right=2cm,top=2.6cm,bottom=2.6cm}
+\setlength{\columnsep}{0.75cm}
 \setlength{\columnseprule}{0pt}
 \setlength{\tabcolsep}{2pt}
 \IfFontExistsTF{LXGW WenKai GB Lite}{\setmonofont{LXGW WenKai GB Lite}}{\setmonofont{Arial Unicode MS}}
-\pagestyle{plain}
+% 赛规：匿名、无页眉、正文页脚居中。
+\fancypagestyle{contest}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{\thepage}}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{\thepage}}
+\pagestyle{contest}
 \setlength{\parindent}{2em}
 \setlength{\parskip}{0.3em}
 \setlength{\emergencystretch}{3em}
 \hypersetup{hidelinks}
 \lstset{basicstyle=\ttfamily\tiny,breaklines=true,breakatwhitespace=false,breakautoindent=false,breakindent=0pt,columns=fixed,keepspaces=true,numbers=left,numberstyle=\tiny,frame=single,literate={_}{{\char95\allowbreak}}1}
 \begin{document}
-\twocolumn[{\begin{center}{\LARGE\bfseries 基于原始感官评分与缺陷约束的啤酒风味预测和风格迁移}\end{center}\vspace{0.5em}
-\begin{center}\textbf{摘要}\end{center}\begin{multicols}{2}
-针对啤酒感官分级、关键化合物识别和风格迁移问题，本文结合竞赛附件与公开的逐人感官评分，建立从评分重建到迁移可行性分析的研究流程。首先核查250款啤酒的样本对应关系，利用2197条原始评分构造各感官属性的0—6分面板均分和七级评分分布。以啤酒为单位进行三折五次重复验证，极端随机树与梯度提升树的等权融合在30个Aroma/Flavour核心属性上的均分预测平均绝对误差为0.50222，在全部50项上的误差为0.43560；核心属性的风格中位数基线误差为0.50969，二者差值的固定预测条件下95\%重采样区间为[-0.01914，0.00418]。七级分布模型在核心属性上的累计分布平方距离为0.02178，对应的个人评分期望RPS为0.11044；核心属性的面板众数一致率为80.52\%，非零众数一致率为24.33\%。其次，构建化合物相关图并比较图约束与普通岭回归：真实图的单折平均误差为0.537035，无图为0.536911；按酒聚合重复预测后分别为0.524865和0.526148。最终因素模型选择图惩罚系数0，150条Top-3结果中36条满足描述性支持条件。最后，对Tripel、Kriek和Lambic生成风味谱，并在冻结候选后进行独立角色复核；真实留出来源的10条重复迁移记录涉及7款酒，其中1条满足全部代理条件。浓度域混配在四项浓度均不增加的严格约束下，对55条来源与划分记录均未找到正的目标风格份额；改用阈值超额不增加的化学风险约束后，参考阈值下30条记录允许正份额。研究结果为感官预测、因素解释及迁移约束设计提供了可复核的定量依据。
+\twocolumn[{\begin{center}{\zihao{2}\heiti 基于原始感官评分与缺陷约束的啤酒风味预测和风格迁移}\end{center}\vspace{1.2em}
+\noindent\textbf{摘\quad 要}\quad 针对啤酒感官分级、关键化合物识别和风格迁移问题，本文结合竞赛附件与公开的逐人感官评分，建立从评分重建到迁移可行性分析的研究流程。首先核查250款啤酒的样本对应关系，利用2197条原始评分构造各感官属性的0—6分面板均分和七级评分分布。以啤酒为单位进行三折五次重复验证，极端随机树与梯度提升树的等权融合在30个Aroma/Flavour核心属性上的均分预测平均绝对误差为0.50222，在全部50项上的误差为0.43560；核心属性的风格中位数基线误差为0.50969，二者差值的固定预测条件下95\%重采样区间为[-0.01914，0.00418]。七级分布模型在核心属性上的累计分布平方距离为0.02178，对应的个人评分期望RPS为0.11044；核心属性的面板众数一致率为80.52\%，非零众数一致率为24.33\%。其次，构建化合物相关图并比较图约束与普通岭回归：真实图的单折平均误差为0.537035，无图为0.536911；按酒聚合重复预测后分别为0.524865和0.526148。最终因素模型选择图惩罚系数0，150条Top-3结果中36条满足描述性支持条件。最后，对Tripel、Kriek和Lambic生成风味谱，并在冻结候选后进行独立角色复核；真实留出来源的10条重复迁移记录涉及7款酒，其中1条满足全部代理条件。浓度域混配在四项浓度均不增加的严格约束下，对55条来源与划分记录均未找到正的目标风格份额；改用阈值超额不增加的化学风险约束后，参考阈值下30条记录允许正份额。研究结果为感官预测、因素解释及迁移约束设计提供了可复核的定量依据。
 
-\noindent\textbf{关键词：} 啤酒风味；感官评分；有序分布；化合物相关网络；风格迁移；缺陷约束
-\end{multicols}\vspace{0.5em}}]
+\noindent\textbf{关键词}\quad 啤酒风味；感官评分；有序分布；化合物相关网络；风格迁移；缺陷约束
+\vspace{1.5em}}]
 \thispagestyle{empty}
 \clearpage
+\onecolumn
 \tableofcontents
 \thispagestyle{empty}
-\clearpage
+\twocolumn
 \setcounter{page}{1}
 \section{问题分析}
 
@@ -101,20 +106,23 @@ D=\frac{1}{6}\sum_{k=0}^{5}(P_k-Q_k)^2.
 \mathbb E_{Y\sim q}[\mathrm{RPS}(P,Y)]=D+\frac16\sum_{k=0}^{5}Q_k(1-Q_k).
 \end{equation}
 
-式（5）的第二项反映面板评分分歧，因此分布距离和个人期望RPS需要分别报告。面板众数一致率以每款酒的预测众数与观测面板众数是否相同计算；非零众数一致率仅在观测面板众数大于0的记录上计算。
+式（5）的第二项反映面板评分分歧，因此分布距离和个人期望RPS需要分别报告。面板众数一致率以每款酒的预测众数与观测面板众数是否相同计算；非零众数一致率仅在观测面板众数大于0的记录上计算。各方法的核心属性结果见表1和图1。
 
 
-\par\noindent{\scriptsize
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.170\columnwidth}>{\raggedright\arraybackslash}p{0.170\columnwidth}>{\raggedright\arraybackslash}p{0.170\columnwidth}>{\raggedright\arraybackslash}p{0.170\columnwidth}>{\raggedright\arraybackslash}p{0.170\columnwidth}}
+\begin{table*}[t]
+\centering\small\renewcommand{\arraystretch}{1.2}
+\caption{核心属性七级分布模型的比较}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.182\textwidth}>{\raggedright\arraybackslash}p{0.182\textwidth}>{\raggedright\arraybackslash}p{0.182\textwidth}>{\raggedright\arraybackslash}p{0.182\textwidth}>{\raggedright\arraybackslash}p{0.182\textwidth}}
 \toprule
 核心30项方法 & 累计分布平方距离$D$ & 个人期望RPS & 面板众数一致率 & 非零众数一致率 \\
 \midrule
-训练总体分布 & 0.\allowbreak{}02820 & 0.\allowbreak{}11685 & 79.\allowbreak{}31\% & 21.\allowbreak{}30\% \\
-风格分布基线 & 0.\allowbreak{}02313 & 0.\allowbreak{}11179 & 80.\allowbreak{}72\% & 26.\allowbreak{}58\% \\
-频率极端随机树 & 0.\allowbreak{}02178 & 0.\allowbreak{}11044 & 80.\allowbreak{}52\% & 24.\allowbreak{}33\% \\
-累计概率极端随机树 & 0.\allowbreak{}02170 & 0.\allowbreak{}11036 & 80.\allowbreak{}65\% & 24.\allowbreak{}88\% \\
+训练总体分布 & 0.02820 & 0.11685 & 79.31\% & 21.30\% \\
+风格分布基线 & 0.02313 & 0.11179 & 80.72\% & 26.58\% \\
+频率极端随机树 & 0.02178 & 0.11044 & 80.52\% & 24.33\% \\
+累计概率极端随机树 & 0.02170 & 0.11036 & 80.65\% & 24.88\% \\
 \bottomrule
-\end{tabular}}\par\smallskip
+\end{tabular}
+\end{table*}
 
 核心属性观测面板众数为0的比例为78.03\%。频率极端随机树相对总体分布基线的$D$下降22.74\%，个人期望RPS下降5.49\%；风格分布基线的非零众数一致率高于两种树模型。累计概率模型相对频率模型的核心$D$差值为-0.000081，固定预测条件下的95\%重采样区间为[-0.000169，0.000004]。现有证据支持报告各方法的差异，同时显示非零等级识别仍是主要改进方向。
 
@@ -128,34 +136,30 @@ D=\frac{1}{6}\sum_{k=0}^{5}(P_k-Q_k)^2.
 \end{figure*}
 \subsection{面板均分预测}
 
-对面板均分，比较训练均值、训练中位数、风格中位数、岭回归、极端随机树、梯度提升树及固定等权融合。外层采用按风格分层的三折五次重复划分；对同一啤酒的五次留出预测取平均，再计算平均绝对误差。岭回归参数在训练数据内选择，其他方法使用预先固定的设置。
+对面板均分，比较训练均值、训练中位数、风格中位数、岭回归、极端随机树、梯度提升树及固定等权融合。外层采用按风格分层的三折五次重复划分；对同一啤酒的五次留出预测取平均，再计算平均绝对误差。岭回归参数在训练数据内选择，其他方法使用预先固定的设置。结果见表2。
 
 
 \begin{equation}
 \mathrm{MAE}=\frac{1}{nq}\sum_{b=1}^{n}\sum_{j=1}^{q}|\bar s_{bj}-\hat s_{bj}|.
 \end{equation}
 
-\par\noindent{\scriptsize
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.283\columnwidth}>{\raggedright\arraybackslash}p{0.283\columnwidth}>{\raggedright\arraybackslash}p{0.283\columnwidth}}
+\begin{table}[!h]
+\centering\small\renewcommand{\arraystretch}{1.2}
+\caption{面板均分预测误差比较}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.290\columnwidth}>{\raggedright\arraybackslash}p{0.290\columnwidth}>{\raggedright\arraybackslash}p{0.290\columnwidth}}
 \toprule
 方法 & 核心30项MAE/分 & 全50项MAE/分 \\
 \midrule
-训练均值 & 0.\allowbreak{}60450 & 0.\allowbreak{}54879 \\
-训练总体中位数 & 0.\allowbreak{}58785 & 0.\allowbreak{}52275 \\
-风格中位数 & 0.\allowbreak{}50969 & 0.\allowbreak{}44712 \\
-岭回归 & 0.\allowbreak{}52270 & 0.\allowbreak{}45708 \\
+训练均值 & 0.60450 & 0.54879 \\
+训练总体中位数 & 0.58785 & 0.52275 \\
+风格中位数 & 0.50969 & 0.44712 \\
+岭回归 & 0.52270 & 0.45708 \\
+极端随机树 & 0.50589 & 0.44336 \\
+梯度提升树 & 0.50819 & 0.43780 \\
+固定等权融合 & 0.50222 & 0.43560 \\
 \bottomrule
-\end{tabular}}\par\smallskip
-\par\noindent{\scriptsize
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.283\columnwidth}>{\raggedright\arraybackslash}p{0.283\columnwidth}>{\raggedright\arraybackslash}p{0.283\columnwidth}}
-\toprule
-方法 & 核心30项MAE/分 & 全50项MAE/分 \\
-\midrule
-极端随机树 & 0.\allowbreak{}50589 & 0.\allowbreak{}44336 \\
-梯度提升树 & 0.\allowbreak{}50819 & 0.\allowbreak{}43780 \\
-固定等权融合 & 0.\allowbreak{}50222 & 0.\allowbreak{}43560 \\
-\bottomrule
-\end{tabular}}\par\smallskip
+\end{tabular}
+\end{table}
 
 融合模型核心误差比训练均值低0.10228分，比风格中位数低0.00747分。以酒为单位、按风格分层，对固定的留出预测重采样5000次，融合与风格中位数的误差差值区间为[-0.01914，0.00418]；融合与极端随机树的差值为-0.00367，区间为[-0.00668，-0.00056]。这些区间反映当前留出预测的样本重采样变化，未纳入模型重训和选择过程的不确定性。风格中位数依赖已知风格标签，适合用于分析风格信息提供的基线。
 
@@ -179,18 +183,21 @@ D=\frac{1}{6}\sum_{k=0}^{5}(P_k-Q_k)^2.
 \hat B=\arg\min_B\{\|Y_c-ZB\|_F^2+\alpha\|B\|_F^2+\lambda\operatorname{tr}(B^TLB)\}.
 \end{equation}
 
-对单个系数向量$b$，有$b^TLb=\sum_{i<j}|W_{ij}|(b_i-\operatorname{sign}(W_{ij})b_j)^2\ge0$。因此当$\alpha>0$且$\lambda\ge0$时，目标函数具有唯一解。正相关边鼓励系数接近，负相关边鼓励系数方向相反。$\alpha$、$\lambda$和相关阈值均在训练折内部选择；节点标签打乱图用于检验具体网络结构的作用。
+对单个系数向量$b$，有$b^TLb=\sum_{i<j}|W_{ij}|(b_i-\operatorname{sign}(W_{ij})b_j)^2\ge0$。因此当$\alpha>0$且$\lambda\ge0$时，目标函数具有唯一解。正相关边鼓励系数接近，负相关边鼓励系数方向相反。$\alpha$、$\lambda$和相关阈值均在训练折内部选择；节点标签打乱图用于检验具体网络结构的作用。真实图与无图的比较见表3。
 
 
-\par\noindent{\scriptsize
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.212\columnwidth}>{\raggedright\arraybackslash}p{0.212\columnwidth}>{\raggedright\arraybackslash}p{0.212\columnwidth}>{\raggedright\arraybackslash}p{0.212\columnwidth}}
+\begin{table}[!h]
+\centering\small\renewcommand{\arraystretch}{1.2}
+\caption{图模型两种评价口径的比较}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.217\columnwidth}>{\raggedright\arraybackslash}p{0.217\columnwidth}>{\raggedright\arraybackslash}p{0.217\columnwidth}>{\raggedright\arraybackslash}p{0.217\columnwidth}}
 \toprule
 核心30项评价口径 & 无图MAE & 真实图MAE & 真实图减无图 \\
 \midrule
-15个留出折误差的平均 & 0.\allowbreak{}536911 & 0.\allowbreak{}537035 & +0.\allowbreak{}000124 \\
-每酒五次预测平均后的误差 & 0.\allowbreak{}526148 & 0.\allowbreak{}524865 & -0.\allowbreak{}001283 \\
+15个留出折误差的平均 & 0.536911 & 0.537035 & +0.000124 \\
+每酒五次预测平均后的误差 & 0.526148 & 0.524865 & -0.001283 \\
 \bottomrule
-\end{tabular}}\par\smallskip
+\end{tabular}
+\end{table}
 
 两种口径分别衡量单次拟合与重复预测聚合后的误差，真实图的差异均较小。聚合口径下，以酒为单位的固定预测条件重采样差值区间为[-0.002392，-0.000177]。最终全数据描述模型选得$\lambda=0$，因此后续Top-3由岭回归系数确定。
 
@@ -221,11 +228,13 @@ D=\frac{1}{6}\sum_{k=0}^{5}(P_k-Q_k)^2.
 
 \subsection{冻结候选与代理复核}
 
-迁移搜索限制特征变动半径、目标风格支持及四项化学缺陷字段，同时要求陈旧酒花感官代理不增加。在候选冻结后，补充使用G和J分别训练的原始评分尺度模型复核stale hops，候选及排序保持固定。
+迁移搜索限制特征变动半径、目标风格支持及四项化学缺陷字段，同时要求陈旧酒花感官代理不增加。在候选冻结后，补充使用G和J分别训练的原始评分尺度模型复核stale hops，候选及排序保持固定，复核结果见表4。
 
 
-\par\noindent{\scriptsize
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.283\columnwidth}>{\raggedright\arraybackslash}p{0.283\columnwidth}>{\raggedright\arraybackslash}p{0.283\columnwidth}}
+\begin{table*}[t]
+\centering\small\renewcommand{\arraystretch}{1.2}
+\caption{冻结迁移候选的代理复核结果}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.303\textwidth}>{\raggedright\arraybackslash}p{0.303\textwidth}>{\raggedright\arraybackslash}p{0.303\textwidth}}
 \toprule
 半径为1的迁移记录 & 全部来源与划分：55条 & T留出来源：10条 \\
 \midrule
@@ -233,7 +242,8 @@ G搜索可行 & 51 & 10 \\
 原J代理支持 & 11 & 2 \\
 同时满足新增G/J原始尺度stale hops条件 & 6 & 1 \\
 \bottomrule
-\end{tabular}}\par\smallskip
+\end{tabular}
+\end{table*}
 
 T来源的10条记录涉及7款不同酒；重复划分形成的记录不是新增酒样。G和J的评分代理对部分候选给出不同判断，说明仅凭搜索模型的可行结果不足以确定迁移效果。
 
@@ -257,7 +267,7 @@ c_{\mathrm{mix}}=(1-\mathbf1^Tw)c_s+C_Aw,\quad w\ge0,\quad\mathbf1^Tw\le0.75.
 \max_w\ \mathbf1^Tw,\qquad Dw\le0,\quad w\ge0,\quad\mathbf1^Tw\le0.75.
 \end{equation}
 
-对55条来源与划分记录，协议A所得最大目标份额均为0。对各行按正尺度归一化得到$D_{\mathrm{norm}}$；若存在$v\ge0$，使$D_{\mathrm{norm}}^Tv$对每个锚点均严格为正，则任意非零$w\ge0$都有$v^TD_{\mathrm{norm}}w>0$，与协议A矛盾。55条记录均找到正余量证书，其中39条可由单项约束阻塞解释，16条需要联合约束。分别删除DMS、双乙酰、4VG和nonenal约束后，允许正份额的记录数为30、4、0和4；该消融用于定位阻塞来源。
+对55条来源与划分记录，协议A所得最大目标份额均为0。对各行按正尺度归一化得到$D_{\mathrm{norm}}$；若存在$v\ge0$，使$D_{\mathrm{norm}}^Tv$对每个锚点均严格为正，则任意非零$w\ge0$都有$v^TD_{\mathrm{norm}}w>0$，与协议A矛盾。55条记录均找到正余量证书，其中39条可由单项约束阻塞解释，16条需要联合约束。分别删除DMS、双乙酰、4VG和nonenal约束后，允许正份额的记录数为30、4、0和4；该消融用于定位阻塞来源，结果见图2。
 
 
 题目强调超阈值缺陷，本文进一步设风险函数$R_d(c)=\max(c/t_d-1,0)$，以协议B要求$R_d(c'_d)\le R_d(c_d)$，等价于$c'_d\le\max(c_d,t_d)$。参考阈值取DMS 19 $\mu$g/L、双乙酰0.09 mg/L、4VG 0.2 mg/L、nonenal 0.1 $\mu$g/L[13][14]。以参考阈值的0.5、1和2倍计算时，55条记录中分别有15、30和34条允许正的Tripel份额。该结果仅检验四项化学风险约束；目标风格提升和stale hops仍需按冻结候选流程评价。阈值与啤酒基质、测量方法相关，零浓度记录还受到未知检出限影响。
@@ -295,7 +305,7 @@ c_{\mathrm{mix}}=(1-\mathbf1^Tw)c_s+C_Aw,\quad w\ge0,\quad\mathbf1^Tw\le0.75.
 \section*{参考文献}
 \addcontentsline{toc}{section}{参考文献}
 \noindent [1] Schreurs M, Piampongsant S, Roncoroni M, et al. Predicting and improving complex beer flavor through machine learning. Nature Communications, 15:2368, 2024. DOI:10.1038/s41467-024-46346-0.\par
-\noindent [2] Schreurs M, et al. Data from: Predicting and improving complex beer flavor through machine learning, Version v4. Zenodo, 2026. DOI:10.5281/zenodo.23624915.\par
+\noindent [2] Schreurs M, et al. Data from: Predicting and improving complex beer flavor through machine learning, Version v4. Zenodo, 2026. \url{https://zenodo.org/records/23624915}，访问日期：2026年10月25日. DOI:10.5281/zenodo.23624915.\par
 \noindent [3] Geurts P, Ernst D, Wehenkel L. Extremely randomized trees. Machine Learning, 63:3–42, 2006.\par
 \noindent [4] Friedman J H. Greedy function approximation: A gradient boosting machine. The Annals of Statistics, 29(5):1189–1232, 2001.\par
 \noindent [5] Breiman L. Stacked Regressions. Machine Learning, 24:49–64, 1996.\par
@@ -593,4 +603,8 @@ protocol & 空白评分表与假设样本量；没有实际品评结果 \\
 \lstinputlisting{sources/053_review_diagnostics.py}
 \subsection*{scripts/build\_latex\_revision.py}
 \lstinputlisting{sources/054_build_latex_revision.py}
+\subsection*{论文排版主文件 main.tex}
+\lstinputlisting{main.tex}
+\subsection*{赛事适配文档类 mathorcup-journal.cls}
+\lstinputlisting{mathorcup-journal.cls}
 \end{document}

@@ -48,38 +48,60 @@ keywords = main_text.split('**关键词：**', 1)[1].split('\n', 1)[0].strip()
 section_text = main_text.split('## 1 问题分析', 1)[1]
 section_text = '## 1 问题分析' + section_text
 
-header = r'''\documentclass[UTF8,a4paper,twocolumn,10pt]{ctexart}
-\usepackage{amsmath,amssymb,graphicx,longtable,booktabs,array,geometry,hyperref,listings,xcolor,multicol}
-\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
-\setlength{\columnsep}{0.7cm}
+header = r'''% 本论文基于 latexstudio/chinesejournal 的 cjc 文档类，依比赛要求适配。
+% 上游作者 Zeping Lee；LPPL 1.3c 或更高版本，见同目录 LICENSE 与 cjc.dtx。
+\documentclass{mathorcup-journal}
+\usepackage{longtable,booktabs,array,hyperref,listings,xcolor}
+\geometry{left=2cm,right=2cm,top=2.6cm,bottom=2.6cm}
+\setlength{\columnsep}{0.75cm}
 \setlength{\columnseprule}{0pt}
 \setlength{\tabcolsep}{2pt}
 \IfFontExistsTF{LXGW WenKai GB Lite}{\setmonofont{LXGW WenKai GB Lite}}{\setmonofont{Arial Unicode MS}}
-\pagestyle{plain}
+% 赛规：匿名、无页眉、正文页脚居中。
+\fancypagestyle{contest}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{\thepage}}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{\thepage}}
+\pagestyle{contest}
 \setlength{\parindent}{2em}
 \setlength{\parskip}{0.3em}
 \setlength{\emergencystretch}{3em}
 \hypersetup{hidelinks}
 \lstset{basicstyle=\ttfamily\tiny,breaklines=true,breakatwhitespace=false,breakautoindent=false,breakindent=0pt,columns=fixed,keepspaces=true,numbers=left,numberstyle=\tiny,frame=single,literate={_}{{\char95\allowbreak}}1}
 \begin{document}
-\twocolumn[{\begin{center}{\LARGE\bfseries TITLE}\end{center}\vspace{0.5em}
-\begin{center}\textbf{摘要}\end{center}\begin{multicols}{2}
-ABSTRACT
+\twocolumn[{\begin{center}{\zihao{2}\heiti TITLE}\end{center}\vspace{1.2em}
+\noindent\textbf{摘\quad 要}\quad ABSTRACT
 
-\noindent\textbf{关键词：} KEYWORDS
-\end{multicols}\vspace{0.5em}}]
+\noindent\textbf{关键词}\quad KEYWORDS
+\vspace{1.5em}}]
 \thispagestyle{empty}
 \clearpage
+\onecolumn
 \tableofcontents
 \thispagestyle{empty}
-\clearpage
+\twocolumn
 \setcounter{page}{1}
 '''.replace('TITLE', inline(title)).replace('ABSTRACT', inline(abstract)).replace('KEYWORDS', inline(keywords))
 
-def render_table(lines):
+table_count = 0
+def render_table(lines, is_appendix=False):
+    global table_count
     rows = [[cell.strip() for cell in line.strip().strip('|').split('|')] for line in lines]
     rows = [r for r in rows if not all(re.fullmatch(r'[:\- ]+', cell or ' ') for cell in r)]
-    n = len(rows[0]); width = 0.85 / n
+    n = len(rows[0])
+    if not is_appendix:
+        table_count += 1
+        captions = ['核心属性七级分布模型的比较', '面板均分预测误差比较', '图模型两种评价口径的比较', '冻结迁移候选的代理复核结果']
+        wide = table_count in (1, 4)
+        dimension = r'\textwidth' if wide else r'\columnwidth'
+        width = (0.91 if wide else 0.87) / n
+        env = 'table*' if wide else 'table'
+        placement = '[t]' if wide else '[!h]'
+        out = ['\\begin{' + env + '}' + placement, r'\centering\small\renewcommand{\arraystretch}{1.2}', '\\caption{' + captions[table_count - 1] + '}', '\\begin{tabular}{' + ''.join(f'>{{\\raggedright\\arraybackslash}}p{{{width:.3f}{dimension}}}' for _ in range(n)) + '}', r'\toprule']
+        out.append(' & '.join(inline(c) for c in rows[0]) + r' \\')
+        out.append(r'\midrule')
+        for row in rows[1:]:
+            out.append(' & '.join(inline(c).replace(r'\_', r'\_\allowbreak{}') for c in row) + r' \\')
+        return '\n'.join(out + [r'\bottomrule', r'\end{tabular}', '\\end{' + env + '}'])
+    width = 0.85 / n
     # Small chunks permit tables to break naturally between the two columns.
     blocks = []
     for first in range(1, len(rows), 4):
@@ -91,7 +113,7 @@ def render_table(lines):
         blocks.append('\n'.join(out + [r'\bottomrule', r'\end{tabular}}\par\smallskip']))
     return '\n'.join(blocks)
 
-def render(markdown):
+def render(markdown, is_appendix=False):
     lines = markdown.splitlines(); result = []; i = 0
     while i < len(lines):
         line = lines[i].strip()
@@ -112,7 +134,7 @@ def render(markdown):
             table = []
             while i < len(lines) and lines[i].strip().startswith('|'):
                 table.append(lines[i]); i += 1
-            result.append(render_table(table)); continue
+            result.append(render_table(table, is_appendix)); continue
         elif line.startswith('### '):
             result.append('\\subsection{' + inline(re.sub(r'^\d+(?:\.\d+)*\s*', '', line[4:])) + '}')
         elif line.startswith('## '):
@@ -123,7 +145,7 @@ def render(markdown):
     return '\n'.join(result)
 
 appendix = old_md.split('## 附录A 全部50项Top-3、结果索引与运行命令', 1)[1].split('## 附录B', 1)[0]
-refs = '\n'.join(r'\noindent [' + str(k) + '] ' + inline(references[k]) + r'\par' for k in sorted(references))
+refs = '\n'.join(r'\noindent [' + str(k) + '] ' + inline(references[k]).replace('https://zenodo.org/records/23624915', r'\url{https://zenodo.org/records/23624915}') + r'\par' for k in sorted(references))
 sources = next(b['paths'] for b in old_json['blocks'] if b['type'] == 'source_files')
 for path in ('scripts/review_experiments.py', 'src/review_diagnostics.py', 'scripts/build_latex_revision.py'):
     if path not in sources: sources.append(path)
@@ -137,8 +159,11 @@ for number, relative in enumerate(sources, 1):
     listings.append('\\subsection*{' + inline(relative) + '}\n\\lstinputlisting{' + dst.relative_to(PROJECT).as_posix() + '}')
 
 content = (header + render(section_text) + '\n\\section*{参考文献}\n\\addcontentsline{toc}{section}{参考文献}\n' + refs
-           + '\n\\appendix\n\\section{全部50项Top-3与结果索引}\n' + render(appendix)
-           + '\n\\section{完整源程序}\n' + '\n'.join(listings) + '\n\\end{document}\n')
+           + '\n\\appendix\n\\section{全部50项Top-3与结果索引}\n' + render(appendix, is_appendix=True)
+           + '\n\\section{完整源程序}\n' + '\n'.join(listings)
+           + '\n\\subsection*{论文排版主文件 main.tex}\n\\lstinputlisting{main.tex}'
+           + '\n\\subsection*{赛事适配文档类 mathorcup-journal.cls}\n\\lstinputlisting{mathorcup-journal.cls}'
+           + '\n\\end{document}\n')
 figures = PROJECT / 'figures'; figures.mkdir(exist_ok=True)
 for filename in ('ordinal_review.png', 'mixture_certificate.png'):
     shutil.copyfile(ROOT / 'outputs/review_20261028/figures' / filename, figures / filename)
