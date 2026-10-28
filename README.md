@@ -6,6 +6,7 @@
 
 ## 从哪里开始阅读
 
+- **2026-10-28 双栏论文修订**：[LaTeX 源码](paper/latex_20261028/main.tex) · [PDF 预览](paper/latex_20261028/main.pdf) · [审查方案](docs/review_20261028/论文问题与实验改进方案.pdf)。该稿修正分布距离与个人评分 RPS、补充图模型两种汇总口径和迁移可行域诊断；复核结果与待做实验分开表述。编译时在 `paper/latex_20261028` 目录运行两次 `xelatex -interaction=nonstopmode -halt-on-error main.tex`。`main.tex` 是后续人工编辑的主文件；运行 `scripts/build_latex_revision.py` 会根据 Markdown 重新生成并覆盖它。
 - **最新：原始评分完善版**：[论文PDF（含完整源程序）](paper/revised_absolute_20261025/论文完善稿.pdf) · [可编辑正文](paper/revised_absolute_20261025/论文完善稿.md) · [AI使用更新说明](paper/revised_absolute_20261025/AI工具使用详情说明_更新版.pdf) · [第四阶段报告](outputs/stage4/STAGE_REPORT.md) · [完整实施记录](docs/第四阶段原始评分与论文完善记录.md)。48项测试通过；原始评分数据路径已实质解决，来源重建边界和未完成实测继续说明。
 - [0–6整数众数等级](outputs/stage4/ordinal/oof_modal_grades_0_6.csv) · [中位数等级](outputs/stage4/ordinal/oof_median_grades_0_6.csv) · [七级概率与实测分布](outputs/stage4/ordinal/oof_rating_distributions.csv) · [原始面板均分](outputs/stage4/audit/observed_panel_means_0_6.csv) · [均分OOF预测](outputs/stage4/prediction/oof_fixed_half_blend_0_6.csv)。众数、中位数与均分含义不同，不能把概率未经校准或总体一致率当精细等级保证。
 - [完整原始端点Top-3](outputs/stage4/raw_graph/q2/top3_with_evidence.csv) · [浓度例外](outputs/stage4/audit/chemical_source_exceptions.csv) · [真实品评方案](docs/真实品评与化学复核实施方案.md)。方案与空表不是已完成实测。
