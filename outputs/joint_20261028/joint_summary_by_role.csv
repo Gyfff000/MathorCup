@@ -1,0 +1,10 @@
+﻿threshold_multiplier,source_role,records,unique_beers,chemical_possible,search_feasible,J_proxy_support
+0.5,G_search_training,21,10,7,0,0
+0.5,J_evaluator_training,24,10,3,0,0
+0.5,T_real_holdout,10,7,5,0,0
+1,G_search_training,21,10,14,1,0
+1,J_evaluator_training,24,10,8,0,0
+1,T_real_holdout,10,7,8,0,0
+2,G_search_training,21,10,15,13,2
+2,J_evaluator_training,24,10,11,11,4
+2,T_real_holdout,10,7,8,7,3

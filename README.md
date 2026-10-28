@@ -12,6 +12,7 @@
 | 原始 0—6 等级和预测 | [众数等级](outputs/stage4/ordinal/oof_modal_grades_0_6.csv) · [中位数等级](outputs/stage4/ordinal/oof_median_grades_0_6.csv) · [面板均分预测](outputs/stage4/prediction/oof_fixed_half_blend_0_6.csv) |
 | 关键因素和迁移 | [50 项 Top-3](outputs/stage4/raw_graph/q2/top3_with_evidence.csv) · [冻结候选复核](outputs/stage4/transfer/frozen_stage3_candidates_raw_score_check.csv) · [浓度约束证书](outputs/review_20261028/mixture_certificates.csv) |
 | 预测诊断 | [等级混淆表](outputs/stage5_diagnostics_20261028/modal_confusion.csv) · [逐目标诊断](outputs/stage5_diagnostics_20261028/modal_by_target.csv) · [分组覆盖](outputs/stage5_diagnostics_20261028/coverage_by_group.csv) |
+| 化学异常与阈值联合复核 | [实验汇总](outputs/joint_20261028/chemical_sensitivity_summary.csv) · [逐目标结果](outputs/joint_20261028/chemical_sensitivity_by_target.csv) · [候选复核](outputs/joint_20261028/joint_candidate_evaluation.csv) · [角色汇总](outputs/joint_20261028/joint_summary_by_role.csv) |
 | 非零等级先导 | [两阶段模型结果](outputs/stage5_two_stage_20261028/metrics.csv) · [非零命中率配对区间](outputs/stage5_two_stage_20261028/paired_nonzero_accuracy.csv) |
 
 `outputs/stage1` 至 `stage3` 和旧论文是历史研究记录；第四阶段在公开逐人评分基础上重建了原始评分端点。不要把早期标准化尺度结果与原始 0—6 分结果直接比较。`outputs/review_20261028` 保存后续诊断先导；`outputs/stage5_diagnostics_20261028` 保存已有留出预测的描述性诊断。
@@ -32,6 +33,7 @@ python run_final_model.py predict --model "local_models\panel_model.joblib" --in
 ```powershell
 python scripts/fetch_stage4_sources.py
 python run_stage4.py all --data-dir "D:\your_data\A附件" --config config_stage4.json --out "outputs\my_run"
+python scripts/joint_review_experiments.py --data-dir "D:\your_data\A附件"
 python -m pytest -q
 cd paper\latex_20261028
 xelatex -jobname=paper_stage5 -interaction=nonstopmode -halt-on-error main.tex
@@ -44,4 +46,5 @@ LaTeX 依赖 XeLaTeX 和中文字体；`main.tex` 是人工编辑入口。`scrip
 
 ## 尚待完成
 
-非零等级的整体计算预算与校准对照、缺失机制与化学异常敏感性、完整参数重选稳定性，以及阈值候选的独立代理复核仍需进一步实验。检测限与完整化学标定、新批次制备和盲评需要真实实验条件。队员独立复核记录、AI 使用详情与最终提交材料由队伍按实际情况完成。
+非零等级的整体计算预算与校准对照、缺失机制和完整参数重选稳定性仍需进一步实验。已增加化学异常逐单元屏蔽敏感性及阈值候选的冻结代理复核，均基于历史数据。检测限与完整化学标定、新批次制备和盲评需要真实实验条件。队员独立复核记录、AI 使用详情与最终提交材料由队伍按实际情况完成。
+

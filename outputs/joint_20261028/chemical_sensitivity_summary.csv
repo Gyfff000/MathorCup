@@ -1,0 +1,7 @@
+﻿variant,scope,fields,mae,paired_mae_change,mean_absolute_prediction_change
+original,core30,226,0.506411996,0,0
+original,all50,226,0.444780447,0,0
+masked_exceptions,core30,226,0.506904697,0.00049270118,0.00570236929
+masked_exceptions,all50,226,0.445146177,0.000365729429,0.0049988215
+reconciled_unit_fields,core30,32,0.507701789,0.00128979263,0.0919258456
+reconciled_unit_fields,all50,32,0.444517366,-0.000263080841,0.0802667148
