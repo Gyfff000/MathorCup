@@ -1,0 +1,17 @@
+model,scope,mae
+mean,core30,0.60450283
+mean,all50,0.54879201
+ridge,core30,0.522702131
+ridge,all50,0.457080897
+extra_trees,core30,0.505891017
+extra_trees,all50,0.443364942
+gbr,core30,0.508186607
+gbr,all50,0.437804249
+fixed_half_blend,core30,0.502221819
+fixed_half_blend,all50,0.435598631
+concentration_ET,core30,0.509125668
+concentration_ET,all50,0.445753554
+training_median,core30,0.587849442
+training_median,all50,0.522754768
+style_median,core30,0.509688327
+style_median,all50,0.447120568

@@ -1,0 +1,5 @@
+graph,scope,aggregated_oof_mae
+real,core30,0.524865201
+none,core30,0.526148015
+real,all50,0.459187243
+none,all50,0.46024042
