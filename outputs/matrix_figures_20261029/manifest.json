@@ -1,0 +1,8 @@
+{
+  "scope": "full historical dataset descriptive Spearman pairwise complete; no supervised models trained; sample standardization fitted to all historical beers for display only",
+  "chemical_n": 250,
+  "cross_pair_n_min": 241,
+  "cross_pair_n_max": 250,
+  "source_panel_sha256": "618aadab0202a6e6495a4cd268388b059ff3d18694b476e280d18bdfd820b490",
+  "source_code_sha256": "743e4ebca72df8004c2a5f21fbec9ef839d738cc3515a28b02583b24247c8bc1"
+}

@@ -8,6 +8,8 @@
 |---|---|
 | 最新论文 | [PDF](paper/latex_20261028/paper_stage5.pdf) · [LaTeX 源码](paper/latex_20261028/main.tex) · [模板与赛规适配](docs/期刊模板来源与赛事适配.md) |
 | 论文问题与实验建议 | [审查报告](docs/review_20261028/论文问题与实验改进方案.pdf) · [可编辑内容](docs/review_20261028/论文问题与实验改进方案.md) |
+| 数据与关系矩阵 | [231阶化学秩相关](outputs/matrix_figures_20261029/chemical_spearman_231.csv) · [50×231化学与感官关系](outputs/matrix_figures_20261029/chemical_sensory_spearman_50x231.csv) · [缺失机制结果](outputs/missingness_mechanisms_20261029/metrics.csv) |
+| 本轮逐项改进 | [2026-10-29 记录](docs/逐项改进记录_20261029.md) · [队员复核记录模板](docs/队员独立复核记录模板.md) · [阈值对照结果](outputs/nested_threshold_20261029/metrics.csv) · [岭参数重选](outputs/reselected_bootstrap_20261029/parameters.csv) · [图模型参数重选](outputs/reselected_graph_20261029/selected_parameters.csv) |
 | 目前结果与剩余工作 | [第四阶段研究报告](outputs/stage4/STAGE_REPORT.md) · [本轮改进记录](docs/交付与诊断记录_20261028.md) · [队内复核清单](docs/TEAM_REVIEW.md) |
 | 原始 0—6 等级和预测 | [众数等级](outputs/stage4/ordinal/oof_modal_grades_0_6.csv) · [中位数等级](outputs/stage4/ordinal/oof_median_grades_0_6.csv) · [面板均分预测](outputs/stage4/prediction/oof_fixed_half_blend_0_6.csv) |
 | 关键因素和迁移 | [50 项 Top-3](outputs/stage4/raw_graph/q2/top3_with_evidence.csv) · [冻结候选复核](outputs/stage4/transfer/frozen_stage3_candidates_raw_score_check.csv) · [浓度约束证书](outputs/review_20261028/mixture_certificates.csv) |
@@ -34,6 +36,11 @@ python run_final_model.py predict --model "local_models\panel_model.joblib" --in
 python scripts/fetch_stage4_sources.py
 python run_stage4.py all --data-dir "D:\your_data\A附件" --config config_stage4.json --out "outputs\my_run"
 python scripts/joint_review_experiments.py --data-dir "D:\your_data\A附件"
+python scripts/nested_threshold_experiment.py --data-dir "D:\your_data\A附件" --out outputs/my_nested_run
+python scripts/reselected_ridge_bootstrap.py --data-dir "D:\your_data\A附件" --out outputs/my_ridge_run
+python scripts/reselected_graph_bootstrap.py --data-dir "D:\your_data\A附件" --out outputs/my_graph_run
+python scripts/missingness_mechanisms.py --data-dir "D:\your_data\A附件" --out outputs/my_missingness_run
+python scripts/paper_matrices.py --data-dir "D:\your_data\A附件"
 python -m pytest -q
 cd paper\latex_20261028
 xelatex -jobname=paper_stage5 -interaction=nonstopmode -halt-on-error main.tex
@@ -46,5 +53,5 @@ LaTeX 依赖 XeLaTeX 和中文字体；`main.tex` 是人工编辑入口。`scrip
 
 ## 尚待完成
 
-非零等级的整体计算预算与校准对照、缺失机制和完整参数重选稳定性仍需进一步实验。已增加化学异常逐单元屏蔽敏感性及阈值候选的冻结代理复核，均基于历史数据。检测限与完整化学标定、新批次制备和盲评需要真实实验条件。队员独立复核记录、AI 使用详情与最终提交材料由队伍按实际情况完成。
+非零等级改善、缺失机制和更大规模的图模型参数稳定性仍需进一步实验。已新增训练内阈值对照与岭参数重选先导，参见逐项改进记录。已增加化学异常逐单元屏蔽敏感性及阈值候选的冻结代理复核，均基于历史数据。检测限与完整化学标定、新批次制备和盲评需要真实实验条件。队员独立复核记录、AI 使用详情与最终提交材料由队伍按实际情况完成。
 

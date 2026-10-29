@@ -50,6 +50,42 @@
 将附件2的相关矩阵与附件1重算结果比较，矩阵与Spearman秩相关的平均绝对差约为1.58×$10^{-16}$，与Pearson相关的平均绝对差约为0.0873。因此，本文将附件2解释为秩相关矩阵。对建模输入，所有截尾界限、中位数和标准化参数均只由训练数据估计；测试样本使用对应训练参数变换。部分化合物字段为对数浓度，负值可对应小于1的原始浓度。
 
 
+
+\subsection{数据矩阵与关系矩阵}
+
+以250款酒为行、231个化学或理化字段为列，建立输入矩阵$X=(x_{bj})\in(\mathbb R\cup\{\mathrm{NA}\})^{250\times231}$；缺失单元格在原表中保留为缺失。按同一beer编号和字段语义对齐后，建立50项面板均分矩阵$Y=(\bar s_{bk})\in[0,6]^{250\times50}$。因此$X$和$Y$的第$b$行对应同一款酒，前者是预测输入，后者是第一问的连续监督端点。第一问的等级分布还需记录每个酒、属性和0—6等级的频率，形成$Q\in[0,1]^{250\times50\times7}$，其元素由式（2）定义。对第三问，另根据单位注册表从校准参考中提取61列浓度，得到$C\in(\mathbb R\cup\{\mathrm{NA}\})^{250\times61}$，用于浓度域混配。
+
+表\ref{tab:matrixsample}展示五款酒的部分字段。化学列是为展示所用、依据全部250款历史酒计算的截尾、填补及标准化值；感官列是重建的0—6分面板均分。此表只说明行列对应，模型验证时的预处理参数严格由各训练折重新估计。化学列中的负值是变换后的相对位置，不是负浓度。
+
+\begin{table*}[t]
+\centering\small
+\caption{数据矩阵片段：标准化化学输入与面板均分的行对应}\label{tab:matrixsample}
+\begin{tabular}{rrrrrrrr}
+\toprule
+酒号 & 乙醛 & DMS & 乙酸乙酯 & 4VG & 酯类香气 & 酒花香气 & 4VG感官\\
+\midrule
+10 & -3.647 & -2.488 & -5.037 & 2.316 & 3.8 & 2.2 & 1.0\\
+86 & -2.261 & -2.488 & -5.037 & 0.013 & 1.4 & 1.2 & 0.2\\
+2  & -0.225 & -1.539 & -4.875 & -0.653 & 0.8 & 0.6 & 0.0\\
+83 & -1.001 & -1.900 & -5.037 & 0.768 & 0.8 & 1.2 & 0.0\\
+40 & -3.954 & -2.488 & -3.782 & -0.653 & 0.6 & 1.2 & 0.0\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+化学字段之间的关系矩阵$R\in[-1,1]^{231\times231}$由Spearman秩相关组成。每对字段使用共同非缺失酒样计算，$R_{ij}=\operatorname{corr}(\operatorname{rank}(X_{\cdot i}),\operatorname{rank}(X_{\cdot j}))$；取值越接近1或-1，表示样本中的单调关联越强。图\ref{fig:chematrix}选取8个可追踪字段展示全样本描述性关系，格内数字为相关系数，共同非缺失数为241—250。完整231阶矩阵和字段顺序保存在结果文件中。乙酸乙酯与己酸乙酯的秩相关为0.68；图模型以0.7为阈值时，这一对在该全样本描述图中不连边。另一对乙酸乙酯与乙醇的相关为0.719，超过该阈值；全图共109条无向边。
+
+化学字段与感官均分之间另构造描述性矩阵$S\in[-1,1]^{50\times231}$，图\ref{fig:crossmatrix}展示其中8个属性与8个字段，每格共同非缺失酒样数为241—250。例如，4VG字段与4VG感官均分的秩相关为0.48，iron与酒花香气的秩相关为-0.36。相关矩阵用于观察变量关系和解释候选；相关系数不等于回归系数，也不直接给出因果效应。完整50×231交叉矩阵及逐格有效样本数另行保存。两幅图均使用全部历史样本描述，第二问的留出验证则在各训练折单独估计相关图。
+
+\begin{figure*}[t]
+\centering\includegraphics[width=0.90\textwidth]{figures/chemical_matrix.png}
+\caption{八个化学字段的Spearman关系矩阵；色标表示相关系数，单元格为数值，共同非缺失样本数241—250。}\label{fig:chematrix}
+\end{figure*}
+\begin{figure*}[t]
+\centering\includegraphics[width=0.90\textwidth]{figures/cross_matrix.png}
+\caption{八个感官均分与八个化学字段的Spearman关系；每格共同非缺失样本数241—250。}\label{fig:crossmatrix}
+\end{figure*}
+
 \subsection{原始评分对应与人员权重}
 
 作者公开数据含2197条逐人评分、16名匿名评分人员和250款啤酒，评分取值为0—6。根据公开补充表行序建立原始编号与附件beer的对应关系，再把50个属性分成互不重叠的两组进行一对一匹配核查，两组结果均与行序对应一致。38个无人员内零方差问题的属性重现公开连续标签，最大误差为2.8×$10^{-8}$；其余12项涉及零方差，采用部分样本估计替代常数并在其余样本上核验。该对应关系用于数据整合，预测测试集仍按啤酒划分。
@@ -108,12 +144,12 @@ D=\frac{1}{6}\sum_{k=0}^{5}(P_k-Q_k)^2.
 \mathbb E_{Y\sim q}[\mathrm{RPS}(P,Y)]=D+\frac16\sum_{k=0}^{5}Q_k(1-Q_k).
 \end{equation}
 
-式（5）的第二项反映面板评分分歧，因此分布距离和个人期望RPS需要分别报告。面板众数一致率以每款酒的预测众数与观测面板众数是否相同计算；非零众数一致率仅在观测面板众数大于0的记录上计算。各方法的核心属性结果见表1和图1，频率模型的等级混淆见图2。
+式（5）的第二项反映面板评分分歧，因此分布距离和个人期望RPS需要分别报告。面板众数一致率以每款酒的预测众数与观测面板众数是否相同计算；非零众数一致率仅在观测面板众数大于0的记录上计算。各方法的核心属性结果见表\ref{tab:ordinal}和图\ref{fig:ordinal}，频率模型的等级混淆见图\ref{fig:confusion}。
 
 
 \begin{table*}[t]
 \centering\small\renewcommand{\arraystretch}{1.2}
-\caption{核心属性七级分布模型的比较}
+\caption{核心属性七级分布模型的比较}\label{tab:ordinal}
 \begin{tabular}{>{\raggedright\arraybackslash}p{0.182\textwidth}>{\raggedright\arraybackslash}p{0.182\textwidth}>{\raggedright\arraybackslash}p{0.182\textwidth}>{\raggedright\arraybackslash}p{0.182\textwidth}>{\raggedright\arraybackslash}p{0.182\textwidth}}
 \toprule
 核心30项方法 & 累计分布平方距离$D$ & 个人期望RPS & 面板众数一致率 & 非零众数一致率 \\
@@ -138,17 +174,57 @@ D=\frac{1}{6}\sum_{k=0}^{5}(P_k-Q_k)^2.
 全部50项中，频率极端随机树的面板众数一致率为79.10\%，非零众数一致率为31.33\%；总体分布基线分别为77.84\%和26.92\%。生成的概率分布、众数和中位数结果按属性分别保存，以适配不同的决策损失。
 
 
+\subsection{非零等级的属性诊断与训练内阈值对照}
+
+整体准确率将不同属性的250款酒合并计算，而不同属性的非零比例差别很大。表\ref{tab:targetdiag}列出六个属性的留出预测。A\_esters\_ethac有27款酒的观测众数非零，模型均预测为0；A\_hops\_noble有49款酒的观测众数非零，也均预测为0。两者总体一致率分别为89.2\%和80.4\%，反映出高零占比对总体结果的影响。相反，A\_esters\_all的非零记录有229条，整体一致率仅26.0\%，错误主要发生在不同非零等级之间。两类问题分别要求改进非零检出与非零等级区分，不能仅根据总体准确率判断。
+
+\begin{table*}[t]
+\centering\small
+\caption{六个感官属性的面板众数留出诊断}\label{tab:targetdiag}
+\begin{tabular}{lrrrr}
+\toprule
+属性 & 酒数 & 非零众数数 & 总体一致率 & 非零众数一致率\\
+\midrule
+A\_esters\_ethac & 250 & 27 & 89.2\% & 0.0\%\\
+A\_esters\_fruity & 250 & 10 & 96.0\% & 0.0\%\\
+A\_hops\_noble & 250 & 49 & 80.4\% & 0.0\%\\
+A\_esters\_all & 250 & 229 & 26.0\% & 28.4\%\\
+A\_hops\_all & 250 & 206 & 33.6\% & 36.4\%\\
+F\_malt\_all & 250 & 230 & 30.8\% & 33.5\%\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+为检验训练内阈值选择能否改善决策，对每个外层训练集再按酒分成两折，训练32棵树的频率模型生成内层留出概率。对各属性在0.05至0.95的网格中选择阈值，以内层零／非零分类的灵敏度和特异度之均值为目标；训练集零或非零众数少于10条时采用0.5。外层测试时，若预测非零概率达到阈值，则在1—6分中取概率最大的等级，否则取0。每款酒五次留出结果采用多数投票，平票取较小等级；对照组则对五次留出概率取平均后取众数。两组采用同样的32棵树和外层划分，但决策汇总方式不同。
+
+\begin{table*}[t]
+\centering\small
+\caption{训练内阈值决策与频率模型众数的探索性对照}\label{tab:threshold}
+\begin{tabular}{lrrrr}
+\toprule
+核心30项方法 & 总体一致率 & 非零精确一致率 & 非零检出率 & 等级绝对误差\\
+\midrule
+频率模型众数 & 80.63\% & 24.76\% & 72.45\% & 0.389\\
+训练内阈值与投票 & 72.59\% & 18.81\% & 55.76\% & 0.664\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+表\ref{tab:threshold}显示，阈值决策的非零精确一致率下降5.95个百分点；按风格分层、以酒为单位对固定留出预测进行重采样，差值的95\%区间为[-7.88，-4.03]个百分点。该区间不包括重训和阈值重选的不确定性。由于众数决策是在七个等级间比较概率，而0.5非零阈值比较的是六个非零等级概率之和，两种判定不等价；阈值和投票共同造成的变化不宜单独归因于其中一项。此试验没有改善精确等级预测，正文保留原频率模型作为主要分布模型。
+
+
+
 \begin{figure*}[t]
 \centering\includegraphics[width=0.95\textwidth]{figures/ordinal_review.png}
-\caption{等级分布预测的累计距离与非零众数识别比较。}
+\caption{等级分布预测的累计距离与非零众数识别比较。}\label{fig:ordinal}
 \end{figure*}
 \begin{figure}[t]
 \centering\includegraphics[width=0.95\columnwidth]{figures/ordinal_confusion.png}
-\caption{核心30项留出预测的面板众数等级混淆。}
+\caption{核心30项留出预测的面板众数等级混淆。}\label{fig:confusion}
 \end{figure}
 \subsection{面板均分预测}
 
-对面板均分，比较训练均值、训练中位数、风格中位数、岭回归、极端随机树、梯度提升树及固定等权融合。外层采用按风格分层的三折五次重复划分；对同一啤酒的五次留出预测取平均，再计算平均绝对误差。岭回归参数在训练数据内选择，其他方法使用预先固定的设置。结果见表2。
+对面板均分，比较训练均值、训练中位数、风格中位数、岭回归、极端随机树、梯度提升树及固定等权融合。外层采用按风格分层的三折五次重复划分；对同一啤酒的五次留出预测取平均，再计算平均绝对误差。岭回归参数在训练数据内选择，其他方法使用预先固定的设置。结果见表\ref{tab:mean}。
 
 
 \begin{equation}
@@ -157,7 +233,7 @@ D=\frac{1}{6}\sum_{k=0}^{5}(P_k-Q_k)^2.
 
 \begin{table}[!h]
 \centering\small\renewcommand{\arraystretch}{1.2}
-\caption{面板均分预测误差比较}
+\caption{面板均分预测误差比较}\label{tab:mean}
 \begin{tabular}{>{\raggedright\arraybackslash}p{0.290\columnwidth}>{\raggedright\arraybackslash}p{0.290\columnwidth}>{\raggedright\arraybackslash}p{0.290\columnwidth}}
 \toprule
 方法 & 核心30项MAE/分 & 全50项MAE/分 \\
@@ -184,26 +260,43 @@ D=\frac{1}{6}\sum_{k=0}^{5}(P_k-Q_k)^2.
 按历史面板人员数分组，3—4人组的描述性覆盖率为74.00\%，对应12款不同酒、750条重复测试的啤酒—属性记录；5—7人组为86.89\%，8人及以上组为92.94\%。分组测试中同一款酒可重复出现，且最小组样本有限，这些比例用于定位覆盖差异。
 
 
-为考察输入缺失，测试阶段在原有缺失基础上增加0\%、5\%、10\%和20\%的随机缺失，使用训练阶段拟合的插补参数。该实验反映随机丢失输入的压力；低浓度未检出或整类检测通道缺失的影响，需要另设缺失机制实验。
+为考察输入缺失，测试阶段在原有缺失基础上增加0\%、5\%、10\%和20\%的随机缺失，使用训练阶段拟合的插补参数。进一步用相同15个外层划分与200棵树的极端随机树比较三种模拟：对已观测单元格随机删除约10\%；按每折训练样本各字段的10\%分位数删除测试样本中的低值；随机抽取约10\%字段，并将该测试折的这些字段整列删除。由于相同低值并列，低值规则实际删除原有可观测单元格的18.78\%，其余两种约为10\%。
+
+\begin{table}[t]
+\centering\small
+\caption{不同模拟缺失机制下核心30项预测误差}\label{tab:missing}
+\begin{tabular}{lrr}
+\toprule
+测试机制 & 新增缺失比例 & 均分MAE\\
+\midrule
+原有缺失 & 0\% & 0.5060\\
+随机单元格缺失 & 9.96\% & 0.5136\\
+低于训练折10\%分位数 & 18.78\% & 0.5330\\
+整组字段缺失 & 9.96\% & 0.5123\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+表\ref{tab:missing}中，低值删除的误差增加0.0271分，高于随机单元格删除的0.0076分，但两者新增缺失比例不同，不宜将差距全部归因于缺失机制。该试验模拟有规律的测试输入缺失，并非实际仪器检出限实验；各机制沿用训练折预处理，不在测试样本上重新估计插补参数。
 
 
 \section{第二问：化合物图与关键因素}
 
 \subsection{图构建和模型}
 
-在全部数据上描述化合物相关结构时，取$|r|\ge 0.7$得到231个节点、109条边。模型验证时，每个训练折单独计算相关图。令$W$为带符号权重矩阵，$L=\operatorname{diag}(\sum_j|W_{ij}|)-W$，多目标系数矩阵$B$由下式估计：
+在全部数据上描述化合物相关结构时，取$|r|\ge 0.7$得到231个节点、109条边。对关系矩阵$R$，带符号邻接矩阵的元素定义为$W_{ij}=R_{ij}\mathbf1(|R_{ij}|\ge\tau)$（$i\ne j$），对角元置零；再由$L=\operatorname{diag}(\sum_j|W_{ij}|)-W$构造图拉普拉斯矩阵。正边表示同向秩关联，负边表示反向秩关联。模型验证时，先在训练折拟合截尾、缺失填补及标准化，再以训练折转换后的数据计算相关图和选择$\tau$；测试酒不参与这些计算。令$Z$为训练折处理后的化学矩阵，$Y_c$为按训练折均值中心化的面板均分，多目标系数矩阵$B$由下式估计：
 
 
 \begin{equation}
 \hat B=\arg\min_B\{\|Y_c-ZB\|_F^2+\alpha\|B\|_F^2+\lambda\operatorname{tr}(B^TLB)\}.
 \end{equation}
 
-对单个系数向量$b$，有$b^TLb=\sum_{i<j}|W_{ij}|(b_i-\operatorname{sign}(W_{ij})b_j)^2\ge0$。因此当$\alpha>0$且$\lambda\ge0$时，目标函数具有唯一解。正相关边鼓励系数接近，负相关边鼓励系数方向相反。$\alpha$、$\lambda$和相关阈值均在训练折内部选择；节点标签打乱图用于检验具体网络结构的作用。真实图与无图的比较见表3。
+对单个系数向量$b$，有$b^TLb=\sum_{i<j}|W_{ij}|(b_i-\operatorname{sign}(W_{ij})b_j)^2\ge0$。因此当$\alpha>0$且$\lambda\ge0$时，目标函数具有唯一解。正相关边鼓励系数接近，负相关边鼓励系数方向相反。$\alpha$、$\lambda$和相关阈值均在训练折内部选择；节点标签打乱图用于检验具体网络结构的作用。真实图与无图的比较见表\ref{tab:graph}。
 
 
 \begin{table}[!h]
 \centering\small\renewcommand{\arraystretch}{1.2}
-\caption{图模型两种评价口径的比较}
+\caption{图模型两种评价口径的比较}\label{tab:graph}
 \begin{tabular}{>{\raggedright\arraybackslash}p{0.217\columnwidth}>{\raggedright\arraybackslash}p{0.217\columnwidth}>{\raggedright\arraybackslash}p{0.217\columnwidth}>{\raggedright\arraybackslash}p{0.217\columnwidth}}
 \toprule
 核心30项评价口径 & 无图MAE & 真实图MAE & 真实图减无图 \\
@@ -228,6 +321,29 @@ D=\frac{1}{6}\sum_{k=0}^{5}(P_k-Q_k)^2.
 化学解释结合统计证据逐项给出。X4VG与4VG感官属性的关联，与4VG相关香气研究方向一致[9]；iron与金属感的关联，可结合金属诱发口腔氧化的研究讨论[10]；linalool与芫荽风味存在文献依据[11]，其当前入选频率低于0.5。对于A\_hops\_all的iron，风格中心化后的Top-3保留比例为0.1，说明其排名对风格差异敏感。相关性较强的化合物还会在模型中相互替代，因此完整因素表同时保留频率、置换贡献、单位和文献对应信息。
 
 
+\subsection{参数重选与化学解释案例}
+
+为检验岭参数固定对因素排序的影响，新增50次按酒有放回重采样。每次把同一款酒的重复抽样记录作为同组，进行三折内部验证，在$\alpha\in\{1,10,100,1000\}$中选择核心30项MAE最小值；各折的插补、截尾和标准化均由该折训练部分拟合。50次均选中$\alpha=1000$，与固定1000的同批重采样结果逐目标Top-3完全相同。该试验只重选岭参数，也未扩大候选参数范围。进一步对30次独立按酒重采样，在同样的分组内层三折中重选图模型的$\alpha$、$\lambda$和相关阈值，相关图由每个内层训练集重新建立。30次中17次选取$\lambda=0$，13次选取正图惩罚；同一次重采样中，与固定全数据参数的Top-3平均重合比例为99.24\%，150条原候选的入选频率平均绝对差为0.0036。这是30次重采样的探索性结果，较原200次固定参数结果的不确定性更大，也仍受候选参数网格限制。
+
+表\ref{tab:factorcases}对比两个具有不同证据结构的因素。X4VG在感官属性X4vg中15个留出训练折全部进入Top-3，固定参数的200次重采样入选频率为1.00；普通置换和风格内置换的平均误差增量分别为0.0242和0.0168分。该字段与被评估的4VG属性具有明确的化学对应，风格内结果进一步支持其预测作用[9]。A\_hops\_all的iron在10个训练折入选，固定参数重采样频率为0.565，但风格中心化后保留比例为0.10，提示其排名依赖样本的风格结构。铁与金属感的研究[10]不能直接证明它导致酒花香气，故该项应作为候选关联进行后续核查。
+
+\begin{table*}[t]
+\centering\small
+\caption{关键因素的稳定性与风格影响示例}\label{tab:factorcases}
+\begin{tabular}{llrrrr}
+\toprule
+感官属性 & 因素 & 入选频率 & 入选折数 & 风格内置换增量 & 风格中心化保留率\\
+\midrule
+X4vg & X4VG & 1.000 & 15 & 0.0168 & 1.00\\
+A\_hops\_all & iron & 0.565 & 10 & 0.0013 & 0.10\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+同一目标的候选之间也可能存在替代：对X4vg，delta-terpinyl acetate和ethyl isovalerate的固定参数入选频率分别为0.255和0.220，均低于X4VG；后者的风格内置换增量为-0.00024分。排序为前三并不保证三个因素具有相同证据强度。完整50项表继续保留三项结果，并通过频率、留出置换及风格中心化信息标记解释优先级。
+
+
+
 \section{第三问：风味生成与迁移可行性}
 
 \subsection{风格条件生成}
@@ -240,15 +356,32 @@ D=\frac{1}{6}\sum_{k=0}^{5}(P_k-Q_k)^2.
 
 在冻结生成谱上，利用G和J分别训练的原始评分模型生成50项面板均分和整数等级画像。画像表示模型对化合物谱的预测；实际风味需通过制备和品评测量。
 
+三种风格的对照见表\ref{tab:styles}。受约束局部凸组合在三种风格上的J目标分类比例分别达到69.5\%、95.0\%和99.5\%；与直接风格内重采样相比，三种风格均有提高。另一方面，Tripel与Kriek的MMD平方分别由0.1034、0.2871增至0.1158、0.2988，Lambic则由0.2226降至0.2181。重采样的精确复制比例为100\%，局部凸组合为0\%。因此局部凸组合更少直接复制训练样本，但分类比例上升与分布距离变化并不一致。每种方法每次划分生成40个谱，共五次划分；汇总指标用于比较生成策略，不能当作盲评成功率。
+
+\begin{table*}[t]
+\centering\small
+\caption{三种目标风格的生成方法比较}\label{tab:styles}
+\begin{tabular}{lrrrr}
+\toprule
+目标风格 & 重采样J识别率 & 凸组合J识别率 & 重采样MMD平方 & 凸组合MMD平方\\
+\midrule
+Tripel & 56.5\% & 69.5\% & 0.1034 & 0.1158\\
+Kriek & 80.0\% & 95.0\% & 0.2871 & 0.2988\\
+Lambic & 88.5\% & 99.5\% & 0.2226 & 0.2181\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
 
 \subsection{冻结候选与代理复核}
 
-迁移搜索限制特征变动半径、目标风格支持及四项化学缺陷字段，同时要求陈旧酒花感官代理不增加。在候选冻结后，补充使用G和J分别训练的原始评分尺度模型复核stale hops，候选及排序保持固定，复核结果见表4。
+迁移搜索限制特征变动半径、目标风格支持及四项化学缺陷字段，同时要求陈旧酒花感官代理不增加。在候选冻结后，补充使用G和J分别训练的原始评分尺度模型复核stale hops，候选及排序保持固定，复核结果见表\ref{tab:transfer}。
 
 
 \begin{table*}[t]
 \centering\small\renewcommand{\arraystretch}{1.2}
-\caption{冻结迁移候选的代理复核结果}
+\caption{冻结迁移候选的代理复核结果}\label{tab:transfer}
 \begin{tabular}{>{\raggedright\arraybackslash}p{0.303\textwidth}>{\raggedright\arraybackslash}p{0.303\textwidth}>{\raggedright\arraybackslash}p{0.303\textwidth}}
 \toprule
 半径为1的迁移记录 & 全部来源与划分：55条 & T留出来源：10条 \\
@@ -282,7 +415,7 @@ c_{\mathrm{mix}}=(1-\mathbf1^Tw)c_s+C_Aw,\quad w\ge0,\quad\mathbf1^Tw\le0.75.
 \max_w\ \mathbf1^Tw,\qquad Dw\le0,\quad w\ge0,\quad\mathbf1^Tw\le0.75.
 \end{equation}
 
-对55条来源与划分记录，协议A所得最大目标份额均为0。对各行按正尺度归一化得到$D_{\mathrm{norm}}$；若存在$v\ge0$，使$D_{\mathrm{norm}}^Tv$对每个锚点均严格为正，则任意非零$w\ge0$都有$v^TD_{\mathrm{norm}}w>0$，与协议A矛盾。55条记录均找到正余量证书，其中39条可由单项约束阻塞解释，16条需要联合约束。分别删除DMS、双乙酰、4VG和nonenal约束后，允许正份额的记录数为30、4、0和4；该消融用于定位阻塞来源，结果见图3。
+对55条来源与划分记录，协议A所得最大目标份额均为0。对各行按正尺度归一化得到$D_{\mathrm{norm}}$；若存在$v\ge0$，使$D_{\mathrm{norm}}^Tv$对每个锚点均严格为正，则任意非零$w\ge0$都有$v^TD_{\mathrm{norm}}w>0$，与协议A矛盾。55条记录均找到正余量证书，其中39条可由单项约束阻塞解释，16条需要联合约束。分别删除DMS、双乙酰、4VG和nonenal约束后，允许正份额的记录数为30、4、0和4；该消融用于定位阻塞来源，结果见图\ref{fig:certificate}。
 
 
 题目强调超阈值缺陷，本文进一步设风险函数$R_d(c)=\max(c/t_d-1,0)$，以协议B要求$R_d(c'_d)\le R_d(c_d)$，等价于$c'_d\le\max(c_d,t_d)$。参考阈值取DMS 19 $\mu$g/L、双乙酰0.09 mg/L、4VG 0.2 mg/L、nonenal 0.1 $\mu$g/L[13][14]。以参考阈值的0.5、1和2倍计算时，55条记录中分别有15、30和34条允许正的Tripel份额。上述数量仅检验四项化学风险约束。为联合考察风格与陈旧酒花，在每次划分中使用G组Tripel锚点、单锚点份额网格与线性规划所得多锚点配方构造候选；G模型要求目标风格概率至少为0.5且比来源提高0.01，并要求两种感官代理的stale hops均不增加。选取标准化变化最小的候选，冻结全部候选后，再用J组模型检查目标风格分类、概率提升与stale hops变化。
@@ -290,9 +423,32 @@ c_{\mathrm{mix}}=(1-\mathbf1^Tw)c_s+C_Aw,\quad w\ge0,\quad\mathbf1^Tw\le0.75.
 阈值为参考值的0.5、1和2倍时，55条来源与划分记录中，G阶段分别找到0、1和31条候选，J复核分别支持0、0和9条。2倍阈值下的9条中，3条来自T留出角色，涉及3款来源酒；其余6条来自G或J来源，其中J来源酒用于J模型训练。重复划分产生的记录并非独立新样本，T角色也属于同一历史数据集的内部留出。候选搜索使用有限网格及一组线性规划解，因此未找到候选表示该搜索范围内未找到，并非联合约束全局无解。阈值与啤酒基质、测量方法相关，零浓度记录还受到未知检出限影响。
 
 
+\subsection{来源酒209的完整候选分析}
+
+第1次划分中，来源酒209属于T留出集。在参考阈值下，四项化学风险约束允许的最大Tripel锚点份额为0.2001，但有限候选搜索没有找到同时满足G风格及两项stale hops条件的方案。将四项参考阈值同时乘以2后，搜索找到候选：来源酒占32.50\%，Tripel锚点189、199、204分别占19.86\%、40.07\%和7.57\%。该配比用于比较约束下的统计候选，原始数据中的锚点编号对应历史酒样，并不代表已实际混配。
+
+\begin{table}[t]
+\centering\small
+\caption{来源酒209在2倍阈值下的四项浓度}\label{tab:beer209}
+\begin{tabular}{lrrl}
+\toprule
+化合物 & 来源 & 候选 & 单位\\
+\midrule
+DMS & 14.0721 & 35.6072 & $\mu$g/L\\
+双乙酰 & 0.02619 & 0.01284 & mg/L\\
+4VG & 0 & 0.03593 & mg/L\\
+trans-2-nonenal & 0.002712 & 0.002712 & mg/L\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+该候选的G模型Tripel概率由0.0010升至0.5142，J模型由0升至0.3265，且J模型预测类别为Tripel。G的树模型与岭模型stale hops预测分别由0.3203降至0.2386、由0.2887降至0.2605；J的树模型由0.2275降至0.2224。表\ref{tab:beer209}中DMS候选值超过参考阈值19 $\mu$g/L，但低于加倍后的38 $\mu$g/L；nonenal来源值已超过加倍阈值，候选值保持不增加。来源4VG记录为0而检出限未知。这个例子说明，代理评价通过取决于阈值设定，必须核验对应批次的阈值、检测限和实际混配变化，才能判断其制备价值。
+
+
+
 \begin{figure*}[t]
 \centering\includegraphics[width=0.95\textwidth]{figures/mixture_certificate.png}
-\caption{严格混配约束的不可行证书及单项约束消融。}
+\caption{严格混配约束的不可行证书及单项约束消融。}\label{fig:certificate}
 \end{figure*}
 \section{验证范围与应用建议}
 
@@ -505,10 +661,10 @@ protocol & 空白评分表与假设样本量；没有实际品评结果 \\
 \bottomrule
 \end{tabular}}\par\smallskip
 
-命令：python scripts/fetch\_stage4\_sources.py；python run\_stage4.py all --data-dir <官方附件目录>；python scripts/stage4\_graph\_comparison.py --data-dir <官方附件目录>；python -m pytest -q；python scripts/verify\_stage4.py；python scripts/stage4\_figures.py；python scripts/prepare\_absolute\_paper.py；使用scripts/build\_revised\_pdf.py按paper\_content.json生成本稿。首次重建旧生成谱时须先运行stage3；脚本默认来源目录可由参数指定。
+复现入口：先获取官方附件和作者公开逐人评分，保留第三阶段角色与第四阶段审计输出；第四阶段运行命令为\texttt{python run\_stage4.py all --data-dir <附件目录> --out <新目录>}。新增实验分别运行\texttt{python scripts/joint\_review\_experiments.py --data-dir <附件目录>}、\texttt{python scripts/nested\_threshold\_experiment.py --data-dir <附件目录>}、\texttt{python scripts/reselected\_ridge\_bootstrap.py --data-dir <附件目录>}和\texttt{python scripts/reselected\_graph\_bootstrap.py --data-dir <附件目录>}。后三项要求输出目录为空，结果和随机种子保存在各自manifest。使用\texttt{python scripts/missingness\_mechanisms.py --data-dir <附件目录> --out <新目录>}复现缺失机制实验，用\texttt{python scripts/paper\_matrices.py --data-dir <附件目录>}生成数据矩阵及图件。运行\texttt{python -m pytest -q}检查程序；在paper/latex\_20261028目录对main.tex使用XeLaTeX编译两次，生成本稿。脚本build\_latex\_revision.py会按旧Markdown重新生成并覆盖main.tex，应保留人工修订的LaTeX源码。
 
 
-软件：Python 3.12及NumPy、pandas、SciPy、scikit-learn、NetworkX、Matplotlib、openpyxl；精确版本在requirements-lock.txt和各运行manifest中。PDF排版另用ReportLab、pypdf、pdfplumber和Pillow；无需声称外部依赖库源码属于本队。
+软件：Python 3.12及NumPy、pandas、SciPy、scikit-learn、NetworkX、Matplotlib、openpyxl；精确版本在requirements-lock.txt和各运行manifest中。本稿使用XeLaTeX、中文字体和mathorcup-journal文档类排版；其他历史PDF工具的依赖见仓库锁定文件。
 
 
 \section{完整源程序}
@@ -636,6 +792,18 @@ protocol & 空白评分表与假设样本量；没有实际品评结果 \\
 \lstinputlisting{sources/061_joint_review_experiments.py}
 \subsection*{tests/test\_joint\_review.py}
 \lstinputlisting{sources/062_test_joint_review.py}
+\subsection*{scripts/nested\_threshold\_experiment.py}
+\lstinputlisting{sources/063_nested_threshold_experiment.py}
+\subsection*{scripts/reselected\_ridge\_bootstrap.py}
+\lstinputlisting{sources/064_reselected_ridge_bootstrap.py}
+\subsection*{tests/test\_nested\_threshold.py}
+\lstinputlisting{sources/065_test_nested_threshold.py}
+\subsection*{scripts/reselected\_graph\_bootstrap.py}
+\lstinputlisting{sources/066_reselected_graph_bootstrap.py}
+\subsection*{scripts/missingness\_mechanisms.py}
+\lstinputlisting{sources/067_missingness_mechanisms.py}
+\subsection*{scripts/paper\_matrices.py}
+\lstinputlisting{sources/068_paper_matrices.py}
 \subsection*{论文排版主文件 main.tex}
 \lstinputlisting{main.tex}
 \subsection*{赛事适配文档类 mathorcup-journal.cls}

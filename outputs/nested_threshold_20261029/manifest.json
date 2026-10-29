@@ -1,0 +1,12 @@
+{
+  "method": "exploratory 32-tree ET; each outer training set 2-fold inner OOF threshold tuned for balanced zero/nonzero detection; decision votes across five repeats; no recalibration of probabilities",
+  "train_positive_and_negative_min": 10,
+  "grid": [
+    0.05,
+    0.95,
+    0.025
+  ],
+  "source_sha256": "bbc661dddcbc8ed703f1241aba0452eecc37bb394bada4e080fa819d69fb6d69",
+  "code_sha256": "018e09b76d8b417c18646fd4b55e6f8d335eee9e000ac7d3c70e2cb63b5be652",
+  "uncertainty": "fixed OOF beer-stratified bootstrap, no refit"
+}

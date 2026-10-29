@@ -1,0 +1,9 @@
+﻿mechanism,scope,mae,mae_change_vs_observed,mean_abs_prediction_change
+observed,core30,0.505995251,0,0
+observed,all50,0.443458482,0,0
+random_cell_10pct,core30,0.513558843,0.00756359192,0.0336855513
+random_cell_10pct,all50,0.45104591,0.00758742726,0.0309739153
+low_value_below_training_q10,core30,0.53304779,0.0270525389,0.0812821718
+low_value_below_training_q10,all50,0.472475135,0.0290166522,0.0777751614
+fixed_field_block_10pct,core30,0.512331049,0.0063357977,0.0327052723
+fixed_field_block_10pct,all50,0.450419263,0.00696078072,0.0307494381

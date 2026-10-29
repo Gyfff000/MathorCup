@@ -1,0 +1,3 @@
+﻿scope,metric,difference,bootstrap_lower,bootstrap_upper
+core30,nonzero_exact_accuracy_difference,-0.0594660194,-0.0788358816,-0.0403076425
+all50,nonzero_exact_accuracy_difference,-0.0390461997,-0.0501323817,-0.0280260285

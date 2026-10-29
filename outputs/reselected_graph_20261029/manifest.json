@@ -1,0 +1,12 @@
+{
+  "repetitions": 30,
+  "bootstrap": "sample beer with replacement, group repeated copies by beer in inner 3-fold",
+  "grid": "stage3 candidates alpha lambda tau",
+  "selection": "train-fold preprocessing and Spearman graph, core30 MAE",
+  "fixed_params": {
+    "alpha": 1000,
+    "lambda": 0,
+    "tau": 0.7
+  },
+  "code_sha256": "1b9b6de0392a177b7f60f955c0c906f3e6f1ad4e234e45b8649e92fda7b9e304"
+}

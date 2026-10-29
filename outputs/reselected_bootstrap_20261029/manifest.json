@@ -1,0 +1,14 @@
+{
+  "replicates": 50,
+  "selection": "bootstrap beers, 3-fold GroupKFold by original beer, training-only preprocessing; select alpha on core30 MAE",
+  "alpha_candidates": [
+    1,
+    10,
+    100,
+    1000
+  ],
+  "fixed_alpha": 1000,
+  "graph_lambda": 0,
+  "scope": "ridge alpha sensitivity only; graph lambda and threshold are not reselected",
+  "code_sha256": "5846ad0e9100d02efba627c19a3d3ccf998947a7194950de69bdedb623dffc82"
+}

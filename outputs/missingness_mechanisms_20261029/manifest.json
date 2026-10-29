@@ -1,0 +1,5 @@
+{
+  "design": "synthetic test-only stress; q10 from outer training values; 10% random fields selected per fold and dropped in all held-out beers; fixed 200-tree ET and shared outer splits; no retraining for stress",
+  "physical_LOD_known": false,
+  "code_sha256": "94e01c0413c4e88aa2d4012de92b47a1b5ef0bde955d0af6e59ad4415f005ba5"
+}

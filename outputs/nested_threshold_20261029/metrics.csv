@@ -1,0 +1,5 @@
+﻿model,scope,overall_accuracy,nonzero_exact_accuracy,nonzero_detection_recall,zero_specificity,grade_mae,nonzero_records
+frequency_mode,core30,0.806266667,0.247572816,0.724514563,0.963602187,0.389333333,1648
+frequency_mode,all50,0.79104,0.313561848,0.815499255,0.966211044,0.36408,3355
+nested_balanced_threshold_vote,core30,0.725866667,0.188106796,0.557645631,0.877306904,0.663866667,1648
+nested_balanced_threshold_vote,all50,0.7336,0.274515648,0.712965723,0.902022963,0.5468,3355
