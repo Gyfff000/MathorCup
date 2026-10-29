@@ -1,0 +1,44 @@
+\section{模型假设与符号说明}
+
+\subsection{基本假设}
+
+\begin{enumerate}
+\item[\textbf{A1}] 附件 1 的字段可能采用对数、恒等或其他处理；对经过核查的对数字段，负值可表示原始浓度小于 1。第\ref{sec:scale}节逐字段比较70个参考字段，不对所有列统一反变换。
+\item[\textbf{A2}] 显式缺失（1.csv 中 73 个空单元格）为随机缺失，与化合物浓度无关；低值密集（数值小于 0 的 10797 个单元格）属于检出限以下的观测，不按缺失处理。第\ref{sec:missing}节用四种缺失机制检验该假设的后果。
+\item[\textbf{A3}] 附件 4 的连续值是同一批原始评分经逐人中心化、标准化后的结果，可由公开的 2197 条 0--6 原始评分重建出面板均分与七级分布；同一品评员的重复评分可先平均，品评员之间等权。
+\item[\textbf{A4}] 风格标签 \texttt{tasting\_category\_fine} 可靠，且风格差异是感官差异的主要来源；因此风格中位数是一个必须比较的强基线，而不是可忽略的对照。
+\item[\textbf{A5}] 缺陷阈值取自文献与 8.xlsx 的阈值中位数，可近似迁移到本数据；但阈值依赖啤酒基质与测量方法，故在第三问中把阈值写成可缩放参数，并在 0.5、1、2 倍三档上报告结论。
+\item[\textbf{A6}] 面板均分可代表该款酒的感官强度，众数可代表最常见的等级；两者对应不同的决策损失，不能互相替代。
+\end{enumerate}
+
+\subsection{符号说明}
+
+表\ref{tab:symbol}汇总全文记号。矩阵用大写粗体，向量用小写粗体，标量用斜体；下标 $b$ 表示酒款、$j$ 表示感官目标、$t$ 表示品评员、$r$ 表示同一品评员的重复次数、$d$ 表示缺陷化合物。
+
+\begin{table}[t]
+\centering\small\renewcommand{\arraystretch}{1.15}
+\caption{主要符号}
+\label{tab:symbol}
+\begin{tabular}{L{0.20\columnwidth}L{0.68\columnwidth}}
+\toprule
+符号 & 含义 \\
+\midrule
+$n,p,q$ & 酒款数（250）、化合物字段数（231）、感官目标数（50） \\
+$X\in\mathbb{R}^{n\times p}$ & 化合物与理化特征矩阵 \\
+$Y\in\mathbb{R}^{n\times q}$ & 感官目标矩阵（面板均分） \\
+$s_{btrj}$ & 品评员 $t$ 对酒 $b$、目标 $j$ 的第 $r$ 次原始评分 \\
+$\bar s_{bj}$ & 酒 $b$ 在目标 $j$ 上的面板均分 \\
+$q_{bjk}$ & 酒 $b$ 在目标 $j$ 上取等级 $k$ 的面板比例 \\
+$\hat g_{\text{mode}},\hat g_{\text{med}}$ & 预测众数等级、预测中位数等级 \\
+$D$ & 累计分布平方距离 \\
+$\mathrm{RPS}$ & 有序概率评分 \\
+$Z$ & 训练折内标准化后的特征矩阵 \\
+$W,L$ & 化合物相关图的带符号权重矩阵、图拉普拉斯矩阵 \\
+$B$ & 多目标回归系数矩阵 \\
+$\alpha,\lambda$ & 岭惩罚系数、图正则系数 \\
+$c_d,t_d,R_d$ & 缺陷 $d$ 的浓度、参考阈值、阈值超额风险 \\
+$\boldsymbol{w}$ & 混配中锚点酒的份额向量 \\
+$\boldsymbol{M}$ & 混配约束矩阵（各锚点与来源在缺陷上的浓度差） \\
+\bottomrule
+\end{tabular}
+\end{table}

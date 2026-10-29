@@ -1,0 +1,12 @@
+{
+  "field": "diethyl.succinate",
+  "comparable_positive_pairs": 247,
+  "identity_max_absolute_difference": 5.000000413701855e-10,
+  "counterfactual_exponentiation_ratio_min_median_max": [
+    6.259143020806599,
+    13.951857327180356,
+    738.0731479456153
+  ],
+  "counterfactual_ratio_note": "10^X/reference is a forced log hypothesis applied to identity-aligned values; variation is not evidence of a constant unit conversion or actual quantification bias",
+  "independent_chemical_calibration": false
+}

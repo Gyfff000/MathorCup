@@ -1,0 +1,133 @@
+\section{源程序清单}
+\label{app:code}
+
+全部源程序随支撑材料提交，运行环境为 Python 3.12、依赖版本见 \texttt{requirements-lock.txt}。下表给出模块与章节的对应关系；此后的完整清单按 \texttt{src/}、\texttt{scripts/}、\texttt{tests/}、入口脚本与配置文件顺序排列。
+
+\begin{table}[h]
+\centering\footnotesize\renewcommand{\arraystretch}{1.1}
+\caption{核心模块与对应章节}
+\begin{tabular}{L{0.42\columnwidth}L{0.30\columnwidth}L{0.18\columnwidth}}
+\toprule
+文件 & 功能 & 章节 \\
+\midrule
+src/audit.py & 附件结构、字段尺度、模板公式核查 & 3 \\
+src/data.py & 数据读入、按酒对齐、缺失与截尾 & 3--4 \\
+src/common.py & 划分、预处理管线、随机种子 & 4--6 \\
+src/q1.py & 面板均分与七级分布的基线模型 & 4 \\
+src/q2.py & 共表达图构建与岭回归候选 & 5 \\
+src/q3.py & 风格生成与迁移搜索原型 & 6 \\
+src/stage2.py & 保形区间、分级敏感性、置换贡献 & 4--5 \\
+src/stage3\_algorithms.py & 图正则求解、对偶证书、阈值风险函数 & 5--6 \\
+src/stage3\_generation.py & 四种生成器与 MMD/KS/复制率评价 & 6 \\
+src/stage3\_graph.py & 交叉拟合的图消融与因素稳定性 & 5 \\
+src/stage3\_prediction.py & 嵌套预测与保形区间 & 4 \\
+src/stage4\_audit.py & 原始评分重建、化学尺度与 OAV 复核 & 3 \\
+src/stage4\_models.py & 有序分布模型与评分规则 & 4 \\
+src/deployment.py & 无标签预测入口与输入校验 & 7 \\
+run.py / run\_stage2.py / run\_stage3.py / run\_stage4.py & 四个阶段的命令行入口 & 全文 \\
+run\_final\_model.py & 最终模型训练与预测 & 7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begingroup\scriptsize
+以下列出建模、审计、实验与验证程序。论文排版与图形生成脚本（\texttt{prepare\_*.py}、\texttt{build\_*.py}、\texttt{render\_*.py}、\texttt{verify\_*.py} 等）不属于建模程序，随支撑材料提交，此处不重复列出。
+\subsection*{\texttt{001\_\_\_init\_\_.py}}
+\lstinputlisting{sources/001___init__.py}
+\subsection*{\texttt{002\_audit.py}}
+\lstinputlisting{sources/002_audit.py}
+\subsection*{\texttt{003\_common.py}}
+\lstinputlisting{sources/003_common.py}
+\subsection*{\texttt{004\_data.py}}
+\lstinputlisting{sources/004_data.py}
+\subsection*{\texttt{005\_q1.py}}
+\lstinputlisting{sources/005_q1.py}
+\subsection*{\texttt{006\_q2.py}}
+\lstinputlisting{sources/006_q2.py}
+\subsection*{\texttt{007\_q3.py}}
+\lstinputlisting{sources/007_q3.py}
+\subsection*{\texttt{008\_reporting.py}}
+\lstinputlisting{sources/008_reporting.py}
+\subsection*{\texttt{009\_stage2.py}}
+\lstinputlisting{sources/009_stage2.py}
+\subsection*{\texttt{010\_stage3\_algorithms.py}}
+\lstinputlisting{sources/010_stage3_algorithms.py}
+\subsection*{\texttt{011\_stage3\_generation.py}}
+\lstinputlisting{sources/011_stage3_generation.py}
+\subsection*{\texttt{012\_stage3\_graph.py}}
+\lstinputlisting{sources/012_stage3_graph.py}
+\subsection*{\texttt{013\_stage3\_prediction.py}}
+\lstinputlisting{sources/013_stage3_prediction.py}
+\subsection*{\texttt{014\_stage4\_audit.py}}
+\lstinputlisting{sources/014_stage4_audit.py}
+\subsection*{\texttt{015\_stage4\_models.py}}
+\lstinputlisting{sources/015_stage4_models.py}
+\subsection*{\texttt{016\_stage4\_trial.py}}
+\lstinputlisting{sources/016_stage4_trial.py}
+\subsection*{\texttt{017\_analyze\_trial.py}}
+\lstinputlisting{sources/017_analyze_trial.py}
+\subsection*{\texttt{020\_fetch\_stage4\_sources.py}}
+\lstinputlisting{sources/020_fetch_stage4_sources.py}
+\subsection*{\texttt{030\_stage3\_preflight.py}}
+\lstinputlisting{sources/030_stage3_preflight.py}
+\subsection*{\texttt{032\_stage4\_graph\_comparison.py}}
+\lstinputlisting{sources/032_stage4_graph_comparison.py}
+\subsection*{\texttt{036\_verify\_stage3.py}}
+\lstinputlisting{sources/036_verify_stage3.py}
+\subsection*{\texttt{037\_verify\_stage4.py}}
+\lstinputlisting{sources/037_verify_stage4.py}
+\subsection*{\texttt{038\_test\_invariants.py}}
+\lstinputlisting{sources/038_test_invariants.py}
+\subsection*{\texttt{039\_test\_stage2.py}}
+\lstinputlisting{sources/039_test_stage2.py}
+\subsection*{\texttt{040\_test\_stage3\_algorithms.py}}
+\lstinputlisting{sources/040_test_stage3_algorithms.py}
+\subsection*{\texttt{041\_test\_stage3\_research.py}}
+\lstinputlisting{sources/041_test_stage3_research.py}
+\subsection*{\texttt{042\_test\_stage4.py}}
+\lstinputlisting{sources/042_test_stage4.py}
+\subsection*{\texttt{043\_run.py}}
+\lstinputlisting{sources/043_run.py}
+\subsection*{\texttt{044\_run\_stage2.py}}
+\lstinputlisting{sources/044_run_stage2.py}
+\subsection*{\texttt{045\_run\_stage3.py}}
+\lstinputlisting{sources/045_run_stage3.py}
+\subsection*{\texttt{046\_run\_stage4.py}}
+\lstinputlisting{sources/046_run_stage4.py}
+\subsection*{\texttt{047\_config.json}}
+\lstinputlisting{sources/047_config.json}
+\subsection*{\texttt{048\_config\_stage2.json}}
+\lstinputlisting{sources/048_config_stage2.json}
+\subsection*{\texttt{049\_config\_stage3.json}}
+\lstinputlisting{sources/049_config_stage3.json}
+\subsection*{\texttt{050\_config\_stage3\_design.json}}
+\lstinputlisting{sources/050_config_stage3_design.json}
+\subsection*{\texttt{051\_config\_stage4.json}}
+\lstinputlisting{sources/051_config_stage4.json}
+\subsection*{\texttt{052\_review\_experiments.py}}
+\lstinputlisting{sources/052_review_experiments.py}
+\subsection*{\texttt{053\_review\_diagnostics.py}}
+\lstinputlisting{sources/053_review_diagnostics.py}
+\subsection*{\texttt{055\_run\_final\_model.py}}
+\lstinputlisting{sources/055_run_final_model.py}
+\subsection*{\texttt{056\_deployment.py}}
+\lstinputlisting{sources/056_deployment.py}
+\subsection*{\texttt{057\_diagnose\_stage4.py}}
+\lstinputlisting{sources/057_diagnose_stage4.py}
+\subsection*{\texttt{058\_test\_deployment.py}}
+\lstinputlisting{sources/058_test_deployment.py}
+\subsection*{\texttt{059\_ordinal\_two\_stage\_experiment.py}}
+\lstinputlisting{sources/059_ordinal_two_stage_experiment.py}
+\subsection*{\texttt{060\_summarize\_two\_stage.py}}
+\lstinputlisting{sources/060_summarize_two_stage.py}
+\subsection*{\texttt{061\_joint\_review\_experiments.py}}
+\lstinputlisting{sources/061_joint_review_experiments.py}
+\subsection*{\texttt{062\_test\_joint\_review.py}}
+\lstinputlisting{sources/062_test_joint_review.py}
+\endgroup
+\subsection*{补充核查程序}
+\lstinputlisting{sources/063_submission_review_checks.py}
+\lstinputlisting{sources/064_submission_graph_grid.py}
+\lstinputlisting{sources/065_submission_scale_figure.py}
+
+\lstinputlisting{sources/066_submission_style_increment.py}

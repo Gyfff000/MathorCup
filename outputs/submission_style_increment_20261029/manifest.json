@@ -1,0 +1,6 @@
+{
+  "design": "exploratory after review; same ET hyperparameters, outer folds and known one-hot style; compare style only and style plus chemical, each train-fold preprocessing; style-median retained; fixed OOF beer bootstrap, no retraining uncertainty",
+  "data_sha256": "618aadab0202a6e6495a4cd268388b059ff3d18694b476e280d18bdfd820b490",
+  "code_sha256": "26ba94458834779c533b90619e0a20747704749f0cc9f1860bd626a6537bbe4b",
+  "note": "max_features=.8 operates on different dimensionalities; not a fully matched optimization budget"
+}

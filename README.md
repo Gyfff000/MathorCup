@@ -6,6 +6,7 @@
 
 | 需要什么 | 入口 |
 |---|---|
+| 用户提交稿修订版 | [论文 PDF](paper/submission_revision_20261029/paper_A_revision.pdf) · [LaTeX 源码](paper/submission_revision_20261029/main2.tex) · [修订与核查记录](docs/提交论文补充核查_20261029.md) |
 | 最新论文 | [PDF](paper/latex_20261028/paper_stage5.pdf) · [LaTeX 源码](paper/latex_20261028/main.tex) · [模板与赛规适配](docs/期刊模板来源与赛事适配.md) |
 | 论文问题与实验建议 | [审查报告](docs/review_20261028/论文问题与实验改进方案.pdf) · [可编辑内容](docs/review_20261028/论文问题与实验改进方案.md) |
 | 数据与关系矩阵 | [231阶化学秩相关](outputs/matrix_figures_20261029/chemical_spearman_231.csv) · [50×231化学与感官关系](outputs/matrix_figures_20261029/chemical_sensory_spearman_50x231.csv) · [缺失机制结果](outputs/missingness_mechanisms_20261029/metrics.csv) |

@@ -1,0 +1,7 @@
+﻿model,scope,mae
+style_ET,core30,0.517011276
+style_ET,all50,0.457623783
+style_chemistry_ET,core30,0.502746854
+style_chemistry_ET,all50,0.440185523
+style_median,core30,0.509688327
+style_median,all50,0.447120568

@@ -1,0 +1,16 @@
+{
+  "source_files": {
+    "outputs\\stage4\\audit\\chemical_scale_reconciliation.csv": "1451c7bc799cf4da9b2540de67e91aeed063be5a8ec50d48ceaef6f247e4e780",
+    "outputs\\stage4\\audit\\concentration_feature_registry.csv": "efaa499da4ec791f1119d451831cbf7e2a332c3d28c6fb08b921c8aace20ecba",
+    "outputs\\stage4\\audit\\chemical_source_exceptions.csv": "404228f76f785b812f70b6016581c9375365859c0fb9e1f6705a0093c146f8ba",
+    "outputs\\joint_20261028\\manifest.json": "aa3811ed155d6ea4a13b2fbe6782663192d3805fee8ff58283237ade655c12d0",
+    "outputs\\stage4\\ordinal\\oof_rating_distributions.csv": "bbc661dddcbc8ed703f1241aba0452eecc37bb394bada4e080fa819d69fb6d69",
+    "outputs\\stage4\\prediction\\outer_roles.csv": "8bd39a6ee9eb35be1d2f07105c042b52d6b304165f9f96e285f97e94d8f707e0",
+    "outputs\\stage4\\raw_graph\\q2\\top3_with_evidence.csv": "76474c0aca9790a8c2ec01cf743dbd4e490c8611ad520916383f50a02c94ab7f"
+  },
+  "script_sha256": "60df1ed40013a0c639881d4efa5db33252eb29e70ade758b9bd9883de01e7e67",
+  "32_unit_subset_and_32_exception_overlap": 0,
+  "metric_scope": "pooled beer-attribute modal grades, macro across observed grades; repeated OOF probabilities averaged per beer before decisions; 7 grades are ordered; no independence claim",
+  "classification_thresholds": "descriptive exploratory evidence thresholds; selection not independent confirmatory test",
+  "no_physical_validation": true
+}

@@ -1,0 +1,12 @@
+{
+  "seed": 20261024,
+  "gbr_estimators": 100,
+  "gbr_learning_rate": 0.04,
+  "gbr_depth": 2,
+  "permutation_repeats": 5,
+  "conformal_alpha": 0.1,
+  "generation_repeats": 5,
+  "generation_n": 40,
+  "generation_styles": ["Tripel", "Kriek", "Lambic"],
+  "transfer_weights": 30
+}

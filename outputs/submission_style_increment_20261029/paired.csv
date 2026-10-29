@@ -1,0 +1,5 @@
+﻿scope,comparison,difference_A_minus_B,conditional_low95,conditional_high95,unique_beers,resamples
+core30,style_chemistry_ET_minus_style_ET,-0.0142644221,-0.0242683646,-0.00395054257,250,5000
+core30,style_chemistry_ET_minus_style_median,-0.00694147346,-0.0177802347,0.0039815016,250,5000
+all50,style_chemistry_ET_minus_style_ET,-0.0174382604,-0.0252182477,-0.00962978766,250,5000
+all50,style_chemistry_ET_minus_style_median,-0.00693504541,-0.0155409489,0.00184210724,250,5000

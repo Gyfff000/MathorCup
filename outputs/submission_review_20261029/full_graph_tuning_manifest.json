@@ -1,0 +1,5 @@
+{
+  "split": "original full-data 3-fold KFold seed stage4_seed+500; scoring core30 MAE",
+  "target": "audited panel means exported CSV",
+  "code_sha256": "bab7756dd00bddcb94b7456922d66643d5e5e6d92fc14cc5674eb92963a27a12"
+}

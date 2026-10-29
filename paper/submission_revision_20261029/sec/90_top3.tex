@@ -1,0 +1,99 @@
+\section{全部 50 项的 Top-3 候选及证据分层}
+\label{app:top3}
+
+下表为全数据描述模型给出的最终 Top-3，括号内为固定全数据参数条件下200次bootstrap入选频率；标记 $^{\ast}$ 的36项同时满足频率、跨折入选和两类置换贡献条件，未标记的114项为探索性候选。标记根据未四舍五入的原始指标计算。最终模型选得 $\lambda=0$，即这些候选由普通岭回归系数给出；频率不是因果概率，也不是独立检验的 $p$ 值。
+
+\begin{longtable}{L{0.30\columnwidth}L{0.62\columnwidth}}
+\toprule
+感官目标 & Top-3 字段（入选频率） \\
+\midrule
+\endfirsthead
+\toprule
+感官目标 & Top-3 字段（入选频率） \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+A\_esters\_all & \texttt{acetaldehyde}$^{\ast}$（0.78）；\texttt{X.E..beta.ionone}（0.23）；\texttt{n.hexanol}（0.23） \\
+A\_esters\_ethac & \texttt{acetaldehyde}（0.40）；\texttt{ethyl\_acetate}（0.21）；\texttt{cis.linalool.oxide}（0.17） \\
+A\_esters\_flower & \texttt{beta.phellandrene}$^{\ast}$（0.56）；\texttt{X.E..alpha.ionone}（0.40）；\texttt{terpinolene}（0.14） \\
+A\_esters\_fruity & \texttt{beta.phellandrene}$^{\ast}$（0.86）；\texttt{X1.10.di.epi.cubenol}（0.18）；\texttt{benzyl.alcohol}（0.30） \\
+A\_esters\_isoaa & \texttt{n.hexanol}（0.40）；\texttt{ambroxide}（0.46）；\texttt{ethyl.hexadecanoate}（0.20） \\
+A\_hops\_all & \texttt{iron}$^{\ast}$（0.56）；\texttt{DMS}（0.34）；\texttt{cis.dihydro.beta.terpineol}（0.20） \\
+A\_hops\_citrus & \texttt{X6.methyl.5.hepten.2.one}$^{\ast}$（0.53）；\texttt{terpinolene}（0.19）；\texttt{geraniol}（0.26） \\
+A\_hops\_noble & \texttt{iron}（0.36）；\texttt{ethyl\_octanoate}（0.23）；\texttt{ethyl\_decanoate}（0.16） \\
+A\_hops\_tropical & \texttt{DMS}$^{\ast}$（0.55）；\texttt{beta.phellandrene}（0.26）；\texttt{citronellol}（0.29） \\
+A\_hops\_woody & \texttt{iron}（0.27）；\texttt{ethyl\_2.methyl\_butyrate}（0.15）；\texttt{X2Z.6Z.farnesol}（0.23） \\
+A\_malt\_all & \texttt{X2.acetylfuran}$^{\ast}$（0.77）；\texttt{ethyl.furoate}（0.42）；\texttt{phenethyl\_alcohol}（0.36） \\
+A\_malt\_bread & \texttt{furfural}（0.36）；\texttt{ethyl.furoate}（0.28）；\texttt{ethyl.tiglate}（0.13） \\
+A\_malt\_burn & \texttt{methylpyrazine}$^{\ast}$（0.75）；\texttt{X2.acetylfuran}$^{\ast}$（0.60）；\texttt{X4.methyl.1.pentanol}（0.11） \\
+A\_malt\_cara & \texttt{X2.acetylfuran}$^{\ast}$（0.60）；\texttt{phenethyl\_alcohol}（0.45）；\texttt{octyl\_acetate}（0.31） \\
+A\_malt\_grain & \texttt{gamma.nonalactone}（0.30）；\texttt{car.3.en.2.one}（0.36）；\texttt{X5.methylfurfural}（0.20） \\
+F\_esters\_all & \texttt{acetaldehyde}$^{\ast}$（0.91）；\texttt{ethyl\_isovalerate}（0.34）；\texttt{n.hexanol}（0.27） \\
+F\_esters\_ethac & \texttt{acetaldehyde}$^{\ast}$（0.51）；\texttt{ethyl\_acetate}（0.47）；\texttt{n.tetradecanol}（0.28） \\
+F\_esters\_flower & \texttt{beta.phellandrene}（0.30）；\texttt{eucalyptol}（0.29）；\texttt{terpinolene}（0.13） \\
+F\_esters\_fruity & \texttt{beta.phellandrene}（0.49）；\texttt{X.E..beta.ionone}（0.38）；\texttt{MeSH}（0.17） \\
+F\_esters\_isoaa & \texttt{n.hexanol}（0.28）；\texttt{ethyl\_decanoate}（0.14）；\texttt{acetaldehyde}（0.12） \\
+F\_hops\_all & \texttt{cis.dihydro.beta.terpineol}（0.70）；\texttt{iron}$^{\ast}$（0.70）；\texttt{ethyl\_isovalerate}（0.40） \\
+F\_hops\_citrus & \texttt{geraniol}（0.47）；\texttt{citronellol}（0.43）；\texttt{cis.dihydro.beta.terpineol}（0.41） \\
+F\_hops\_noble & \texttt{iron}$^{\ast}$（0.68）；\texttt{citronellol}（0.23）；\texttt{X14.hydroxy.alpha.humulene}（0.30） \\
+F\_hops\_tropical & \texttt{X6.methyl.5.hepten.2.one}（0.46）；\texttt{DMS}（0.24）；\texttt{citronellol}（0.27） \\
+F\_hops\_woody & \texttt{manool}（0.43）；\texttt{cis.dihydro.beta.terpineol}（0.28）；\texttt{n.octanol}（0.15） \\
+F\_malt\_all & \texttt{acetaldehyde}$^{\ast}$（0.57）；\texttt{X2.acetylfuran}（0.47）；\texttt{X.E..alpha.ionone}（0.44） \\
+F\_malt\_bread & \texttt{acetaldehyde}（0.26）；\texttt{dehydroxy.cis.linalool.oxide}（0.23）；\texttt{caryophylla.4.12..8.13..dien.5.alpha.ol}（0.15） \\
+F\_malt\_burn & \texttt{X2.acetylfuran}$^{\ast}$（0.51）；\texttt{methylpyrazine}（0.57）；\texttt{MeSH}（0.25） \\
+F\_malt\_cara & \texttt{acetaldehyde}（0.62）；\texttt{ethyl.nicotinate}（0.27）；\texttt{isobutyl.hexanoate}（0.23） \\
+F\_malt\_grain & \texttt{X2.3.butanedione}（0.49）；\texttt{gamma.nonalactone}（0.14）；\texttt{X3.methyl.2.butenal}（0.18） \\
+X4vg & \texttt{X4VG}$^{\ast}$（1.00）；\texttt{delta.terpinyl.acetate}（0.26）；\texttt{ethyl\_isovalerate}（0.22） \\
+acetic & \texttt{lactic\_acid.mg.L.}（1.00）；\texttt{acetic\_acid.g.L.}（0.62）；\texttt{DES}（0.23） \\
+acidity & \texttt{lactic\_acid.mg.L.}$^{\ast}$（1.00）；\texttt{acetic\_acid.g.L.}$^{\ast}$（0.72）；\texttt{X4.ethyl.guaiacol}（0.12） \\
+aftertaste & \texttt{glycerol}$^{\ast}$（0.68）；\texttt{ethyl\_isovalerate}$^{\ast}$（0.62）；\texttt{cis.dihydro.beta.terpineol}（0.34） \\
+alcohol & \texttt{acetaldehyde}$^{\ast}$（0.83）；\texttt{ethanol..v.v.}$^{\ast}$（0.82）；\texttt{X3.methyl.2.hexanol}（0.47） \\
+barnyard & \texttt{X2.butyloctanoate}（0.32）；\texttt{gamma.eudesmol}（0.27）；\texttt{iron}（0.23） \\
+bitternes & \texttt{iron}$^{\ast}$（0.98）；\texttt{cis.dihydro.beta.terpineol}（0.63）；\texttt{ethyl\_octanoate}（0.48） \\
+body & \texttt{glycerol}$^{\ast}$（0.80）；\texttt{acetaldehyde}（0.68）；\texttt{X3.methyl.2.hexanol}（0.47） \\
+clove & \texttt{linalool}$^{\ast}$（0.81）；\texttt{limonene}$^{\ast}$（0.67）；\texttt{eucalyptol}（0.48） \\
+co2 & \texttt{ethyl\_octanoate}$^{\ast}$（0.62）；\texttt{X3.methyl.2.hexanol}（0.55）；\texttt{ethyl\_hexanoate}（0.34） \\
+coriander & \texttt{x.methyl.1.octanol}$^{\ast}$（0.57）；\texttt{geraniol}$^{\ast}$（0.55）；\texttt{linalool}（0.46） \\
+diacetyl & \texttt{CS2}（0.21）；\texttt{X.E..beta.ionone}（0.09）；\texttt{octyl\_acetate}（0.29） \\
+dms & \texttt{SO2.mg.L.}$^{\ast}$（0.56）；\texttt{caryophylla.4.12..8.13..dien.5.alpha.ol}（0.18）；\texttt{neryl.formate}（0.17） \\
+lactic & \texttt{lactic\_acid.mg.L.}（1.00）；\texttt{acetic\_acid.g.L.}（0.61）；\texttt{ethyl.phenylacetate}（0.28） \\
+metallic & \texttt{iron}$^{\ast}$（0.94）；\texttt{ethyl\_isovalerate}（0.46）；\texttt{neryl.formate}（0.20） \\
+orange & \texttt{X1.alpha.terpineol}$^{\ast}$（0.73）；\texttt{limonene}（0.49）；\texttt{linalool}（0.38） \\
+overall & \texttt{ethyl\_acetate}（0.49）；\texttt{X2.butyloctanoate}（0.34）；\texttt{ethyl\_hexanoate}（0.14） \\
+stale\_hops & \texttt{X2.butyloctanoate}（0.41）；\texttt{iron}（0.27）；\texttt{X.E..ortho.methoxy.cinnamaldehyde}（0.21） \\
+sweetness & \texttt{ethyl\_decanoate}$^{\ast}$（0.81）；\texttt{iron}$^{\ast}$（0.52）；\texttt{ethyl\_octanoate}（0.28） \\
+t2n & \texttt{germacrene.D}$^{\ast}$（0.58）；\texttt{isopentyl.hexanoate}（0.46）；\texttt{X.Z..dihydro.apofarnesal}（0.18） \\
+\end{longtable}
+
+150 条记录中，满足“入选频率 $\ge0.5$、至少 5 个训练折入选、普通与风格内置换贡献均为正”这三条描述性条件的有 36 条。完整记录（含系数方向、置换贡献、单位与文献核查状态）见支撑材料 \texttt{top3\_with\_evidence.csv}。
+\section{敏感性分析所用32字段清单}\label{app:fieldsets}
+该集合为全部可比记录尺度一致、在浓度单位注册表中、且属于226个非综合输入的字段交集；与含80处不一致的32个字段没有重合。单位为来源表的参考单位；部分建模输入仍为对数变换值，\texttt{diethyl.succinate} 为恒等对应，单位登记本身不证明化学定值准确。
+\begin{longtable}{L{0.37\columnwidth}L{0.10\columnwidth}L{0.37\columnwidth}L{0.10\columnwidth}}
+\toprule
+字段 & 单位 & 字段 & 单位\\
+\midrule
+\endfirsthead
+\toprule
+字段 & 单位 & 字段 & 单位\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\texttt{acetaldehyde} & mg/L & \texttt{MeSH} & $\mu$g/L \\
+\texttt{CS2} & $\mu$g/L & \texttt{octyl\_acetate} & mg/L \\
+\texttt{DES} & $\mu$g/L & \texttt{phenethyl\_acetate} & mg/L \\
+\texttt{DMS} & $\mu$g/L & \texttt{phenethyl\_alcohol} & mg/L \\
+\texttt{ethyl\_2.\allowbreak{}methyl\_butyrate} & mg/L & \texttt{X4VG} & mg/L \\
+\texttt{ethyl\_acetate} & mg/L & \texttt{SO2.\allowbreak{}mg.\allowbreak{}L.\allowbreak{}} & mg/L \\
+\texttt{ethyl\_decanoate} & mg/L & \texttt{acetic\_acid.\allowbreak{}g.\allowbreak{}L.\allowbreak{}} & g/L \\
+\texttt{ethyl\_hexanoate} & mg/L & \texttt{ammonia.\allowbreak{}mg.\allowbreak{}L.\allowbreak{}} & mg/L \\
+\texttt{ethyl\_isovalerate} & mg/L & \texttt{betaglucan.\allowbreak{}mg.\allowbreak{}L.\allowbreak{}} & mg/L \\
+\texttt{ethyl\_octanoate} & mg/L & \texttt{lactic\_acid.\allowbreak{}mg.\allowbreak{}L.\allowbreak{}} & mg/L \\
+\texttt{ethyl\_propionate} & mg/L & \texttt{glycerol} & g/L \\
+\texttt{H2S} & $\mu$g/L & \texttt{iron} & mg/L \\
+\texttt{isoamyl\_alcohol} & mg/L & \texttt{protein.\allowbreak{}g.\allowbreak{}L.\allowbreak{}} & g/L \\
+\texttt{isobutanol} & mg/L & \texttt{GFS} & g/L \\
+\texttt{isobutyl\_acetate} & mg/L & \texttt{ethanol.\allowbreak{}.\allowbreak{}v.\allowbreak{}v.\allowbreak{}} & v/v \\
+\texttt{isopentyl\_acetate} & mg/L & \texttt{diethyl.\allowbreak{}succinate} & mg/L \\
+\end{longtable}
