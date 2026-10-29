@@ -34,10 +34,10 @@
 啤酒风味由挥发性化合物、理化条件及其相互作用共同影响。题目要求完成三项任务：根据化合物数据预测0—6分的感官等级；利用化合物相关关系识别各感官维度的三个关键因素，并论证稳定性和化学合理性；在给定风格下生成化合物谱与感官画像，研究Pils/Lager向Tripel的迁移及缺陷控制。
 
 
-题面描述数据约226款酒、Aroma和Flavour合计约40项；实际用于建模的附件包含250款酒、231个数值输入和50个感官目标，其中Aroma与Flavour前缀各15项。本文对全部50项目标建模与输出，同时单独报告30个Aroma/Flavour核心属性。原始个人评分来自作者公开数据[1][2]，附件中的标准化分值用于样本对应核查，不作为0—6分值直接使用。
+题面描述数据约226款酒、Aroma和Flavour合计约40项；实际用于建模的附件包含250款酒、231个数值输入和50个感官目标，其中Aroma与Flavour前缀各15项。本文对全部50项目标建模与输出，同时单独报告30个Aroma/Flavour核心属性。原始个人评分来自作者公开数据\cite{ref1}\cite{ref2}，附件中的标准化分值用于样本对应核查，不作为0—6分值直接使用。
 
 
-三问共用同一数据与验证框架。第一问分别建立面板均分和个人评分分布模型；第二问将训练折内的化合物网络引入多目标回归，并以无图和打乱图作对照；第三问将生成、候选搜索、代理评价和浓度域可行性分析依次连接。各方法基于极端随机树、梯度提升、岭回归、图正则化和保形预测等已有方法[3][4][5][6][7]，本文的工作重点是将这些方法与题目的评分尺度、缺陷约束和验证条件对应起来。
+三问共用同一数据与验证框架。第一问分别建立面板均分和个人评分分布模型；第二问将训练折内的化合物网络引入多目标回归，并以无图和打乱图作对照；第三问将生成、候选搜索、代理评价和浓度域可行性分析依次连接。各方法基于极端随机树、梯度提升、岭回归、图正则化和保形预测等已有方法\cite{ref3}\cite{ref4}\cite{ref5}\cite{ref6}\cite{ref7}，本文的工作重点是将这些方法与题目的评分尺度、缺陷约束和验证条件对应起来。
 
 
 \section{数据处理与评分端点}
@@ -137,7 +137,7 @@ q_{bjk}=\frac{1}{|T_b|}\sum_{t\in T_b}\frac{1}{n_{bt}}\sum_{r=1}^{n_{bt}}\mathbf
 D=\frac{1}{6}\sum_{k=0}^{5}(P_k-Q_k)^2.
 \end{equation}
 
-该指标衡量预测分布与历史面板经验分布之间的距离。对个人实际等级$Y$计算的标准有序概率评分为$\mathrm{RPS}(P,Y)=\frac16\sum_{k=0}^{5}(P_k-\mathbf1(Y\le k))^2$[8]。按经验分布取期望后有
+该指标衡量预测分布与历史面板经验分布之间的距离。对个人实际等级$Y$计算的标准有序概率评分为$\mathrm{RPS}(P,Y)=\frac16\sum_{k=0}^{5}(P_k-\mathbf1(Y\le k))^2$\cite{ref8}。按经验分布取期望后有
 
 
 \begin{equation}
@@ -318,14 +318,14 @@ F\_malt\_all & 250 & 230 & 30.8\% & 33.5\%\\
 描述性支持条件为：bootstrap入选频率至少0.5、至少在5个训练折入选，且所选折的普通与风格内置换平均贡献均为正。150条记录中有36条满足条件。该频率以固定参数为前提；重采样中重新选参可进一步评估完整选择流程的稳定性。
 
 
-化学解释结合统计证据逐项给出。X4VG与4VG感官属性的关联，与4VG相关香气研究方向一致[9]；iron与金属感的关联，可结合金属诱发口腔氧化的研究讨论[10]；linalool与芫荽风味存在文献依据[11]，其当前入选频率低于0.5。对于A\_hops\_all的iron，风格中心化后的Top-3保留比例为0.1，说明其排名对风格差异敏感。相关性较强的化合物还会在模型中相互替代，因此完整因素表同时保留频率、置换贡献、单位和文献对应信息。
+化学解释结合统计证据逐项给出。X4VG与4VG感官属性的关联，与4VG相关香气研究方向一致\cite{ref9}；iron与金属感的关联，可结合金属诱发口腔氧化的研究讨论\cite{ref10}；linalool与芫荽风味存在文献依据\cite{ref11}，其当前入选频率低于0.5。对于A\_hops\_all的iron，风格中心化后的Top-3保留比例为0.1，说明其排名对风格差异敏感。相关性较强的化合物还会在模型中相互替代，因此完整因素表同时保留频率、置换贡献、单位和文献对应信息。
 
 
 \subsection{参数重选与化学解释案例}
 
 为检验岭参数固定对因素排序的影响，新增50次按酒有放回重采样。每次把同一款酒的重复抽样记录作为同组，进行三折内部验证，在$\alpha\in\{1,10,100,1000\}$中选择核心30项MAE最小值；各折的插补、截尾和标准化均由该折训练部分拟合。50次均选中$\alpha=1000$，与固定1000的同批重采样结果逐目标Top-3完全相同。该试验只重选岭参数，也未扩大候选参数范围。进一步对30次独立按酒重采样，在同样的分组内层三折中重选图模型的$\alpha$、$\lambda$和相关阈值，相关图由每个内层训练集重新建立。30次中17次选取$\lambda=0$，13次选取正图惩罚；同一次重采样中，与固定全数据参数的Top-3平均重合比例为99.24\%，150条原候选的入选频率平均绝对差为0.0036。这是30次重采样的探索性结果，较原200次固定参数结果的不确定性更大，也仍受候选参数网格限制。
 
-表\ref{tab:factorcases}对比两个具有不同证据结构的因素。X4VG在感官属性X4vg中15个留出训练折全部进入Top-3，固定参数的200次重采样入选频率为1.00；普通置换和风格内置换的平均误差增量分别为0.0242和0.0168分。该字段与被评估的4VG属性具有明确的化学对应，风格内结果进一步支持其预测作用[9]。A\_hops\_all的iron在10个训练折入选，固定参数重采样频率为0.565，但风格中心化后保留比例为0.10，提示其排名依赖样本的风格结构。铁与金属感的研究[10]不能直接证明它导致酒花香气，故该项应作为候选关联进行后续核查。
+表\ref{tab:factorcases}对比两个具有不同证据结构的因素。X4VG在感官属性X4vg中15个留出训练折全部进入Top-3，固定参数的200次重采样入选频率为1.00；普通置换和风格内置换的平均误差增量分别为0.0242和0.0168分。该字段与被评估的4VG属性具有明确的化学对应，风格内结果进一步支持其预测作用\cite{ref9}。A\_hops\_all的iron在10个训练折入选，固定参数重采样频率为0.565，但风格中心化后保留比例为0.10，提示其排名依赖样本的风格结构。铁与金属感的研究\cite{ref10}不能直接证明它导致酒花香气，故该项应作为候选关联进行后续核查。
 
 \begin{table*}[t]
 \centering\small
@@ -351,7 +351,7 @@ A\_hops\_all & iron & 0.565 & 10 & 0.0013 & 0.10\\
 以tasting\_category\_fine为风格标签，比较风格内重采样、局部凸组合、条件PCA高斯生成和受约束局部凸组合。每次分层划分设搜索训练集G为100款、评价训练集J为100款、真实留出集T为50款；对Tripel、Kriek、Lambic，每种方法在每次划分下生成40个谱。候选在G中形成并冻结，再由J模型复核；T用于检验留出来源的表现。
 
 
-局部凸组合的形式为$x_{\mathrm{new}}=u x_a+(1-u)x_b$，其中$x_a,x_b$为同风格邻近样本，$0\le u\le1$。生成谱使用最大均值差异MMD、范围检查、复制比例和J风格分类结果评价[12]。对于Tripel，受约束局部凸组合的J目标风格识别率为69.5\%，高于风格内重采样的56.5\%；其MMD平方为0.1158，高于重采样的0.1034。分类识别率与分布距离反映不同性质，应结合覆盖度和重复率共同判断生成质量。已有MMD采用包含对角项的V统计量，结果受有限样本影响。
+局部凸组合的形式为$x_{\mathrm{new}}=u x_a+(1-u)x_b$，其中$x_a,x_b$为同风格邻近样本，$0\le u\le1$。生成谱使用最大均值差异MMD、范围检查、复制比例和J风格分类结果评价\cite{ref12}。对于Tripel，受约束局部凸组合的J目标风格识别率为69.5\%，高于风格内重采样的56.5\%；其MMD平方为0.1158，高于重采样的0.1034。分类识别率与分布距离反映不同性质，应结合覆盖度和重复率共同判断生成质量。已有MMD采用包含对角项的V统计量，结果受有限样本影响。
 
 
 在冻结生成谱上，利用G和J分别训练的原始评分模型生成50项面板均分和整数等级画像。画像表示模型对化合物谱的预测；实际风味需通过制备和品评测量。
@@ -418,7 +418,7 @@ c_{\mathrm{mix}}=(1-\mathbf1^Tw)c_s+C_Aw,\quad w\ge0,\quad\mathbf1^Tw\le0.75.
 对55条来源与划分记录，协议A所得最大目标份额均为0。对各行按正尺度归一化得到$D_{\mathrm{norm}}$；若存在$v\ge0$，使$D_{\mathrm{norm}}^Tv$对每个锚点均严格为正，则任意非零$w\ge0$都有$v^TD_{\mathrm{norm}}w>0$，与协议A矛盾。55条记录均找到正余量证书，其中39条可由单项约束阻塞解释，16条需要联合约束。分别删除DMS、双乙酰、4VG和nonenal约束后，允许正份额的记录数为30、4、0和4；该消融用于定位阻塞来源，结果见图\ref{fig:certificate}。
 
 
-题目强调超阈值缺陷，本文进一步设风险函数$R_d(c)=\max(c/t_d-1,0)$，以协议B要求$R_d(c'_d)\le R_d(c_d)$，等价于$c'_d\le\max(c_d,t_d)$。参考阈值取DMS 19 $\mu$g/L、双乙酰0.09 mg/L、4VG 0.2 mg/L、nonenal 0.1 $\mu$g/L[13][14]。以参考阈值的0.5、1和2倍计算时，55条记录中分别有15、30和34条允许正的Tripel份额。上述数量仅检验四项化学风险约束。为联合考察风格与陈旧酒花，在每次划分中使用G组Tripel锚点、单锚点份额网格与线性规划所得多锚点配方构造候选；G模型要求目标风格概率至少为0.5且比来源提高0.01，并要求两种感官代理的stale hops均不增加。选取标准化变化最小的候选，冻结全部候选后，再用J组模型检查目标风格分类、概率提升与stale hops变化。
+题目强调超阈值缺陷，本文进一步设风险函数$R_d(c)=\max(c/t_d-1,0)$，以协议B要求$R_d(c'_d)\le R_d(c_d)$，等价于$c'_d\le\max(c_d,t_d)$。参考阈值取DMS 19 $\mu$g/L、双乙酰0.09 mg/L、4VG 0.2 mg/L、nonenal 0.1 $\mu$g/L\cite{ref13}\cite{ref14}。以参考阈值的0.5、1和2倍计算时，55条记录中分别有15、30和34条允许正的Tripel份额。上述数量仅检验四项化学风险约束。为联合考察风格与陈旧酒花，在每次划分中使用G组Tripel锚点、单锚点份额网格与线性规划所得多锚点配方构造候选；G模型要求目标风格概率至少为0.5且比来源提高0.01，并要求两种感官代理的stale hops均不增加。选取标准化变化最小的候选，冻结全部候选后，再用J组模型检查目标风格分类、概率提升与stale hops变化。
 
 阈值为参考值的0.5、1和2倍时，55条来源与划分记录中，G阶段分别找到0、1和31条候选，J复核分别支持0、0和9条。2倍阈值下的9条中，3条来自T留出角色，涉及3款来源酒；其余6条来自G或J来源，其中J来源酒用于J模型训练。重复划分产生的记录并非独立新样本，T角色也属于同一历史数据集的内部留出。候选搜索使用有限网格及一组线性规划解，因此未找到候选表示该搜索范围内未找到，并非联合约束全局无解。阈值与啤酒基质、测量方法相关，零浓度记录还受到未知检出限影响。
 
@@ -475,22 +475,23 @@ trans-2-nonenal & 0.002712 & 0.002712 & mg/L\\
 本文的数据核查、分析实现和文字整理使用了OpenAI Codex辅助；工具使用详情与队员实际复核记录另行提供。
 
 
-\section*{参考文献}
 \addcontentsline{toc}{section}{参考文献}
-\noindent [1] Schreurs M, Piampongsant S, Roncoroni M, et al. Predicting and improving complex beer flavor through machine learning. Nature Communications, 15:2368, 2024. DOI:10.1038/s41467-024-46346-0.\par
-\noindent [2] Schreurs M, et al. Data from: Predicting and improving complex beer flavor through machine learning, Version v4. Zenodo, 2026. \url{https://zenodo.org/records/23624915}，访问日期：2026年10月25日. DOI:10.5281/zenodo.23624915.\par
-\noindent [3] Geurts P, Ernst D, Wehenkel L. Extremely randomized trees. Machine Learning, 63:3–42, 2006.\par
-\noindent [4] Friedman J H. Greedy function approximation: A gradient boosting machine. The Annals of Statistics, 29(5):1189–1232, 2001.\par
-\noindent [5] Breiman L. Stacked Regressions. Machine Learning, 24:49–64, 1996.\par
-\noindent [6] Li C, Li H. Variable selection and regression analysis for graph-structured covariates with an application to genomics. The Annals of Applied Statistics, 4(3):1498–1516, 2010.\par
-\noindent [7] Lei J, G'Sell M, Rinaldo A, et al. Distribution-Free Predictive Inference for Regression. Journal of the American Statistical Association, 113(523):1094–1111, 2018.\par
-\noindent [8] Gneiting T, Raftery A E. Strictly Proper Scoring Rules, Prediction, and Estimation. Journal of the American Statistical Association, 102(477):359–378, 2007.\par
-\noindent [9] Vanbeneden N, Saison D, Delvaux F, Delvaux F R. Decrease of 4-vinylguaiacol during beer aging and formation of apocynol and vanillin in beer. Journal of Agricultural and Food Chemistry, 56(24):11983–11988, 2008.\par
-\noindent [10] Omur-Ozbek P, Dietrich A M, Duncan S E, Lee Y. Role of lipid oxidation, chelating agents, and antioxidants in metallic flavor development in the oral cavity. Journal of Agricultural and Food Chemistry, 60(9):2274–2280, 2012.\par
-\noindent [11] Pater A, Satora P, Januszek M. Effect of Coriander Seed Addition at Different Stages of Brewing on Selected Parameters of Low-Alcohol Wheat Beers. Molecules, 29(4):844, 2024.\par
-\noindent [12] Gretton A, Borgwardt K M, Rasch M J, et al. A Kernel Two-Sample Test. Journal of Machine Learning Research, 13:723–773, 2012.\par
-\noindent [13] Meilgaard M C. Individual differences in sensory threshold for aroma chemicals added to beer. Food Quality and Preference, 4(3):153–167, 1993.\par
-\noindent [14] Santos J R, et al. Determination of E-2-nonenal by high-performance liquid chromatography with UV detection assay for the evaluation of beer ageing. Journal of Chromatography A, 985(1–2):395–402, 2003.\par
+\begin{thebibliography}{99}\raggedright
+\bibitem{ref1} Schreurs M, Piampongsant S, Roncoroni M, et al. Predicting and improving complex beer flavor through machine learning. Nature Communications, 15:2368, 2024. \href{https://doi.org/10.1038/s41467-024-46346-0}{DOI:10.1038/s41467-024-46346-0}.
+\bibitem{ref2} Schreurs M, et al. Data from: Predicting and improving complex beer flavor through machine learning, Version v4. Zenodo, 2026. \url{https://zenodo.org/records/23624915}，访问日期：2026年10月25日. \href{https://doi.org/10.5281/zenodo.23624915}{DOI:10.5281/zenodo.23624915}.
+\bibitem{ref3} Geurts P, Ernst D, Wehenkel L. Extremely randomized trees. Machine Learning, 63:3–42, 2006.
+\bibitem{ref4} Friedman J H. Greedy function approximation: A gradient boosting machine. The Annals of Statistics, 29(5):1189–1232, 2001.
+\bibitem{ref5} Breiman L. Stacked Regressions. Machine Learning, 24:49–64, 1996.
+\bibitem{ref6} Li C, Li H. Variable selection and regression analysis for graph-structured covariates with an application to genomics. The Annals of Applied Statistics, 4(3):1498–1516, 2010.
+\bibitem{ref7} Lei J, G'Sell M, Rinaldo A, et al. Distribution-Free Predictive Inference for Regression. Journal of the American Statistical Association, 113(523):1094–1111, 2018.
+\bibitem{ref8} Gneiting T, Raftery A E. Strictly Proper Scoring Rules, Prediction, and Estimation. Journal of the American Statistical Association, 102(477):359–378, 2007.
+\bibitem{ref9} Vanbeneden N, Saison D, Delvaux F, Delvaux F R. Decrease of 4-vinylguaiacol during beer aging and formation of apocynol and vanillin in beer. Journal of Agricultural and Food Chemistry, 56(24):11983–11988, 2008.
+\bibitem{ref10} Omur-Ozbek P, Dietrich A M, Duncan S E, Lee Y. Role of lipid oxidation, chelating agents, and antioxidants in metallic flavor development in the oral cavity. Journal of Agricultural and Food Chemistry, 60(9):2274–2280, 2012.
+\bibitem{ref11} Pater A, Satora P, Januszek M. Effect of Coriander Seed Addition at Different Stages of Brewing on Selected Parameters of Low-Alcohol Wheat Beers. Molecules, 29(4):844, 2024.
+\bibitem{ref12} Gretton A, Borgwardt K M, Rasch M J, et al. A Kernel Two-Sample Test. Journal of Machine Learning Research, 13:723–773, 2012.
+\bibitem{ref13} Meilgaard M C. Individual differences in sensory threshold for aroma chemicals added to beer. Food Quality and Preference, 4(3):153–167, 1993.
+\bibitem{ref14} Santos J R, et al. Determination of E-2-nonenal by high-performance liquid chromatography with UV detection assay for the evaluation of beer ageing. Journal of Chromatography A, 985(1–2):395–402, 2003.
+\end{thebibliography}
 \appendix
 \section{全部50项Top-3与结果索引}
 
